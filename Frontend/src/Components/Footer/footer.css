@@ -1,0 +1,76 @@
+/* Definição das variáveis */
+:root {
+    --Dourado_Luxo: #D4AF37;
+    --Preto_Clássico: #000000;
+    --Cinza_Escuro: #333333;
+    --Branco-Puro: #FFFFFF;
+}
+
+/* Estilo para o rodapé */
+.footer-custom {
+   border-top: 2px solid rgba(255, 255, 255, 0.25);
+    color: white; /* Cor do texto */
+    padding: 10px;
+    overflow-x: hidden;
+ 
+}
+
+/* Estilos para títulos */
+
+
+.p-button-warning {
+   
+ border-color:white!important;
+ 
+}
+.p-button-facebook{
+color: blue;
+
+}
+.p-button-instagram{
+color:white;
+
+}
+
+
+
+/* Caso queira mudar o fundo ou cor dos ícones */
+.p-button-facebook .pi-facebook {
+    color: white; /* Cor para o ícone do Facebook */
+}
+
+.p-button-instagram .pi-instagram {
+    color: white; /* Cor para o ícone do Instagram */
+}
+
+.p-button-linkedin .pi-linkedin {
+    color:  white; /* Cor para o ícone do LinkedIn */
+}
+
+/* Mudando a cor dos botões quando estiverem com hover */
+.p-button-facebook:hover {
+    background-color:#0077B5; 
+}
+
+.p-button-instagram:hover {
+    background-color: #E4405F; 
+}
+
+.p-button-linkedin:hover {
+    background-color: #0077B5; /* Cor do fundo do botão LinkedIn */
+   
+}
+.p-button .pi{
+    font-size: 20px;
+}
+
+.nav{
+    color: white;
+}
+
+@media screen and (min-width : 789px) {
+    .grid{
+        margin:0  80px;
+    }
+
+}

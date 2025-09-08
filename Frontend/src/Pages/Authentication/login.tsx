@@ -1,0 +1,161 @@
+import {type FC, useState } from "react";
+import { Button } from "primereact/button";
+import { InputText } from "primereact/inputtext";
+import { Password } from "primereact/password";
+import { InputSwitch } from "primereact/inputswitch";
+import { Message } from "primereact/message";  // Importando o Message do PrimeReact
+import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from "../../Reducers/UserReducer";
+import { useDispatch } from "react-redux";
+import { useProgressOverlay } from "../../Components/ProgressBar/useProgressOverlay";
+import { ApiErrorHelper } from "../../Helper/apihelper";
+// Constants
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://localhost:7027';
+const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || 'https://localhost:5173'; 
+interface SocialLoginButtonProps {
+  icon: string;
+  provider: 'Google' | 'Facebook';
+  className?: string;
+  severity?: 'danger' | 'info';
+}
+
+const SocialLoginButton = ({ icon, provider, className, severity }: SocialLoginButtonProps) => {
+  const handleSocialLogin = () => {
+    const returnUrl = `${FRONTEND_URL}/callback`;
+    
+    if (provider === 'Google') {
+      window.location.href = `${BACKEND_URL}/auth/login?provider=Google&returnUrl=${encodeURIComponent(returnUrl)}`;
+    } else {
+      window.location.href = `${BACKEND_URL}/api/ExtraLogin/facebook?returnUrl=${encodeURIComponent(returnUrl)}`;
+    }
+  };}
+
+
+
+
+export const Login: FC = () => {
+  const { ProgressOverlay, show, hide } = useProgressOverlay();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+ 
+  
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const handleLogin = async (e: React.FormEvent) => {
+
+    e.preventDefault();
+    
+    show();
+    
+    setLoading(true);
+    setError(null);
+    setLoading(true); // Ativa o spinner
+   
+   try {
+  const resultAction = await dispatch(loginUser({ email, password }) as any);
+
+  if (loginUser.fulfilled.match(resultAction)) {
+    navigate("/dashboard");
+  } else if (loginUser.rejected.match(resultAction)) {
+    const errorMessage = ApiErrorHelper.extractErrorMessage(resultAction.payload);
+    setError(errorMessage);
+  }
+} catch (err) {
+  setError(ApiErrorHelper.extractErrorMessage(err));
+} finally {
+  hide();
+   setLoading(false); 
+}
+  };
+  
+
+  return (
+    <div className="flex justify-content-center align-items-center">
+      <form
+        onSubmit={handleLogin}
+        className="card border-2 p-5 border-round-2xl layouts border-bottom-2 form-login shadow-8 glass"
+        autoComplete="on"
+      >
+        <div className="text-center">
+          <h3 className="mb-3 text-3xl text-white font-light">Entre com</h3>
+          <div>
+          
+
+         
+          <div className="flex justify-content-center mt-4">
+           
+          </div>
+
+
+            <div className="my-3 max-w-screen">
+              <hr />
+            </div>
+            <h3 className="text-3xl mb-2 text-white font-light">ou</h3>
+          </div>
+        </div>
+        <div className="mb-4 mx-auto flex justify-content-center  ">
+        {error && <Message severity="error" text={error} />}
+        </div>
+       {/* Exibe mensagem de erro com PrimeReact */}
+
+        <div className="mb-3">
+          <div className="p-inputgroup mb-3">
+            <span className="p-inputgroup-addon pi pi-envelope pi-phone"></span>
+            <InputText
+              id="email"
+              placeholder="Informe seu email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              type="email"
+              keyfilter={"email"}
+            />
+          </div>
+          <div className="p-inputgroup">
+            <span className="p-inputgroup-addon pi pi-lock"></span>
+            <Password
+              id="password"
+              placeholder="Informe sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              type="password"
+             
+            />
+          </div>
+          <div className="text-center mb-3">
+            <div className="my-3 flex align-items-center justify-content-center">
+              <InputSwitch
+               readOnly
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.value)}
+              />
+              <label className="mt-2 ml-2 nav">Lembrar de mim</label>
+            </div>
+            <div>
+              <Link to="/forgot" className="underline nav">
+                Esqueceu sua senha?
+              </Link>
+            </div>
+          </div>
+          <div>
+              <ProgressOverlay />
+              </div>
+          <div>
+            <Button type="submit" label="Entrar" className="w-full p-button-mobile" loading={loading} />
+          </div>
+        </div>
+        <div className="text-center">
+          <h3>Não tem uma conta?</h3>
+          <Link to="/register" className="underline nav">Cadastre-se</Link>
+        </div>
+      </form>
+    </div>
+  );
+};

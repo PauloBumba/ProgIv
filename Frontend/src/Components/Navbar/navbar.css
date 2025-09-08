@@ -1,0 +1,152 @@
+:root{
+    --Dourado_Luxo : #D4AF37;
+    --Preto_Clássico : #000000;
+    --Cinza_Escuro : #333333;
+    --Branco-Puro : #FFFFFF;
+    
+}
+
+.navbar-logo {
+    height: 80px;
+    object-fit: cover;
+   
+}
+
+.p-menubar .p-menubar-button {
+    order: 1;
+    height: 55px; /* Ajuste a altura do botão */
+    width: auto; /* Deixa a largura automática */
+    padding: 0 15px; /* Aumenta o espaçamento lateral do botão */
+    color: white; /* Cor do texto do botão */
+    font-size: 16px;
+    border: 2px solid white; 
+    border-radius: 5px ;
+    
+    /* Ajusta o tamanho da fonte, se necessário */
+}
+.p-menubar .p-menubar-button
+{
+    font-size: 18px;
+}
+.p-menubar-root-list{
+    font-size: 17.5px;
+color: #f3f4f69e !important;
+
+ 
+}
+
+.p-menubar .p-menubar-button .pi {
+    font-size: 64px; 
+}
+.navbar-custom .p-menubar-button:hover{
+    color: #000000;
+}
+/* Ajuste a logo na navbar */
+.p-button-login{
+    border: 1px solid var(--Dourado_Luxo);
+    color: black;
+  margin-left: 10px;
+    font-weight: normal;
+    background-color: #D4AF37;
+}
+
+
+/* Personaliza o Menu no mobile */
+@media (max-width: 768px) {
+    
+    .p-buttons :hover >a{
+       background-color: var(--Dourado_Luxo);
+       color: black;
+      text-align: center;
+       width: 96%;
+       margin-left: 10px;
+       transition-duration: 0.2s;
+      
+       
+    }
+    
+    .navbar-logo{
+        margin: 10px;
+    }
+    .mobile-menu {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+   
+    .p-menubar{
+            padding: 0 20px;
+    }
+    
+
+    /* Ajuste do Menu Mobile */
+    .p-menubar-button {
+        margin-left: auto;
+    }
+
+    /* Ajusta o botão hambúrguer */
+    .p-menuitem-link {
+        padding: 1rem; /* Ajusta o tamanho do botão no mobile */
+    }
+}
+.p-menubar {
+    border-radius: 0 !important;  /* Remove arredondamento */
+    width: 100vw !important;
+    max-width: 100% !important;
+    padding: 10 !important;
+    outline: none;
+    border: none;
+   border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    z-index: 10;
+   
+   
+    
+}
+.p-button-mobile
+{
+    background-color: #D4AF37;
+    border-radius: 10px;
+    width: 96%;
+    border: 1px solid var(--Cinza_Escuro);
+    color: #000000;
+   
+}
+.p-button-mobile:hover
+{
+    background-color: #D4AF37;
+}
+
+
+.border{
+    border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.glass {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    
+}
+.form-control {
+    height: 50px;
+    font-size: 1.1rem;
+}
+.input-group-text {
+    height: 50px;
+    font-size: 1.2rem;
+}
+.input-group-text i {
+    font-size: 1.3rem;
+}
+.shadow-dark {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .35) !important;
+}
+.shadow-darker {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5) !important;
+}
+.shadow-darkest {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .75) !important;
+}
+.sidebar-brand {
+    border-bottom: 1px solid #104638;
+}

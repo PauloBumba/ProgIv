@@ -1,0 +1,16 @@
+.pi{
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.371);
+}
+
+@media screen  and (max-width: 992px){
+    
+
+.img{
+    flex: 1;
+    order: 1;
+}}
+
+.navbar{
+    background-color:#E8F5E9;
+}

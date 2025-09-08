@@ -1,0 +1,344 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF20853-1D84-416C-8E9C-8658159A5F68}|Infrastruture\\Infrastruture.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\infrastruture\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF20853-1D84-416C-8E9C-8658159A5F68}|Infrastruture\\Infrastruture.csproj|solutionrelative:infrastruture\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|solutionrelative:web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|solutionrelative:web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\web\\web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|solutionrelative:web\\web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\application\\masstrasit\\consumers\\createuserconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|solutionrelative:application\\masstrasit\\consumers\\createuserconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\application\\services\\signalrnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|solutionrelative:application\\services\\signalrnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\application\\masstrasit\\consumers\\passwordrecoveryrequestedconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|solutionrelative:application\\masstrasit\\consumers\\passwordrecoveryrequestedconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\application\\interface\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|solutionrelative:application\\interface\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A4DBC4-4AAB-4B46-BCBC-069852A8F62C}|Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{17A4DBC4-4AAB-4B46-BCBC-069852A8F62C}|Domain\\Domain.csproj|solutionrelative:domain\\domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A4DBC4-4AAB-4B46-BCBC-069852A8F62C}|Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\domain\\settings\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A4DBC4-4AAB-4B46-BCBC-069852A8F62C}|Domain\\Domain.csproj|solutionrelative:domain\\settings\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\web\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|solutionrelative:web\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|solutionrelative:web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF20853-1D84-416C-8E9C-8658159A5F68}|Infrastruture\\Infrastruture.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\infrastruture\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF20853-1D84-416C-8E9C-8658159A5F68}|Infrastruture\\Infrastruture.csproj|solutionrelative:infrastruture\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A4DBC4-4AAB-4B46-BCBC-069852A8F62C}|Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\domain\\settings\\jwttyping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A4DBC4-4AAB-4B46-BCBC-069852A8F62C}|Domain\\Domain.csproj|solutionrelative:domain\\settings\\jwttyping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80C28DBC-3B69-4C6A-AA4A-02891D6976A5}|References\\References.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\references\\references.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{80C28DBC-3B69-4C6A-AA4A-02891D6976A5}|References\\References.csproj|solutionrelative:references\\references.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\web\\web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B0E69C24-3AC3-4C0E-9839-918DBC6417F8}|Web\\Web.csproj|solutionrelative:web\\web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{44B8AF18-5B4C-4913-AF8D-55C661789BD2}|Application\\Application.csproj|solutionrelative:application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF20853-1D84-416C-8E9C-8658159A5F68}|Infrastruture\\Infrastruture.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\infrastruture\\infrastruture.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7DF20853-1D84-416C-8E9C-8658159A5F68}|Infrastruture\\Infrastruture.csproj|solutionrelative:infrastruture\\infrastruture.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DF20853-1D84-416C-8E9C-8658159A5F68}|Infrastruture\\Infrastruture.csproj|c:\\users\\paulo\\documents\\github\\fiescdevfullstack\\backend\\notificationservice\\infrastruture\\interface\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DF20853-1D84-416C-8E9C-8658159A5F68}|Infrastruture\\Infrastruture.csproj|solutionrelative:infrastruture\\interface\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Web",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Web.csproj",
+              "RelativeDocumentMoniker": "Web\\Web.csproj",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Web.csproj",
+              "RelativeToolTip": "Web\\Web.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-23T01:45:20.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotificationHub.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Infrastruture\\Hubs\\NotificationHub.cs",
+              "RelativeDocumentMoniker": "Infrastruture\\Hubs\\NotificationHub.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Infrastruture\\Hubs\\NotificationHub.cs",
+              "RelativeToolTip": "Infrastruture\\Hubs\\NotificationHub.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T00:49:40.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateUserConsumer.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\MassTrasit\\Consumers\\CreateUserConsumer.cs",
+              "RelativeDocumentMoniker": "Application\\MassTrasit\\Consumers\\CreateUserConsumer.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\MassTrasit\\Consumers\\CreateUserConsumer.cs",
+              "RelativeToolTip": "Application\\MassTrasit\\Consumers\\CreateUserConsumer.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwCgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T17:03:22.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PasswordRecoveryRequestedConsumer.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\MassTrasit\\Consumers\\PasswordRecoveryRequestedConsumer.cs",
+              "RelativeDocumentMoniker": "Application\\MassTrasit\\Consumers\\PasswordRecoveryRequestedConsumer.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\MassTrasit\\Consumers\\PasswordRecoveryRequestedConsumer.cs",
+              "RelativeToolTip": "Application\\MassTrasit\\Consumers\\PasswordRecoveryRequestedConsumer.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T01:23:22.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\Interface\\INotificationService.cs",
+              "RelativeDocumentMoniker": "Application\\Interface\\INotificationService.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\Interface\\INotificationService.cs",
+              "RelativeToolTip": "Application\\Interface\\INotificationService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T00:26:21.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SignalRNotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\Services\\SignalRNotificationService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\SignalRNotificationService.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\Services\\SignalRNotificationService.cs",
+              "RelativeToolTip": "Application\\Services\\SignalRNotificationService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T00:25:20.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Program.cs",
+              "RelativeDocumentMoniker": "Web\\Program.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Program.cs",
+              "RelativeToolTip": "Web\\Program.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAYwEIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T00:56:28.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Domain\\Domain.csproj",
+              "RelativeDocumentMoniker": "Domain\\Domain.csproj",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Domain\\Domain.csproj",
+              "RelativeToolTip": "Domain\\Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-28T00:41:31.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmailSettings.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Domain\\Settings\\EmailSettings.cs",
+              "RelativeDocumentMoniker": "Domain\\Settings\\EmailSettings.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Domain\\Settings\\EmailSettings.cs",
+              "RelativeToolTip": "Domain\\Settings\\EmailSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T23:49:57.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Web\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Web\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-30T01:02:52.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NotificationsController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Controllers\\NotificationsController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\NotificationsController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Controllers\\NotificationsController.cs",
+              "RelativeToolTip": "Web\\Controllers\\NotificationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T02:02:51.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Infrastruture\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Infrastruture\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Infrastruture\\Services\\EmailService.cs",
+              "RelativeToolTip": "Infrastruture\\Services\\EmailService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAADYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T00:39:25.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T18:28:04.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\appsettings.json",
+              "RelativeToolTip": "Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-28T00:56:42.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "JwtTyping.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Domain\\Settings\\JwtTyping.cs",
+              "RelativeDocumentMoniker": "Domain\\Settings\\JwtTyping.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Domain\\Settings\\JwtTyping.cs",
+              "RelativeToolTip": "Domain\\Settings\\JwtTyping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T02:14:32.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "References.csproj",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\References\\References.csproj",
+              "RelativeDocumentMoniker": "References\\References.csproj",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\References\\References.csproj",
+              "RelativeToolTip": "References\\References.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-01T23:51:53.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Web.csproj",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Web.csproj",
+              "RelativeDocumentMoniker": "Web\\Web.csproj",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Web\\Web.csproj",
+              "RelativeToolTip": "Web\\Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-28T00:50:47.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Application.csproj",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "Application\\Application.csproj",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Application\\Application.csproj",
+              "RelativeToolTip": "Application\\Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-28T02:17:44.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Infrastruture.csproj",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj",
+              "RelativeDocumentMoniker": "Infrastruture\\Infrastruture.csproj",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj",
+              "RelativeToolTip": "Infrastruture\\Infrastruture.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-28T00:43:51.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Infrastruture\\Interface\\IEmailService.cs",
+              "RelativeDocumentMoniker": "Infrastruture\\Interface\\IEmailService.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\FiescDevFullStack\\Backend\\NotificationService\\Infrastruture\\Interface\\IEmailService.cs",
+              "RelativeToolTip": "Infrastruture\\Interface\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T23:37:34.19Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

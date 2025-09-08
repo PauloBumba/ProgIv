@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "5552:5552"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - notification-network
+    restart: unless-stopped
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: pharma-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Admin@2025
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - pharma-network
+    restart: unless-stopped
+  notification-service:
+    container_name: notification-service
+    build:
+      context: .
+      dockerfile: NotificationService/Dockerfile
+   
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RabbitMQ__Host=rabbitmq
+      - RabbitMQ__Port=5672
+      - EmailSettings__Email=paulomvbumba@gmail.com
+      - EmailSettings__Password=ajib ilnr blxz xcyd
+      - EmailSettings__Host=smtp.gmail.com
+      - EmailSettings__Port=587
+    depends_on:
+      - rabbitmq
+    networks:
+      - notification-network
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - notification-network
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - notification-network
+    restart: unless-stopped
+volumes:
+  sqlserver_data:
+networks:
+  pharma-network:
+    driver: bridge
+  notification-network:
+    driver: bridge

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\UseCaseService.References\References\References.csproj" />
+    <ProjectReference Include="..\..\UseCaseService.Infrastructure\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\..\UseCaseService.Domain\Domain\Domain.csproj" />
+    <ProjectReference Include="..\..\..\Shared.Contracts\Shared.Contracts.csproj" />
+   
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
