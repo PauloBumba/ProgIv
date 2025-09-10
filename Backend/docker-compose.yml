@@ -20,9 +20,9 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: meubanco
-      MYSQL_USER: usuario
-      MYSQL_PASSWORD: senha123
+      MYSQL_DATABASE: MedicationDb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin123
       DOTNET_RUNNING_IN_CONTAINER: "true" # para o app detectar que tá no Docker
     ports:
       - "3306:3306"

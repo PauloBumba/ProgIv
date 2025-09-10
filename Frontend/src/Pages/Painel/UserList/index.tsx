@@ -11,7 +11,8 @@ import { Message } from 'primereact/message';
 
 import { userService } from '../../../Services/userService';
 import {type IUser } from '../Components/Types';
-import { RootState } from '../../../Root/RootReducer';
+import {type RootState } from '../../../Root/RootReducer';
+import { useSelector } from 'react-redux';
 
 export default function ListaUsuarios() {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -30,7 +31,7 @@ const fetchUsers = async () => {
       setUsers(allUsers);
     } else {
       // usuário normal só vê ele mesmo
-      setUsers(allUsers.filter(u => u.id === currentUser?.id));
+      setUsers(allUsers.filter((u: IUser) => u.id === currentUser?.id));
     }
   } catch (err: any) {
     setError(err.response?.data?.message || 'Erro ao buscar usuários');

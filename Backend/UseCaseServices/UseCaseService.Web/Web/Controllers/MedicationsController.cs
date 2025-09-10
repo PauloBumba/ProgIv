@@ -157,9 +157,10 @@ public class MedicationsController : ControllerBase
             {
                 Id = Guid.NewGuid(),
                 MedicationId = medId,
-                TimeOfDay = dto.TimeOfDay,
+                TimeOfDay = dto.TimeOfDay, // aqui
                 Enabled = dto.Enabled
             };
+
 
             _db.MedicationSchedules.Add(schedule);
             await _db.SaveChangesAsync();
@@ -168,9 +169,10 @@ public class MedicationsController : ControllerBase
             {
                 ScheduleId = schedule.Id,
                 MedicationId = schedule.MedicationId,
-                TimeOfDay = DateTime.Now,
+                TimeOfDay = DateTime.Now.TimeOfDay, // ✅ corrigido
                 Enabled = schedule.Enabled
             });
+
 
 
             return Ok(EnvelopResponse<MedicationSchedule>.Success(schedule, "Schedule criado."));

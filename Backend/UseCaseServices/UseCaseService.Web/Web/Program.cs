@@ -23,7 +23,7 @@ var isDocker = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER")
 // Escolhe a connection string correta
 var connectionString = isDocker
     ? builder.Configuration.GetConnectionString("MySqlConnection") // dentro do Docker
-    : "Server=localhost;Port=3306;Database=meubanco;User=usuario;Password=senha123;"; // fora do Docker
+    : "Server=localhost;Port=3306;Database=MedicationDb;User=admin;Password=admin123;"; // fora do Docker
 
 builder.Services.AddDbContext<UserCaseDbContext>(options =>
 {
@@ -112,8 +112,13 @@ using (var scope = app.Services.CreateScope())
 
     await adminInitializer.CreateAdmin();
 }
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var adminInitializer = services.GetRequiredService<IAdminServices>();
 
-
+    await adminInitializer.CreateAdmin();
+}
 // Middlewares
 
 if (!app.Environment.IsDevelopment())
