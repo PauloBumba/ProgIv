@@ -4,6 +4,7 @@ using Application.Services;
 using Domain.Entities;
 using Domain.Typing;
 using Infrastructure;
+
 using Infrastructure.Persistence;
 
 using MediatR;
@@ -16,11 +17,26 @@ using Web.Extensions;
 using Web.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
+// Detecta se está dentro do Docker (variável de ambiente opcional)
+var isDocker = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true";
+
+// Escolhe a connection string correta
+var connectionString = isDocker
+    ? builder.Configuration.GetConnectionString("MySqlConnection") // dentro do Docker
+    : "Server=localhost;Port=3306;Database=meubanco;User=usuario;Password=senha123;"; // fora do Docker
 
 builder.Services.AddDbContext<UserCaseDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString),
+        mySqlOptions =>
+        {
+            mySqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 10,
+                maxRetryDelay: TimeSpan.FromSeconds(5),
+                errorNumbersToAdd: null
+            );
+        });
+});
 
 // Identity com EF
 builder.Services.AddIdentity<UserEntities, IdentityRole>()
@@ -85,10 +101,18 @@ var app = builder.Build();
 // Criação do admin (se precisar)
 using (var scope = app.Services.CreateScope())
 {
+    var db = scope.ServiceProvider.GetRequiredService<UserCaseDbContext>();
+
+    // Aplica migrations
+    db.Database.Migrate();
+
+    db.SaveChanges();
     var services = scope.ServiceProvider;
     var adminInitializer = services.GetRequiredService<IAdminServices>();
+
     await adminInitializer.CreateAdmin();
 }
+
 
 // Middlewares
 

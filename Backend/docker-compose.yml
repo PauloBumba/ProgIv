@@ -1,6 +1,83 @@
 version: '3.8'
 
+networks:
+  app-net:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  mysql_backup:
+  sqlserver_data:
+  sqlserver_backup:
+
 services:
+  # ==========================
+  # MySQL
+  # ==========================
+  mysql:
+    image: mysql:8.0
+    container_name: meu-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: meubanco
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: senha123
+      DOTNET_RUNNING_IN_CONTAINER: "true" # para o app detectar que tá no Docker
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - mysql_backup:/backups
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-uroot", "-proot123"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - app-net
+
+  # ==========================
+  # SQL Server
+  # ==========================
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: meu-sqlserver
+    restart: unless-stopped
+    environment:
+      SA_PASSWORD: StrongPass123!
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+      - sqlserver_backup:/backups
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P StrongPass123! -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      retries: 5
+    networks:
+      - app-net
+
+  # ==========================
+  # Adminer
+  # ==========================
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+      - sqlserver
+    networks:
+      - app-net
+
+  # ==========================
+  # RabbitMQ + Notification Service
+  # ==========================
   rabbitmq:
     container_name: rabbitmq
     image: rabbitmq:3-management
@@ -12,42 +89,32 @@ services:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
     networks:
-      - notification-network
+      - app-net
     restart: unless-stopped
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: pharma-sqlserver
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Admin@2025
-      - MSSQL_PID=Express
-    ports:
-      - "1433:1433"
-    volumes:
-      - sqlserver_data:/var/opt/mssql
-    networks:
-      - pharma-network
-    restart: unless-stopped
+
   notification-service:
     container_name: notification-service
     build:
       context: .
       dockerfile: NotificationService/Dockerfile
-   
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - RabbitMQ__Host=rabbitmq
       - RabbitMQ__Port=5672
       - EmailSettings__Email=paulomvbumba@gmail.com
-      - EmailSettings__Password=ajib ilnr blxz xcyd
+      - EmailSettings__Password=********
       - EmailSettings__Host=smtp.gmail.com
       - EmailSettings__Port=587
+      - DOTNET_RUNNING_IN_CONTAINER=true
     depends_on:
       - rabbitmq
     networks:
-      - notification-network
+      - app-net
     restart: unless-stopped
 
+  # ==========================
+  # Observabilidade
+  # ==========================
   prometheus:
     image: prom/prometheus
     container_name: prometheus
@@ -56,7 +123,7 @@ services:
     ports:
       - "9090:9090"
     networks:
-      - notification-network
+      - app-net
     restart: unless-stopped
 
   grafana:
@@ -65,12 +132,5 @@ services:
     ports:
       - "3000:3000"
     networks:
-      - notification-network
+      - app-net
     restart: unless-stopped
-volumes:
-  sqlserver_data:
-networks:
-  pharma-network:
-    driver: bridge
-  notification-network:
-    driver: bridge

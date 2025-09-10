@@ -14,7 +14,7 @@ namespace Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    
     public class UserController : ControllerBase
     {
         private readonly IUserServices _userService;
@@ -49,7 +49,7 @@ namespace Api.Controllers
             }
         }
 
-     
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(string id, [FromBody] UpdateUserDto updateUserDto)
         {
@@ -75,6 +75,7 @@ namespace Api.Controllers
 
        
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteUser(DeleteUserDto deleteUserDto)
         {
             try
@@ -96,6 +97,7 @@ namespace Api.Controllers
 
         
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllUsers()
         {
             try
@@ -117,6 +119,7 @@ namespace Api.Controllers
 
      
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetUserById(string id)
         {
             try

@@ -3,19 +3,27 @@ using Application.Response;
 using Application.Services;
 using Domain.Entities;
 using Infrastructure.Persistence;
+using MassTransit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Shared.Contracts.Contracts;
+using Shared.Contracts.Events;
+
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class MedicationsController : ControllerBase
 {
     private readonly UserCaseDbContext _db;
     private readonly UserContextService _userContextService;
-    public MedicationsController(UserCaseDbContext db, UserContextService userContextService)
+    private readonly IPublishEndpoint _publish;
+    public MedicationsController(UserCaseDbContext db, UserContextService userContextService,  IPublishEndpoint publish)
     {
         _db = db;
         _userContextService = userContextService;
+        _publish = publish;
     }
 
     // GET: /api/Medications
@@ -70,9 +78,19 @@ public class MedicationsController : ControllerBase
                 UserId = userId
 
             };
-
+            
             _db.Medications.Add(med);
             await _db.SaveChangesAsync();
+
+            await _publish.Publish(new MedicationCreatedEvent
+            {
+                MedicationId = med.Id,
+                Name = med.Name,
+                Strength = med.Strength,
+                
+                UserId = med.UserId,
+                
+            });
 
             return Ok(EnvelopResponse<Medication>.Success(med, "Medicação criada com sucesso."));
         }
@@ -145,6 +163,16 @@ public class MedicationsController : ControllerBase
 
             _db.MedicationSchedules.Add(schedule);
             await _db.SaveChangesAsync();
+
+            await _publish.Publish(new ScheduleCreatedEvent
+            {
+                ScheduleId = schedule.Id,
+                MedicationId = schedule.MedicationId,
+                TimeOfDay = DateTime.Now,
+                Enabled = schedule.Enabled
+            });
+
+
             return Ok(EnvelopResponse<MedicationSchedule>.Success(schedule, "Schedule criado."));
         }
         catch (Exception ex)
@@ -159,6 +187,8 @@ public class MedicationsController : ControllerBase
     {
         try
         {
+            string userId = _userContextService.GetUserId(); // ✅ correto
+
             var schedule = await _db.MedicationHistories.FindAsync(scheduleId);
             if (schedule == null)
                 return NotFound(EnvelopResponse<string>.Failure("Schedule não encontrado."));
@@ -166,7 +196,15 @@ public class MedicationsController : ControllerBase
             schedule.WasTaken = true;
             schedule.TakenAt = DateTime.UtcNow;
 
-            await _db.SaveChangesAsync();
+            await _db.SaveChangesAsync ();
+
+            await _publish.Publish(new MedicationTakenEvent
+            {
+               
+                MedicationId = schedule.MedicationId,
+                UserId = userId,
+                TakenAt = schedule.TakenAt ?? DateTime.UtcNow
+            });
             return Ok(EnvelopResponse<MedicationHistory>.Success(schedule, "Medicação marcada como tomada."));
         }
         catch (Exception ex)
