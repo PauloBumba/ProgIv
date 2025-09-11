@@ -33,6 +33,10 @@ import EditarUsuarioPage from "../Pages/Painel/UserList/EditarUsuario";
 import { CreateExpense } from "../Pages/Painel/Expense/CreateExpense";
 import { ViewExpense } from "../Pages/Painel/Expense/ViewExpense";
 import { MyExpense } from "../Pages/Painel/Expense/myExpense";
+import { MedicationsList } from "../Pages/Painel/Medications/MedicationsList";
+import { MedicationForm } from "../Pages/Painel/Medications/MedicationForm";
+import { MedicationDetails } from "../Pages/Painel/Medications/edicationDetails";
+import { MedicationSchedules } from "../Pages/Painel/Medications/MedicationSchedules";
 
 // Tipo do usuário (garanta que isso esteja consistente com seu store)
 interface AppUser {
@@ -69,7 +73,19 @@ export const AppRouter: FC = () => {
           {/* Dashboard e perfil (qualquer autenticado) */}
           <Route index path="dashboard" element={<HomePage />} />
           <Route path="profile" element={<Profile />} />
-
+          <Route path="/" element={<MedicationsList />} />
+      
+      {/* Novo medicamento */}
+      <Route path="/new" element={<MedicationForm />} />
+      
+      {/* Editar medicamento */}
+      <Route path="/:id/edit" element={<MedicationForm />} />
+      
+      {/* Detalhes do medicamento */}
+      <Route path="/:id" element={<MedicationDetails />} />
+      
+      {/* Gerenciar horários */}
+      <Route path="/:id/schedules" element={<MedicationSchedules />} />
           {/* Somente para Colaborador */}
         <Route
   path="expense"

@@ -21,7 +21,7 @@ const useScrollReveal = (selector: string, options: ScrollRevealOptions = {}) =>
       distance: '30%',
       duration: 2000,
       delay: 250,
-      reset: true,
+      reset:false,
       ...options, // Combina as opções padrão com as passadas como argumento
     });
 
