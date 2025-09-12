@@ -153,7 +153,7 @@ export const Login: FC = () => {
         </div>
         <div className="text-center">
           <h3>Não tem uma conta?</h3>
-          <Link to="/register" className="underline nav">Cadastre-se</Link>
+          <Link to="/usuarios/criar" className="underline nav">Cadastre-se</Link>
         </div>
       </form>
     </div>

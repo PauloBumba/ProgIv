@@ -75,6 +75,10 @@ builder.Services.AddScoped<IFileStorageService, FileStorageService>();
 // Camadas da aplicação
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
+// Se UserContextService implementa IUserContextService
+
+// ou, se você tiver uma interface
+builder.Services.AddScoped<IUserContextService, UserContextService>();
 
 // JWT (se estiver usando)
 builder.Services.AddJwtExtension(builder.Configuration);

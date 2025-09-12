@@ -1,280 +1,230 @@
 import { useEffect, useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Card } from 'primereact/card';
+import { medicationService } from '../../../Services/medicationService'; // seu serviço de medicamentos
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
-import { Badge } from 'primereact/badge';
-import { Toolbar } from 'primereact/toolbar';
 import { InputText } from 'primereact/inputtext';
+import { Dialog } from 'primereact/dialog';
+import { Message } from 'primereact/message';
 
-import { FilterMatchMode } from 'primereact/api';
+interface IMedication {
+  id?: string;
+  name: string;
+  strength: string;
+  notes?: string;
+}
 
-import { medicationService, type Medication } from '../../../Services/medicationService';
-
-export const MedicationsList = () => {
-  const [medications, setMedications] = useState<Medication[]>([]);
-  const [loading, setLoading] = useState(false);
+export const GenericList= () => {
+  const [medications, setMedications] = useState<IMedication[]>([]);
   const [globalFilter, setGlobalFilter] = useState('');
-  const [filters, setFilters] = useState({
-    global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-    name: { value: null, matchMode: FilterMatchMode.CONTAINS },
-    strength: { value: null, matchMode: FilterMatchMode.CONTAINS }
-  });
-  
+  const [error, setError] = useState<string | null>(null);
+  const [selectedMed, setSelectedMed] = useState<IMedication | null>(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [saving, setSaving] = useState(false);
   const toast = useRef<Toast>(null);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    loadMedications();
-  }, []);
-
-  const loadMedications = async () => {
-    setLoading(true);
+  // Buscar medicamentos
+  const fetchMeds = async () => {
     try {
-      const response = await medicationService.getAll();
-      if (response.success) {
-        setMedications(response.data);
-      } else {
-        showToast('error', 'Erro', 'Falha ao carregar medicamentos');
-      }
-    } catch (error: any) {
-      showToast('error', 'Erro', error.message);
-    } finally {
-      setLoading(false);
+      const res = await medicationService.getAll();
+      setMedications(res.data.data);
+      setError(null);
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Erro ao buscar medicamentos');
+      toast.current?.show({ severity: 'error', summary: 'Erro', detail: error });
     }
   };
 
-  const showToast = (severity: 'success' | 'info' | 'warn' | 'error', summary: string, detail: string) => {
-    toast.current?.show({ severity, summary, detail });
-  };
+  useEffect(() => {
+    fetchMeds();
+  }, []);
 
-  const confirmDelete = (medication: Medication) => {
+  // Confirmar exclusão
+  const confirmDelete = (id: string) => {
     confirmDialog({
-      message: `Tem certeza que deseja excluir o medicamento "${medication.name}"?`,
-      header: 'Confirmar Exclusão',
+      message: 'Tem certeza que deseja deletar este medicamento?',
+      header: 'Confirmação',
       icon: 'pi pi-exclamation-triangle',
-      accept: () => deleteMedication(medication.id),
-      reject: () => {},
-      acceptLabel: 'Sim',
-      rejectLabel: 'Cancelar',
-      acceptClassName: 'p-button-danger'
+      accept: () => handleDelete(id),
     });
   };
 
-  const deleteMedication = async (id: string) => {
+  // Deletar medicamento
+  const handleDelete = async (id: string) => {
     try {
-      const response = await medicationService.delete(id);
-      if (response.success) {
-        showToast('success', 'Sucesso', 'Medicamento excluído com sucesso');
-        loadMedications();
-      } else {
-        showToast('error', 'Erro', 'Falha ao excluir medicamento');
-      }
-    } catch (error: any) {
-      showToast('error', 'Erro', error.message);
+      await medicationService.delete(id);
+      setMedications(prev => prev.filter(m => m.id !== id));
+      toast.current?.show({ severity: 'success', summary: 'Sucesso', detail: 'Medicamento deletado.' });
+      setError(null);
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Erro ao deletar medicamento');
+      toast.current?.show({ severity: 'error', summary: 'Erro', detail: error });
     }
   };
 
-  // Templates das colunas
-  const nameTemplate = (rowData: Medication) => (
-    <div className="flex align-items-center gap-2">
-      <div className="w-2rem h-2rem border-circle flex align-items-center justify-content-center"
-           style={{ backgroundColor: '#00C896', color: 'white' }}>
-        <i className="pi pi-heart text-sm"></i>
-      </div>
-      <div>
-        <div className="font-medium">{rowData.name}</div>
-        <div className="text-sm text-gray-500">{rowData.strength}</div>
-      </div>
-    </div>
-  );
+  // Abrir modal criar
+  const openCreateModal = () => {
+    setSelectedMed({ name: '', strength: '', notes: '' });
+    setModalVisible(true);
+  };
 
-  const schedulesTemplate = (rowData: Medication) => {
-    const scheduleCount = rowData.schedules?.length || 0;
-    const activeSchedules = rowData.schedules?.filter(s => s.enabled).length || 0;
-    
+  // Abrir modal editar
+  const openEditModal = (med: IMedication) => {
+    setSelectedMed(med);
+    setModalVisible(true);
+  };
+
+  // Fechar modal
+  const hideModal = () => {
+    setModalVisible(false);
+    setSelectedMed(null);
+    setError(null);
+  };
+
+  // Salvar medicamento (criar ou editar)
+  const handleSave = async () => {
+    if (!selectedMed) return;
+
+    if (!selectedMed.name.trim() || !selectedMed.strength.trim()) {
+      setError('Nome e força são obrigatórios.');
+      return;
+    }
+
+    setSaving(true);
+    try {
+      if (selectedMed.id) {
+        await medicationService.update(selectedMed.id, selectedMed);
+        toast.current?.show({ severity: 'success', summary: 'Sucesso', detail: 'Medicamento atualizado.' });
+      } else {
+        await medicationService.create(selectedMed);
+        toast.current?.show({ severity: 'success', summary: 'Sucesso', detail: 'Medicamento criado.' });
+      }
+      fetchMeds();
+      hideModal();
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Erro ao salvar medicamento');
+      toast.current?.show({ severity: 'error', summary: 'Erro', detail: error });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  // Botões AÇÃO
+  const actionBodyTemplate = (rowData: IMedication) => {
     return (
-      <div className="flex align-items-center gap-2">
-        <Badge 
-          value={scheduleCount} 
-          severity={scheduleCount > 0 ? 'success' : 'secondary'}
+      <div className="flex gap-2 justify-content-center">
+        <Button
+          icon="pi pi-pencil"
+          className="p-button-rounded p-button-warning"
+          onClick={() => openEditModal(rowData)}
+          tooltip="Editar medicamento"
+          tooltipOptions={{ position: 'top' }}
+          type="button"
         />
-        <span className="text-sm text-gray-600">
-          {activeSchedules}/{scheduleCount} ativos
-        </span>
+        <Button
+          icon="pi pi-trash"
+          className="p-button-rounded p-button-danger"
+          onClick={() => confirmDelete(rowData.id!)}
+          tooltip="Deletar medicamento"
+          tooltipOptions={{ position: 'top' }}
+          type="button"
+        />
       </div>
     );
   };
 
-  const actionsTemplate = (rowData: Medication) => (
-    <div className="flex gap-2">
-      <Button
-        icon="pi pi-eye"
-        size="small"
-        outlined
-        tooltip="Visualizar"
-        tooltipOptions={{ position: 'top' }}
-        onClick={() => navigate(`/medications/${rowData.id}`)}
-        style={{ color: '#0062A8', borderColor: '#0062A8' }}
-      />
-      <Button
-        icon="pi pi-pencil"
-        size="small"
-        outlined
-        tooltip="Editar"
-        tooltipOptions={{ position: 'top' }}
-        onClick={() => navigate(`/medications/${rowData.id}/edit`)}
-        style={{ color: '#00C896', borderColor: '#00C896' }}
-      />
-      <Button
-        icon="pi pi-clock"
-        size="small"
-        outlined
-        tooltip="Gerenciar Horários"
-        tooltipOptions={{ position: 'top' }}
-        onClick={() => navigate(`/medications/${rowData.id}/schedules`)}
-        style={{ color: '#003F7D', borderColor: '#003F7D' }}
-      />
-      <Button
-        icon="pi pi-trash"
-        size="small"
-        outlined
-        severity="danger"
-        tooltip="Excluir"
-        tooltipOptions={{ position: 'top' }}
-        onClick={() => confirmDelete(rowData)}
-      />
-    </div>
-  );
-
-  const notesTemplate = (rowData: Medication) => (
-    <div className="max-w-20rem">
-      {rowData.notes ? (
-        <span className="text-sm">{rowData.notes}</span>
-      ) : (
-        <span className="text-sm text-gray-400 italic">Sem observações</span>
-      )}
-    </div>
-  );
-
-  // Header da toolbar
-  const leftToolbarTemplate = () => (
-    <div className="flex align-items-center gap-2">
-      <Button
-        label="Novo Medicamento"
-        icon="pi pi-plus"
-        style={{ backgroundColor: '#00C896', borderColor: '#00C896' }}
-        onClick={() => navigate('/medications/new')}
-      />
-      <Button
-        label="Atualizar"
-        icon="pi pi-refresh"
-        outlined
-        onClick={loadMedications}
-        loading={loading}
-        style={{ borderColor: '#0062A8', color: '#0062A8' }}
-      />
-    </div>
-  );
-
-  const rightToolbarTemplate = () => (
-    <div className="flex align-items-center gap-2">
-      <span className="p-input-icon-left">
-        <i className="pi pi-search" />
-        <InputText
-          value={globalFilter}
-          onChange={(e) => setGlobalFilter(e.target.value)}
-          placeholder="Buscar medicamentos..."
-          className="w-20rem"
-        />
-      </span>
-    </div>
-  );
-
   const header = (
     <div className="flex justify-content-between align-items-center">
-      <h2 className="m-0" style={{ color: '#003F7D' }}>
-        <i className="pi pi-heart mr-2"></i>
-        Medicamentos
-      </h2>
-      <Badge 
-        value={medications.length} 
-        severity="info" 
-        size="large"
-      />
+      <h2>Lista de Medicamentos</h2>
+      <div className="flex gap-3 align-items-center">
+        <InputText
+          type="search"
+          placeholder="Buscar..."
+          onInput={(e: any) => setGlobalFilter(e.target.value)}
+          value={globalFilter}
+          className="p-input-icon-left"
+          style={{ maxWidth: 250 }}
+        />
+        <Button
+          label="Criar Medicamento"
+          icon="pi pi-plus"
+          className="p-button-success"
+          onClick={openCreateModal}
+          type="button"
+        />
+      </div>
     </div>
   );
 
   return (
-    <div className="min-h-screen p-4" 
-         style={{ background: 'linear-gradient(135deg, #0062A8 0%, #00C896 100%)' }}>
-      
-      <Card className="shadow-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
-        {header}
-        
-        <Toolbar 
-          className="mb-4 border-round" 
-          left={leftToolbarTemplate} 
-          right={rightToolbarTemplate}
-        />
-
-        <DataTable
-          value={medications}
-          loading={loading}
-          dataKey="id"
-          paginator
-          rows={10}
-          rowsPerPageOptions={[5, 10, 25, 50]}
-          globalFilter={globalFilter}
-          filters={filters}
-          onFilter={(e) => setFilters(e.filters as any)}
-          emptyMessage="Nenhum medicamento encontrado"
-          className="p-datatable-sm"
-          stripedRows
-          showGridlines
-          responsiveLayout="scroll"
-          paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} medicamentos"
-        >
-          <Column
-            field="name"
-            header="Medicamento"
-            body={nameTemplate}
-            sortable
-            filter
-            filterPlaceholder="Filtrar por nome"
-            style={{ minWidth: '14rem' }}
-          />
-          
-          <Column
-            field="schedules"
-            header="Horários"
-            body={schedulesTemplate}
-            style={{ minWidth: '8rem' }}
-          />
-          
-          <Column
-            field="notes"
-            header="Observações"
-            body={notesTemplate}
-            style={{ minWidth: '12rem' }}
-          />
-          
-          <Column
-            body={actionsTemplate}
-            header="Ações"
-            frozen
-            alignFrozen="right"
-            style={{ minWidth: '12rem' }}
-          />
-        </DataTable>
-      </Card>
-
+    <div className="card">
       <Toast ref={toast} />
+      {error && <Message severity="error" text={error} />}
       <ConfirmDialog />
+      <DataTable
+        value={medications}
+        paginator
+        rows={10}
+        header={header}
+        globalFilter={globalFilter}
+        emptyMessage="Nenhum medicamento encontrado."
+        responsiveLayout="scroll"
+        stripedRows
+      >
+        <Column field="name" header="Nome" sortable filter filterPlaceholder="Buscar por nome" />
+        <Column field="strength" header="Força" sortable filter filterPlaceholder="Buscar por força" />
+        <Column field="notes" header="Notas" />
+        <Column body={actionBodyTemplate} header="Ações" style={{ width: '10rem' }} />
+      </DataTable>
+
+      <Dialog
+        visible={modalVisible}
+        header={selectedMed?.id ? 'Editar Medicamento' : 'Criar Medicamento'}
+        modal
+        closable
+        onHide={hideModal}
+        footer={
+          <>
+            <Button label="Cancelar" icon="pi pi-times" onClick={hideModal} className="p-button-text" disabled={saving} type="button" />
+            <Button label="Salvar" icon="pi pi-check" onClick={handleSave} disabled={saving} loading={saving} type="button" />
+          </>
+        }
+      >
+        <div className="p-fluid">
+          <div className="field">
+            <label htmlFor="name">Nome</label>
+            <InputText
+              id="name"
+              value={selectedMed?.name || ''}
+              onChange={(e) => setSelectedMed(prev => prev ? { ...prev, name: e.target.value } : null)}
+              disabled={saving}
+              required
+            />
+          </div>
+          <div className="field mt-3">
+            <label htmlFor="strength">Força</label>
+            <InputText
+              id="strength"
+              value={selectedMed?.strength || ''}
+              onChange={(e) => setSelectedMed(prev => prev ? { ...prev, strength: e.target.value } : null)}
+              disabled={saving}
+              required
+            />
+          </div>
+          <div className="field mt-3">
+            <label htmlFor="notes">Notas</label>
+            <InputText
+              id="notes"
+              value={selectedMed?.notes || ''}
+              onChange={(e) => setSelectedMed(prev => prev ? { ...prev, notes: e.target.value } : null)}
+              disabled={saving}
+            />
+          </div>
+          {error && <Message severity="error" text={error} />}
+        </div>
+      </Dialog>
     </div>
   );
-};
+}

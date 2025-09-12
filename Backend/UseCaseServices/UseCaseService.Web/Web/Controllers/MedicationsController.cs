@@ -17,9 +17,9 @@ using Shared.Contracts.Events;
 public class MedicationsController : ControllerBase
 {
     private readonly UserCaseDbContext _db;
-    private readonly UserContextService _userContextService;
+    private readonly IUserContextService _userContextService;
     private readonly IPublishEndpoint _publish;
-    public MedicationsController(UserCaseDbContext db, UserContextService userContextService,  IPublishEndpoint publish)
+    public MedicationsController(UserCaseDbContext db, IUserContextService userContextService,  IPublishEndpoint publish)
     {
         _db = db;
         _userContextService = userContextService;

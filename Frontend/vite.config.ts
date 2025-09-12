@@ -18,33 +18,28 @@ export default defineConfig({
       'Helper': '/src/Helper',
     }
   },
-  
   server: {
     host: 'localhost',
     port: 5173,
     strictPort: true,
-   https: {
-   key: fs.readFileSync(path.resolve(__dirname, 'certs/localhost-key.pem')),
-cert: fs.readFileSync(path.resolve(__dirname, 'certs/localhost.pem')),
-
-  },// 🔥 aqui ativa HTTPS no Vite pra rodar seu front igual backend (HTTPS)
+    https: {
+      key: fs.readFileSync(path.resolve(__dirname, 'certs/localhost-key.pem')),
+      cert: fs.readFileSync(path.resolve(__dirname, 'certs/localhost.pem')),
+    },
     hmr: {
-      protocol: 'wss', // WebSocket seguro quando HTTPS tá ligado
+      protocol: 'wss',
       host: 'localhost',
       port: 5173,
+      clientPort: 5173, // 🔥 HMR funcionando com HTTPS
     },
-    fs: {
-      strict: false,
-    },
+    fs: { strict: false },
     open: true,
     proxy: {
       '/api': {
-        target: ' https://localhost:7085/usecase',
+        target: 'https://localhost:7085/usecase',
         changeOrigin: true,
-        secure: false, // aceita certificado dev autoassinado
-       
+        secure: false,
       },
-      
     }
   }
 });

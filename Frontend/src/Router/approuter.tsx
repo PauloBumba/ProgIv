@@ -6,7 +6,6 @@ import type { RootState } from "../Root/RootReducer";
 import { PublicLayot } from "../Layout/Public/public";
 import { Main } from "../Layout/Private/dashbord";
 import { PrivateRoute } from "./PrivateRouter";
-import { Roles } from "../Constants/roles";
 
 // Páginas públicas
 import { Index } from "../Pages/Common/home";
@@ -24,21 +23,17 @@ import PasswordRecoveryOTP from "../Pages/Authentication/ConfirmPassword";
 // Páginas privadas
 import { Profile } from "../Pages/Painel/profile";
 import { HomePage } from "../Pages/Painel/homepage";
-
-import { ExpenseRequestList } from "../Pages/Painel/expenseRequeList";
-import ExpenseReportPage from "../Pages/Painel/UserTableWithExport";
-import ListaUsuarios from "../Pages/Painel/UserList";
-import { CriarUsuarioPage } from "../Pages/Painel/UserList/CreateUser";
-import EditarUsuarioPage from "../Pages/Painel/UserList/EditarUsuario";
-import { CreateExpense } from "../Pages/Painel/Expense/CreateExpense";
-import { ViewExpense } from "../Pages/Painel/Expense/ViewExpense";
-import { MyExpense } from "../Pages/Painel/Expense/myExpense";
-import { MedicationsList } from "../Pages/Painel/Medications/MedicationsList";
+import { GenericList } from "../Pages/Painel/Medications/MedicationsList";
 import { MedicationForm } from "../Pages/Painel/Medications/MedicationForm";
 import { MedicationDetails } from "../Pages/Painel/Medications/edicationDetails";
 import { MedicationSchedules } from "../Pages/Painel/Medications/MedicationSchedules";
+import { CreateExpense } from "../Pages/Painel/Expense/CreateExpense";
+import { ViewExpense } from "../Pages/Painel/Expense/ViewExpense";
+import { MyExpense } from "../Pages/Painel/Expense/myExpense";
+import ListaUsuarios from "../Pages/Painel/UserList";
+import { CriarUsuarioPage } from "../Pages/Painel/UserList/CreateUser";
+import EditarUsuarioPage from "../Pages/Painel/UserList/EditarUsuario";
 
-// Tipo do usuário (garanta que isso esteja consistente com seu store)
 interface AppUser {
   id: string;
   username: string;
@@ -64,85 +59,30 @@ export const AppRouter: FC = () => {
           <Route path="otp" element={<PasswordRecoveryOTP />} />
           <Route path="suport" element={<Suport />} />
           <Route path="acesso-negado" element={<AccessDenied />} />
+          <Route path="usuarios/criar" element={<CriarUsuarioPage />} />
           <Route path="*" element={<Navigate to="/acesso-negado" replace />} />
         </Route>
 
         {/* Rotas privadas */}
         <Route element={<PrivateRoute><Main /></PrivateRoute>}>
-
-          {/* Dashboard e perfil (qualquer autenticado) */}
           <Route index path="dashboard" element={<HomePage />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="/" element={<MedicationsList />} />
-      
-      {/* Novo medicamento */}
-      <Route path="/new" element={<MedicationForm />} />
-      
-      {/* Editar medicamento */}
-      <Route path="/:id/edit" element={<MedicationForm />} />
-      
-      {/* Detalhes do medicamento */}
-      <Route path="/:id" element={<MedicationDetails />} />
-      
-      {/* Gerenciar horários */}
-      <Route path="/:id/schedules" element={<MedicationSchedules />} />
-          {/* Somente para Colaborador */}
-        <Route
-  path="expense"
-  element={
-    <PrivateRoute requiredRoles={[Roles.Collaborator, Roles.Admin]}>
-      <CreateExpense />
-    </PrivateRoute>
-  }
-/>
 
+          {/* Medicamentos */}
+          <Route path="medications/list" element={<GenericList/>} />
+          <Route path="medications/new" element={<MedicationForm />} />
+          <Route path="medications/:id/edit" element={<MedicationForm />} />
+          <Route path="medications/:id/schedules" element={<MedicationSchedules />} />
+          <Route path="medications/:id" element={<MedicationDetails />} />
 
-            
-          
+          {/* Despesas */}
+          <Route path="expense/create" element={<CreateExpense />} />
+          <Route path="expense/view" element={<ViewExpense />} />
+          <Route path="expense/my" element={<MyExpense />} />
 
-          {/* Somente para Admin */}
-          <Route
-            path="usuarios"
-            element={
-              <PrivateRoute requiredRoles={[Roles.Admin]}>
-                <ListaUsuarios />
-              </PrivateRoute>
-            }
-          />
-
-          <Route
-            path="usuarios/criar"
-            element={
-              <PrivateRoute requiredRoles={[Roles.Admin]}>
-                <CriarUsuarioPage />
-              </PrivateRoute>
-            }
-          />
-
-          <Route
-            path="usuarios/editar/:id"
-            element={
-              <PrivateRoute >
-                <EditarUsuarioPage />
-              </PrivateRoute>
-            }
-          />
-      <Route
-  path="myexpense"
-  element={
-    <PrivateRoute requiredRoles={[Roles.Collaborator]}>
-      <MyExpense />
-    </PrivateRoute>
-  }
-/>
-          <Route
-            path="expense"
-            element={
-              <PrivateRoute requiredRoles={[Roles.Admin , Roles.FinancialAnalyst]}>
-                <ViewExpense />
-              </PrivateRoute>
-            }
-          />
+          {/* Usuários */}
+          <Route path="usuarios" element={<ListaUsuarios />} />
+          <Route path="usuarios/editar/:id" element={<EditarUsuarioPage />} />
         </Route>
       </Routes>
     </Router>
