@@ -30,6 +30,8 @@ namespace Domain.Entities
         public ICollection<PasswordResetCode> PasswordResetCodes { get; set; } = new List<PasswordResetCode>();
 
         public ICollection<Medication> Medications { get; set; } = new List<Medication>();
+
+        public ICollection<MedicationSchedule> ExpenseRequests { get; set; } = new List<MedicationSchedule>();
     }
 
 }

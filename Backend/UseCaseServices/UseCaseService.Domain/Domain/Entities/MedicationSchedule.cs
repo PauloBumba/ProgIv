@@ -17,5 +17,11 @@ namespace Domain.Entities
        
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+
+        public ICollection<MedicationHistory> Histories { get; set; } = new List<MedicationHistory>();
+
+        public string UserId { get; set; } = string.Empty;
+        public UserEntities? User { get; set; }
+
     }
 }

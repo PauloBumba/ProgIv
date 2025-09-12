@@ -4,9 +4,9 @@ using Application.Services;
 using Domain.Entities;
 using Domain.Typing;
 using Infrastructure;
-
+using Infrastructure.Interface;
 using Infrastructure.Persistence;
-
+using Infrastructure.Repository;
 using MediatR;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Http;
@@ -79,7 +79,7 @@ builder.Services.AddApplicationServices();
 
 // ou, se você tiver uma interface
 builder.Services.AddScoped<IUserContextService, UserContextService>();
-
+builder.Services.AddScoped<IMedicationRepository, Repository>();
 // JWT (se estiver usando)
 builder.Services.AddJwtExtension(builder.Configuration);
 builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection("EmailConfig"));

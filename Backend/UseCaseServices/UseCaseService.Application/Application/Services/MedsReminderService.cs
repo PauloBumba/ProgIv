@@ -1,9 +1,11 @@
 ﻿using Domain.Entities;
 using Infrastructure.Persistence;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Shared.Contracts.Events;
 using System;
 using System.Linq;
 using System.Threading;
@@ -15,11 +17,13 @@ namespace Application.Services
     {
         private readonly IServiceScopeFactory _scopeFactory;
         private readonly ILogger<MedsReminderService> _logger;
+        private readonly IPublishEndpoint _publish;
 
-        public MedsReminderService(IServiceScopeFactory scopeFactory, ILogger<MedsReminderService> logger)
+        public MedsReminderService(IServiceScopeFactory scopeFactory, ILogger<MedsReminderService> logger, IPublishEndpoint publish)
         {
             _scopeFactory = scopeFactory;
             _logger = logger;
+            _publish = publish;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -32,11 +36,9 @@ namespace Application.Services
                 {
                     using var scope = _scopeFactory.CreateScope();
                     var db = scope.ServiceProvider.GetRequiredService<UserCaseDbContext>();
-
                     var now = DateTime.UtcNow;
-                    var currentTime = now.TimeOfDay;
 
-                    // Busca todos os schedules habilitados com include da medication
+                    // Busca todos os schedules habilitados
                     var allSchedules = await db.MedicationSchedules
                         .Include(s => s.Medication)
                         .Where(s => s.Enabled)
@@ -44,47 +46,49 @@ namespace Application.Services
 
                     foreach (var schedule in allSchedules)
                     {
-                        // Calcula o horário programado para hoje
                         var scheduledTimeToday = now.Date.Add(schedule.TimeOfDay);
                         var timeDifference = (now - scheduledTimeToday).Duration();
 
-                        // Verifica se está dentro da janela de 60 segundos
+                        // Dentro da janela de 60 segundos
                         if (timeDifference <= TimeSpan.FromSeconds(60))
                         {
-                            _logger.LogInformation("Lembrete para {Medication} às {Time}",
-                                schedule.Medication.Name, schedule.TimeOfDay);
+                            _logger.LogInformation("Lembrete para {Medication} às {Time}", schedule.Medication.Name, schedule.TimeOfDay);
 
-                            // Verifica se já não foi registrado hoje para evitar duplicatas
                             var alreadyNotifiedToday = await db.MedicationHistories
                                 .AnyAsync(h => h.MedicationId == schedule.MedicationId &&
-                                              h.CreatedAt.Date == now.Date &&
-                                              h.Note != null &&
-                                              h.Note.Contains("Lembrete enviado"),
-                                          stoppingToken);
+                                              h.Notes != null &&
+                                              h.Notes.Contains("Lembrete enviado") &&
+                                              h.TakenAt == null, stoppingToken);
 
                             if (!alreadyNotifiedToday)
                             {
-                                // Cria registro de histórico para o lembrete
+                                // Cria registro de histórico
                                 var history = new MedicationHistory
                                 {
                                     Id = Guid.NewGuid(),
                                     MedicationId = schedule.MedicationId,
-                                    TakenAt = null, // Não foi tomado ainda, apenas lembrado
-                                    WasTaken = false, // Ainda não foi tomado
-                                    Note = $"Lembrete enviado para {schedule.Medication.Name} às {schedule.TimeOfDay}",
-                                    CreatedAt = now
+                                    ScheduleId = schedule.Id,
+                                    WasTaken = false,
+                                    TakenAt = null,
+                                    Notes = $"Lembrete enviado para {schedule.Medication.Name} às {schedule.TimeOfDay}"
                                 };
 
                                 db.MedicationHistories.Add(history);
                                 await db.SaveChangesAsync(stoppingToken);
 
-                                _logger.LogInformation("Lembrete registrado para {Medication}",
-                                    schedule.Medication.Name);
-                            }
-                            else
-                            {
-                                _logger.LogInformation("Lembrete já enviado hoje para {Medication}",
-                                    schedule.Medication.Name);
+                                _logger.LogInformation("Lembrete registrado no banco para {Medication}", schedule.Medication.Name);
+
+                                // ✅ Publica evento no RabbitMQ via MassTransit
+                                await _publish.Publish(new MedicationReminderEvent
+                                {
+                                    MedicationId = schedule.MedicationId,
+                                    ScheduleId = schedule.Id,
+                                    UserId = schedule.UserId,
+                                    TimeOfReminder = now,
+                                    MedicationName = schedule.Medication.Name
+                                }, stoppingToken);
+
+                                _logger.LogInformation("Evento enviado para RabbitMQ para {Medication}", schedule.Medication.Name);
                             }
                         }
                     }
@@ -94,9 +98,10 @@ namespace Application.Services
                     _logger.LogError(ex, "Erro no serviço de lembretes");
                 }
 
-                // Aguarda 30 segundos antes da próxima verificação
                 await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
             }
         }
     }
+
+    
 }

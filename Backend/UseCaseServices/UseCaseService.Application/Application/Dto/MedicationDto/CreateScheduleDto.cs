@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Dto
+namespace Application.Dto.MedicationDto
 {
     public class CreateScheduleDto
     {
@@ -16,5 +16,10 @@ namespace Application.Dto
         public TimeSpan TimeOfDay { get; set; }
 
         public bool Enabled { get; set; } = true;
+
+        public int RepeatIntervalDays { get; set; } = 1;
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
     }
+
 }

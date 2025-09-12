@@ -9,9 +9,9 @@ namespace Application.Response
     public class EnvelopResponse<T>
     {
       
-            public string Message { get; set; } = string.Empty;
-            public bool isSuccess { get; set; }
-            public T? Data { get; set; }
+        public string Message { get; set; } = string.Empty;
+        public bool isSuccess { get; set; }
+        public T? Data { get; set; }
         public static EnvelopResponse<T> Success(T data, string message = "Success")
         {
             return new EnvelopResponse<T> { Data = data, isSuccess = true, Message = message };

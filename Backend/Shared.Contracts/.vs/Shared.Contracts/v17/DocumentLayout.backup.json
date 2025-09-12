@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\",
+  "WorkspaceRootPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\shared.contracts\\events\\medicationcreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|solutionrelative:events\\medicationcreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo.bumba\\desktop\\progiv\\progiv\\backend\\shared.contracts\\events\\medicationschedulecreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|solutionrelative:events\\medicationschedulecreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\shared.contracts\\events\\schedulecreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo.bumba\\desktop\\progiv\\progiv\\backend\\shared.contracts\\events\\medicationreminderevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|solutionrelative:events\\medicationreminderevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo.bumba\\desktop\\progiv\\progiv\\backend\\shared.contracts\\events\\schedulecreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|solutionrelative:events\\schedulecreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\shared.contracts\\events\\medicationtakenevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo.bumba\\desktop\\progiv\\progiv\\backend\\shared.contracts\\events\\recoverpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|solutionrelative:events\\recoverpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo.bumba\\desktop\\progiv\\progiv\\backend\\shared.contracts\\events\\medicationtakenevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|solutionrelative:events\\medicationtakenevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|c:\\users\\paulo.bumba\\desktop\\progiv\\progiv\\backend\\shared.contracts\\events\\medicationcreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{213561D1-5059-0CBF-CD09-FA726B4B44F5}|Shared.Contracts.csproj|solutionrelative:events\\medicationcreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +34,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MedicationTakenEvent.cs",
-              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationTakenEvent.cs",
-              "RelativeDocumentMoniker": "Events\\MedicationTakenEvent.cs",
-              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationTakenEvent.cs",
-              "RelativeToolTip": "Events\\MedicationTakenEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MedicationScheduleCreatedEvent.cs",
+              "DocumentMoniker": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationScheduleCreatedEvent.cs",
+              "RelativeDocumentMoniker": "Events\\MedicationScheduleCreatedEvent.cs",
+              "ToolTip": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationScheduleCreatedEvent.cs",
+              "RelativeToolTip": "Events\\MedicationScheduleCreatedEvent.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA3wA0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T23:56:34.619Z",
+              "WhenOpened": "2025-09-12T20:22:30.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ScheduleCreatedEvent.cs",
-              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Events\\ScheduleCreatedEvent.cs",
-              "RelativeDocumentMoniker": "Events\\ScheduleCreatedEvent.cs",
-              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Events\\ScheduleCreatedEvent.cs",
-              "RelativeToolTip": "Events\\ScheduleCreatedEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "MedicationReminderEvent.cs",
+              "DocumentMoniker": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationReminderEvent.cs",
+              "RelativeDocumentMoniker": "Events\\MedicationReminderEvent.cs",
+              "ToolTip": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationReminderEvent.cs",
+              "RelativeToolTip": "Events\\MedicationReminderEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T23:56:08.17Z",
+              "WhenOpened": "2025-09-12T19:08:32.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "RecoverPassword.cs",
+              "DocumentMoniker": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\RecoverPassword.cs",
+              "RelativeDocumentMoniker": "Events\\RecoverPassword.cs",
+              "ToolTip": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\RecoverPassword.cs",
+              "RelativeToolTip": "Events\\RecoverPassword.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T23:57:13.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MedicationTakenEvent.cs",
+              "DocumentMoniker": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationTakenEvent.cs",
+              "RelativeDocumentMoniker": "Events\\MedicationTakenEvent.cs",
+              "ToolTip": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationTakenEvent.cs",
+              "RelativeToolTip": "Events\\MedicationTakenEvent.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T23:56:34.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ScheduleCreatedEvent.cs",
+              "DocumentMoniker": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\ScheduleCreatedEvent.cs",
+              "RelativeDocumentMoniker": "Events\\ScheduleCreatedEvent.cs",
+              "ToolTip": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\ScheduleCreatedEvent.cs",
+              "RelativeToolTip": "Events\\ScheduleCreatedEvent.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T23:56:08.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MedicationCreatedEvent.cs",
-              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationCreatedEvent.cs",
+              "DocumentMoniker": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationCreatedEvent.cs",
               "RelativeDocumentMoniker": "Events\\MedicationCreatedEvent.cs",
-              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationCreatedEvent.cs",
+              "ToolTip": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Events\\MedicationCreatedEvent.cs",
               "RelativeToolTip": "Events\\MedicationCreatedEvent.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T23:54:22.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T23:54:22.34Z"
             }
           ]
         }

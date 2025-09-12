@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
@@ -10,10 +6,15 @@ namespace Domain.Entities
     {
         public Guid Id { get; set; }
         public Guid MedicationId { get; set; }
-        public Medication Medication { get; set; } = null!;
-        public DateTime? TakenAt { get; set; } // Alterado para nullable (quando é apenas lembrete)
-        public bool WasTaken { get; set; } = true;
-        public string? Note { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Adicionado para controle
+        public Medication? Medication { get; set; }
+
+        public Guid ScheduleId { get; set; }   // Relaciona com o schedule
+        public MedicationSchedule? Schedule { get; set; }
+
+        public bool WasTaken { get; set; } = false;
+        public DateTime? TakenAt { get; set; }
+
+        public string? Notes { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

@@ -8,6 +8,10 @@
    
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mappers\MedicationMappers\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
