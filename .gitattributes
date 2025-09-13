@@ -1,2 +1,65 @@
+# =============================
+# BACKEND (.NET / Visual Studio)
+# =============================
+
+# Ignorar pastas bin/ e obj/ em qualquer nível
+**/[Bb]in/
+**/[Oo]bj/
+
+# Arquivos gerados pelo Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs e builds
+*.log
+*.pdb
+*.cache
+*.dbmdl
+*.db
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.old
+
+# Diretórios de publicação
+publish/
+out/
+
+# ===============
+# FRONTEND (Node.js / React / Yarn / Vite)
+# ===============
+
+# Dependências
+node_modules/
+.pnp/
+.pnp.js
+
+# Produção
+/build
+/dist
+
+# Testes
+/coverage
+
+# Arquivos de ambiente
+.env
+.env.*
+!.env.example
+
+# Logs do NPM/Yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
 # Auto detect text files and perform LF normalization
 * text=auto
