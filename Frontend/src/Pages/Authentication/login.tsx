@@ -46,7 +46,8 @@ const handleLogin = async (e: React.FormEvent) => {
     const resultAction = await dispatch(loginUser({ email, password }) as any);
 
     if (loginUser.fulfilled.match(resultAction)) {
-      navigate(lastPath); // usa a rota salva no Redux
+      navigate("/dashboard");
+      
     } else if (loginUser.rejected.match(resultAction)) {
       const errorMessage = ApiErrorHelper.extractErrorMessage(resultAction.payload);
       setError(errorMessage);
