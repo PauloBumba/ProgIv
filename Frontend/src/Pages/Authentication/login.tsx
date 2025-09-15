@@ -4,32 +4,19 @@ import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
 import { InputSwitch } from "primereact/inputswitch";
 import { Message } from "primereact/message";  // Importando o Message do PrimeReact
-import { Link, useNavigate } from "react-router-dom";
-import { loginUser } from "../../Reducers/UserReducer";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { loginExternal, loginUser } from "../../Reducers/UserReducer";
 import { useDispatch } from "react-redux";
 import { useProgressOverlay } from "../../Components/ProgressBar/useProgressOverlay";
 import { ApiErrorHelper } from "../../Helper/apihelper";
+
+import { useSelector } from "react-redux";
+import type { RootState } from "../../Root/RootReducer";
+
+import { SocialLoginButton } from "../../Utils/SocialLoginButton";
 // Constants
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://localhost:7027';
-const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || 'https://localhost:5173'; 
-interface SocialLoginButtonProps {
-  icon: string;
-  provider: 'Google' | 'Facebook';
-  className?: string;
-  severity?: 'danger' | 'info';
-}
 
-const SocialLoginButton = ({ icon, provider, className, severity }: SocialLoginButtonProps) => {
-  const handleSocialLogin = () => {
-    const returnUrl = `${FRONTEND_URL}/callback`;
-    
-    if (provider === 'Google') {
-      window.location.href = `${BACKEND_URL}/auth/login?provider=Google&returnUrl=${encodeURIComponent(returnUrl)}`;
-    } else {
-      window.location.href = `${BACKEND_URL}/api/ExtraLogin/facebook?returnUrl=${encodeURIComponent(returnUrl)}`;
-    }
-  };}
 
 
 
@@ -47,32 +34,32 @@ export const Login: FC = () => {
 
   const dispatch = useDispatch();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const lastPath = useSelector((state: RootState) => state.route.lastPath) || "/dashboard";
 
-    e.preventDefault();
-    
-    show();
-    
-    setLoading(true);
-    setError(null);
-    setLoading(true); // Ativa o spinner
-   
-   try {
-  const resultAction = await dispatch(loginUser({ email, password }) as any);
+const handleLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
+  show();
+  setLoading(true);
+  setError(null);
 
-  if (loginUser.fulfilled.match(resultAction)) {
-    navigate("/dashboard");
-  } else if (loginUser.rejected.match(resultAction)) {
-    const errorMessage = ApiErrorHelper.extractErrorMessage(resultAction.payload);
-    setError(errorMessage);
+  try {
+    const resultAction = await dispatch(loginUser({ email, password }) as any);
+
+    if (loginUser.fulfilled.match(resultAction)) {
+      navigate(lastPath); // usa a rota salva no Redux
+    } else if (loginUser.rejected.match(resultAction)) {
+      const errorMessage = ApiErrorHelper.extractErrorMessage(resultAction.payload);
+      setError(errorMessage);
+    }
+  } catch (err) {
+    setError(ApiErrorHelper.extractErrorMessage(err));
+  } finally {
+    hide();
+    setLoading(false);
   }
-} catch (err) {
-  setError(ApiErrorHelper.extractErrorMessage(err));
-} finally {
-  hide();
-   setLoading(false); 
-}
-  };
+};
+
+
   
 
   return (
@@ -85,7 +72,10 @@ export const Login: FC = () => {
         <div className="text-center">
           <h3 className="mb-3 text-3xl text-white font-light">Entre com</h3>
           <div>
-          
+          <div className="flex justify-content-center mt-4">
+          <SocialLoginButton icon="pi pi-google" provider="Google" severity="danger" />
+           
+          </div>
 
          
           <div className="flex justify-content-center mt-4">

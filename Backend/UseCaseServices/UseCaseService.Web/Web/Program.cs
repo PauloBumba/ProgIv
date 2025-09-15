@@ -75,11 +75,15 @@ builder.Services.AddScoped<IFileStorageService, FileStorageService>();
 // Camadas da aplicação
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
+builder.Services.AddExternalAuthentication(builder.Configuration); // Autenticação externa (Google, etc) se precisar
 // Se UserContextService implementa IUserContextService
 
 // ou, se você tiver uma interface
 builder.Services.AddScoped<IUserContextService, UserContextService>();
+
 builder.Services.AddScoped<IMedicationRepository, MedicationRepository>();
+
+
 // JWT (se estiver usando)
 builder.Services.AddJwtExtension(builder.Configuration);
 builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection("EmailConfig"));

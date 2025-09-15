@@ -33,9 +33,13 @@ import { MyExpense } from "../Pages/Painel/Expense/myExpense";
 import ListaUsuarios from "../Pages/Painel/UserList";
 import { CriarUsuarioPage } from "../Pages/Painel/UserList/CreateUser";
 import EditarUsuarioPage from "../Pages/Painel/UserList/EditarUsuario";
+
 import { ScheduleList } from "../Pages/Painel/Schedules/ScheduleList";
 import { ScheduleListWrapper } from "../Helper/ScheduleList";
 import { SuportPrivate } from "../Pages/Painel/Suport";
+
+import { RouteWatcher } from "./RouteWatcher";
+
 
 interface AppUser {
   id: string;
@@ -48,7 +52,9 @@ export const AppRouter: FC = () => {
 
   return (
     <Router>
+       <RouteWatcher />
       <Routes>
+       
         {/* Rotas públicas */}
         <Route element={<PublicLayot />}>
           <Route index element={<Index />} />
