@@ -46,6 +46,38 @@
     ]
   },
   {
+    "ContainingType": "Web.Controllers.HistoryController",
+    "Method": "GetByMedication",
+    "RelativePath": "api/History/{medicationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicationId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.HistoryController",
+    "Method": "MarkTaken",
+    "RelativePath": "api/History/mark-taken/{scheduleId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "scheduleId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MedicationsController",
     "Method": "GetAll",
     "RelativePath": "api/Medications",
@@ -65,7 +97,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Application.Dto.CreateMedicationDto",
+        "Type": "Application.Dto.MedicationDto.CreateMedicationDto",
         "IsRequired": true
       }
     ],
@@ -81,7 +113,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Guid",
+        "Type": "System.Int64",
         "IsRequired": true
       }
     ],
@@ -96,13 +128,13 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Guid",
+        "Name": "dto",
+        "Type": "Application.Dto.UpdateMedicationDto",
         "IsRequired": true
       },
       {
-        "Name": "dto",
-        "Type": "Application.Dto.UpdateMedicationDto",
+        "Name": "id",
+        "Type": "",
         "IsRequired": true
       }
     ],
@@ -118,44 +150,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MedicationsController",
-    "Method": "AddSchedule",
-    "RelativePath": "api/Medications/{medId}/schedule",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "medId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "Application.Dto.CreateScheduleDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MedicationsController",
-    "Method": "MarkTaken",
-    "RelativePath": "api/Medications/mark-taken/{scheduleId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "scheduleId",
-        "Type": "System.Guid",
+        "Type": "System.Int64",
         "IsRequired": true
       }
     ],
@@ -210,6 +205,107 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Web.Controllers.SchedulesController",
+    "Method": "Create",
+    "RelativePath": "api/Schedules",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.Dto.MedicationDto.CreateScheduleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.SchedulesController",
+    "Method": "GetByMedications",
+    "RelativePath": "api/Schedules/{medicationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicationId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.SchedulesController",
+    "Method": "Update",
+    "RelativePath": "api/Schedules/{scheduleId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "scheduleId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Application.Dto.MedicationDto.UpdateScheduleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.SchedulesController",
+    "Method": "Delete",
+    "RelativePath": "api/Schedules/{scheduleId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "scheduleId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.SchedulesController",
+    "Method": "GetByMedication",
+    "RelativePath": "api/Schedules/by-medication/{medicationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicationId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.SchedulesController",
+    "Method": "MarkTaken",
+    "RelativePath": "api/Schedules/mark-taken/{scheduleId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "scheduleId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Api.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User",
@@ -245,7 +341,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       },
       {
@@ -265,13 +361,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "deleteUserDto",
-        "Type": "Application.Dto.DeleteUserDto",
-        "IsRequired": true
-      },
-      {
         "Name": "id",
-        "Type": "",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -287,7 +378,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.String",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

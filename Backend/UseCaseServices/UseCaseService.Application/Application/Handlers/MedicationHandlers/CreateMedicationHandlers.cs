@@ -16,7 +16,7 @@ namespace Application.Handlers.MedicationHandlers
     public class CreateMedicationHandler : IRequestHandler<CreateMedicationCommand, EnvelopResponse<Medication>>
     {
         private readonly IMedicationRepository _repository;
-        private readonly IPublishEndpoint _publish; // ✅ MassTransit
+        private readonly IPublishEndpoint _publish;
         private readonly IUserContextService _userContextService;
 
         public CreateMedicationHandler(IMedicationRepository repository, IPublishEndpoint publish, IUserContextService userContext)
@@ -33,6 +33,7 @@ namespace Application.Handlers.MedicationHandlers
                 return EnvelopResponse<Medication>.Failure("Nome ou força do medicamento inválidos.");
 
             var userId = _userContextService.GetUserId();
+            var email = _userContextService.GetUserEmail();
             if (string.IsNullOrEmpty(userId))
                 return EnvelopResponse<Medication>.Failure("Usuário não autenticado.");
 
@@ -53,7 +54,7 @@ namespace Application.Handlers.MedicationHandlers
             // Criação da entidade
             var medication = new Medication
             {
-                Id = Guid.NewGuid(),
+                // Id será gerado automaticamente pelo banco de dados
                 Name = request.Name,
                 Strength = request.Strength,
                 Notes = request.Notes,
@@ -68,10 +69,11 @@ namespace Application.Handlers.MedicationHandlers
             // Publica evento de integração
             await _publish.Publish(new MedicationCreatedEvent
             {
-                MedicationId = medication.Id,
+                MedicationId = medication.Id, // Será convertido implicitamente para Guid
                 Name = medication.Name,
                 Strength = medication.Strength,
-                UserId = medication.UserId
+                UserId = medication.UserId,
+                Email=email
             }, cancellationToken);
 
             return EnvelopResponse<Medication>.Success(result, "Medicamento criado com sucesso!");

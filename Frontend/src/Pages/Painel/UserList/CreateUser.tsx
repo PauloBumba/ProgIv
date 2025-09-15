@@ -6,7 +6,10 @@ import { Button } from "primereact/button";
 import { Message } from "primereact/message";
 import { userService } from "../../../Services/userService";
 import { ApiErrorHelper } from "../../../Helper/apihelper";
+import { Password } from "primereact/password";
 
+import { InputMask } from 'primereact/inputmask';
+        
 export const CriarUsuarioPage = () => {
   const [form, setForm] = useState({
     email: "",
@@ -50,15 +53,46 @@ export const CriarUsuarioPage = () => {
       [name]: value
     }));
   };
+const fetchAddressByCep = async (cep: string) => {
+  try {
+    const cleanCep = cep.replace(/\D/g, "");
+    if (cleanCep.length !== 8) return; // só busca se tiver 8 dígitos
 
-  const handleAddressChange = (e: any) => {
-    const { name, value } = e.target;
+    const response = await fetch(`https://viacep.com.br/ws/${cleanCep}/json/`);
+    const data = await response.json();
+
+    if (data.erro) return;
+
     setForm(prev => ({
       ...prev,
-      addresses: [{ ...prev.addresses[0], [name]: value }]
+      addresses: [{
+        ...prev.addresses[0],
+        zipCode: cleanCep,
+        district: data.bairro || "",
+        city: data.localidade || "",
+        federalstate: data.uf || "",
+        country: "Brasil" // já preenche fixo
+      }]
     }));
-  };
+  } catch (err) {
+    console.error("Erro ao buscar CEP:", err);
+  }
+};
+  const handleAddressChange = (e: any) => {
+  const { name, value } = e.target;
 
+  setForm(prev => ({
+    ...prev,
+    addresses: [{ ...prev.addresses[0], [name]: value }]
+  }));
+
+  if (name === "zipCode") {
+    const cleanCep = value.replace(/\D/g, "");
+    if (cleanCep.length === 8) {
+      fetchAddressByCep(cleanCep);
+    }
+  }
+};
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setErrors({});
@@ -70,7 +104,7 @@ export const CriarUsuarioPage = () => {
       email: form.email,
       sex: form.sex,
       phoneNumber: form.phoneNumber,
-      cpf: form.cpf,
+      cpf: form.cpf.replace(/\D/g, ""),
       dateOfBirth: form.dateOfBirth,
       password: form.password,
       confirmPassword: form.confirmPassword,
@@ -80,7 +114,7 @@ export const CriarUsuarioPage = () => {
         city: addr.city,
         country: addr.country,
         federalstate: addr.federalstate,
-        zipCode: addr.zipCode,
+        zipCode: addr.zipCode.replace(/\D/g, ""),
         district: addr.district,
         numberHouse: addr.numberHouse
       }))
@@ -142,8 +176,8 @@ export const CriarUsuarioPage = () => {
     ));
 
   return (
-    <div className="card p-fluid">
-      <h2>Criar Novo Usuário</h2>
+    <div className="card p-fluid  glass p-2 border-round-2xl shadow-8 border">
+      <h2 className="lg:mx-8 mb-3">Criar Novo Usuário</h2>
 
       {submitError && (
         <div className="mb-3">
@@ -162,16 +196,18 @@ export const CriarUsuarioPage = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="grid formgrid">
+      <form onSubmit={handleSubmit} className="grid formgrid  ">
+      
         <div className="field col-12 md:col-6">
-          <label>Email</label>
-          <InputText name="email" value={form.email} onChange={handleChange} />
+          
+          <label className="text-white">Email</label>
+          <InputText name="email" value={form.email} onChange={handleChange} placeholder="Informa teu email"/>
           {renderFieldError("email")}
         </div>
 
         <div className="field col-12 md:col-6">
           <label>Nome Completo</label>
-          <InputText name="fullName" value={form.fullName} onChange={handleChange} />
+          <InputText name="fullName" value={form.fullName} onChange={handleChange}  placeholder="Confirma teu email"/>
           {renderFieldError("fullName")}
         </div>
 
@@ -191,10 +227,18 @@ export const CriarUsuarioPage = () => {
         </div>
 
         <div className="field col-12 md:col-4">
-          <label>CPF</label>
-          <InputText name="cpf" value={form.cpf} onChange={handleChange} />
-          {renderFieldError("cpf")}
-        </div>
+  <label htmlFor="cpf">CPF</label>
+  <InputMask
+    id="cpf"
+    name="cpf"
+    value={form.cpf}
+    onChange={handleChange}
+    mask="999.999.999-99"
+    placeholder="000.000.000-00"
+  />
+  {renderFieldError("cpf")}
+</div>
+
 
         <div className="field col-12 md:col-4">
           <label>Telefone</label>
@@ -259,7 +303,7 @@ export const CriarUsuarioPage = () => {
 
         <div className="field col-12 md:col-6">
           <label>Senha</label>
-          <InputText
+          <Password
             type="password"
             name="password"
             value={form.password}
@@ -270,7 +314,7 @@ export const CriarUsuarioPage = () => {
 
         <div className="field col-12 md:col-6">
           <label>Confirmar Senha</label>
-          <InputText
+          <Password
             type="password"
             name="confirmPassword"
             value={form.confirmPassword}
@@ -280,27 +324,37 @@ export const CriarUsuarioPage = () => {
         </div>
 
         <div className="col-12">
-          <h4>Endereço</h4>
+        
         </div>
 
-        {[
-          { name: "country", label: "País" },
-          { name: "federalstate", label: "Estado" },
-          { name: "city", label: "Cidade" },
-          { name: "district", label: "Bairro" },
-          { name: "zipCode", label: "CEP" },
-          { name: "numberHouse", label: "Número" }
-        ].map((field) => (
-          <div key={field.name} className="field col-12 md:col-4">
-            <label>{field.label}</label>
-            <InputText
-              name={field.name}
-              value={form.addresses[0][field.name]}
-              onChange={handleAddressChange}
-            />
-            {renderFieldError(`addresses[0].${field.name}`)}
-          </div>
-        ))}
+       {[
+        { name: "zipCode", label: "CEP" },
+  { name: "country", label: "País" },
+  { name: "federalstate", label: "Estado" },
+  { name: "city", label: "Cidade" },
+  { name: "district", label: "Bairro" },
+  ,
+  { name: "numberHouse", label: "Número" }
+].map((field) => (
+  <div key={field.name} className="field col-12 md:col-4">
+    <label>{field.label}</label>
+    {field.name === "zipCode" ? (
+      <InputMask
+        name={field.name}
+        mask="99999-999"
+        value={form.addresses[0][field.name]}
+        onChange={handleAddressChange}
+      />
+    ) : (
+      <InputText
+        name={field.name}
+        value={form.addresses[0][field.name] as string}
+        onChange={handleAddressChange}
+      />
+    )}
+    {renderFieldError(`addresses[0].${field.name}`)}
+  </div>
+))}
 
         <div className="col-12 text-right">
           <Button

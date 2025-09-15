@@ -24,7 +24,7 @@ namespace Web.Controllers
 
         // POST: /api/History/mark-taken/{scheduleId}
         [HttpPost("mark-taken/{scheduleId:guid}")]
-        public async Task<IActionResult> MarkTaken(Guid scheduleId)
+        public async Task<IActionResult> MarkTaken(long scheduleId)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace Web.Controllers
 
         // GET: /api/History/{medicationId}
         [HttpGet("{medicationId:guid}")]
-        public async Task<IActionResult> GetByMedication(Guid medicationId)
+        public async Task<IActionResult> GetByMedication(long medicationId)
         {
             try
             {

@@ -11,9 +11,9 @@ namespace Application.Queries
 {
     public class GetSchedulesByMedicationQuery : IRequest<EnvelopResponse<List<MedicationSchedule>>>
     {
-        public Guid MedicationId { get; }
+        public long MedicationId { get; }
 
-        public GetSchedulesByMedicationQuery(Guid medicationId)
+        public GetSchedulesByMedicationQuery(long medicationId)
         {
             MedicationId = medicationId;
         }

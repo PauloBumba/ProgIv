@@ -1,11 +1,12 @@
 ﻿using Application.Commands.MedicationCommand;
+using Application.Commands.MedicationSchuduleCommand;
 using Application.Response;
+using Application.Services;
 using Domain.Entities;
 using Infrastructure.Interface;
+using MassTransit;
 using MediatR;
 using Shared.Contracts.Events;
-using MassTransit;
-using Application.Commands.MedicationSchuduleCommand;
 
 namespace Application.Handlers.MedicationHandlers
 {
@@ -13,18 +14,20 @@ namespace Application.Handlers.MedicationHandlers
     {
         private readonly IMedicationRepository _repository;
         private readonly IPublishEndpoint _publish;
-
-        public AddScheduleHandler(IMedicationRepository repository, IPublishEndpoint publish)
+        private readonly IUserContextService _userContextService;
+        public AddScheduleHandler(IMedicationRepository repository, IPublishEndpoint publish, IUserContextService userContextService)
         {
             _repository = repository;
             _publish = publish;
+            _userContextService = userContextService;
         }
 
         public async Task<EnvelopResponse<MedicationSchedule>> Handle(CreateScheduleCommand request, CancellationToken cancellationToken)
         {
             // validação básica
-            if (request.MedicationId == Guid.Empty)
-                return EnvelopResponse<MedicationSchedule>.Failure("Id do medicamento inválido.");
+            var userId = _userContextService.GetUserId();
+            var email = _userContextService.GetUserEmail();
+
 
             if (request.TimeOfDay == default)
                 return EnvelopResponse<MedicationSchedule>.Failure("Horário inválido.");
@@ -37,13 +40,14 @@ namespace Application.Handlers.MedicationHandlers
             // Criação do schedule
             var schedule = new MedicationSchedule
             {
-                Id = Guid.NewGuid(),
+                
                 MedicationId = request.MedicationId,
                 TimeOfDay = request.TimeOfDay,
                 RepeatIntervalDays = request.RepeatIntervalDays > 0 ? request.RepeatIntervalDays : 1,
                 Enabled = true,
                 StartDate = request.StartDate,
-                EndDate = request.EndDate
+                EndDate = request.EndDate,
+                UserId = request.UserId
             };
 
             var result = await _repository.AddMedicationScheduleAsync(schedule);
@@ -59,7 +63,10 @@ namespace Application.Handlers.MedicationHandlers
                 Enabled=result.Enabled,
                 RepeatIntervalDays = result.RepeatIntervalDays,
                 StartDate = result.StartDate,
-                EndDate = result.EndDate
+                EndDate = result.EndDate,
+                UserId = userId,
+              
+                Email = email // 👈
             });
 
             return EnvelopResponse<MedicationSchedule>.Success(result, "Agendamento criado com sucesso!");

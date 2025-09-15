@@ -8,8 +8,8 @@ namespace Domain.Entities
 {
     public class MedicationSchedule
     {
-        public Guid Id { get; set; }
-        public Guid MedicationId { get; set; }
+        public long Id { get; set; }
+        public long MedicationId { get; set; } // Atualizado de Guid para long
         public Medication? Medication { get; set; } 
         public TimeSpan TimeOfDay { get; set; } // horário diário
         public int RepeatIntervalDays { get; set; } = 1; 

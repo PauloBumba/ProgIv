@@ -1,0 +1,1735 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\schudulemedicationhandlers\\updateschedulehandler.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\schudulemedicationhandlers\\updateschedulehandler.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\controllers\\historycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\controllers\\historycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\controllers\\medicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\controllers\\medicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\medicationdto\\updatescheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\medicationdto\\updatescheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\schudulemedicationhandlers\\getschedulesbymedicationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\schudulemedicationhandlers\\getschedulesbymedicationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\medicationschudulecommand\\updateschedulecommand.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\medicationschudulecommand\\updateschedulecommand.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\schudulemedicationhandlers\\createschedulehandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\schudulemedicationhandlers\\createschedulehandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\services\\userservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\services\\medsreminderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\services\\medsreminderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\medicationhandlers\\markscheduletakenhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\medicationhandlers\\markscheduletakenhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\medicationhandlers\\createmedicationhandlers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\medicationhandlers\\createmedicationhandlers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\schudulemedicationhandlers\\deleteschedulehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\schudulemedicationhandlers\\deleteschedulehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\approveexpenserequesthandler .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\approveexpenserequesthandler .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\medicationhandlers\\updatemedicationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\medicationhandlers\\updatemedicationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\medicationhandlers\\getmedicationbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\medicationhandlers\\getmedicationbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\medicationcommand\\markscheduletakencommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\medicationcommand\\markscheduletakencommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\medicationhandlers\\getallmedicationshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\medicationhandlers\\getallmedicationshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\medicationhandlers\\deletemedicationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\medicationhandlers\\deletemedicationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\services\\usercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\services\\usercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\interface\\iusercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\interface\\iusercontextservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\interface\\iuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\interface\\iuserservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.infrastructure\\infrastructure\\repository\\medicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|solutionrelative:usecaseservice.infrastructure\\infrastructure\\repository\\medicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\historiesmedicationhandler\\gethistoriesbymedicationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\historiesmedicationhandler\\gethistoriesbymedicationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\approveexpenserequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\approveexpenserequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\deleteusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\deleteusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\deleteuserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\deleteuserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.infrastructure\\infrastructure\\persistence\\usercasedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|solutionrelative:usecaseservice.infrastructure\\infrastructure\\persistence\\usercasedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\createuserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\createuserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\controllers\\recoverpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\controllers\\recoverpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\queries\\getmedicationbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\queries\\getmedicationbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\medicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\medicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\updatemedicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\updatemedicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\medicationdto\\createscheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\medicationdto\\createscheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\medicationschudulecommand\\createschedulecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\medicationschudulecommand\\createschedulecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\medicationcommand\\updatemedicationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\medicationcommand\\updatemedicationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\queries\\gethistoriesbymedicationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\queries\\gethistoriesbymedicationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\queries\\getschedulesbymedicationquery.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\queries\\getschedulesbymedicationquery.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\medicationschudulecommand\\deleteschedulecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\medicationschudulecommand\\deleteschedulecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\medicationcommand\\deletemedicationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\medicationcommand\\deletemedicationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\medicationcommand\\createmedicationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\medicationcommand\\createmedicationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\queries\\getmedicationallquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\queries\\getmedicationallquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\entities\\medicationschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\entities\\medicationschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\entities\\medicationhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\entities\\medicationhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.infrastructure\\infrastructure\\interface\\imedicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|solutionrelative:usecaseservice.infrastructure\\infrastructure\\interface\\imedicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\entities\\passwordresetcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\entities\\passwordresetcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\entities\\addressentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\entities\\addressentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\entities\\generatecode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\entities\\generatecode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\entities\\medication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\entities\\medication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.infrastructure\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|solutionrelative:usecaseservice.infrastructure\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.infrastructure\\infrastructure\\designtime\\usercasedbcontextfactory .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D72F44D4-AA7F-4ACD-9048-B3A258C25859}|UseCaseService.Infrastructure\\Infrastructure\\Infrastructure.csproj|solutionrelative:usecaseservice.infrastructure\\infrastructure\\designtime\\usercasedbcontextfactory .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\medicationdto\\createmedicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\medicationdto\\createmedicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\helpers\\servicehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\helpers\\servicehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\entities\\userentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\entities\\userentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\cancelexpenserequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\cancelexpenserequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\createexpenserequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\createexpenserequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\createusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\createusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\createexpenserequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\createexpenserequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\response\\envelopresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\response\\envelopresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\deleteexpenserequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\deleteexpenserequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\getuserbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\getuserbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\getexpenserequestsbyuserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\getexpenserequestsbyuserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\generatereportqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\generatereportqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\mappers\\createdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\mappers\\createdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\queries\\getuserbyallquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\queries\\getuserbyallquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\extensions\\swaggerextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\extensions\\swaggerextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\extensions\\jwtenxtension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\extensions\\jwtenxtension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\extensions\\externalauthenticationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\extensions\\externalauthenticationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\helpers\\authconfighelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\helpers\\authconfighelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\helpers\\claimshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\helpers\\claimshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\constants\\roleconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\constants\\roleconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\mappers\\expenserequestmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\mappers\\expenserequestmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\mappers\\expenserequestquerymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\mappers\\expenserequestquerymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\createexpenserequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\createexpenserequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\getallexpenserequestshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\getallexpenserequestshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\paidexpenserequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\paidexpenserequesthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\getexpenserequestbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\getexpenserequestbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\typing\\jwttyping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\typing\\jwttyping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\typing\\extralogintyping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\typing\\extralogintyping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\typing\\admintyping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\typing\\admintyping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\enums\\sexenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\enums\\sexenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.domain\\domain\\enums\\usertypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46896EFC-0E41-4370-AAFB-87460A049754}|UseCaseService.Domain\\Domain\\Domain.csproj|solutionrelative:usecaseservice.domain\\domain\\enums\\usertypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\services\\authenticationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\services\\authenticationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.web\\web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{955ED9DC-2CED-4172-A14A-09A62D7EA775}|UseCaseService.Web\\Web\\Web.csproj|solutionrelative:usecaseservice.web\\web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\services\\recoverpasswordservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\services\\recoverpasswordservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\services\\adminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\services\\adminservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\services\\sendemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\services\\sendemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\handlers\\updateuserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\handlers\\updateuserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\dto\\adressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\dto\\adressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\mappers\\updateusermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\mappers\\updateusermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\mappers\\deleteusermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\mappers\\deleteusermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\commands\\deleteexpenserequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\commands\\deleteexpenserequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|c:\\users\\paulo\\documents\\github\\progiv\\backend\\usecaseservices\\usecaseservice.application\\application\\queries\\getuserbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8334D16D-0162-4999-85DB-6700189ADD8D}|UseCaseService.Application\\Application\\Application.csproj|solutionrelative:usecaseservice.application\\application\\queries\\getuserbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CreateScheduleDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\MedicationDto\\CreateScheduleDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\MedicationDto\\CreateScheduleDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\MedicationDto\\CreateScheduleDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\MedicationDto\\CreateScheduleDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T19:06:27.37Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MedicationController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\MedicationController.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Controllers\\MedicationController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\MedicationController.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Controllers\\MedicationController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAuwHIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T18:52:40.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SchedulesController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\SchedulesController.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Controllers\\SchedulesController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\SchedulesController.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Controllers\\SchedulesController.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJ0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T18:55:08.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HistoryController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\HistoryController.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Controllers\\HistoryController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\HistoryController.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Controllers\\HistoryController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAD0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T18:58:56.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UpdateScheduleHandler.cs.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\UpdateScheduleHandler.cs.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\UpdateScheduleHandler.cs.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\UpdateScheduleHandler.cs.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\UpdateScheduleHandler.cs.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T01:23:41.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateScheduleDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\MedicationDto\\UpdateScheduleDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\MedicationDto\\UpdateScheduleDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\MedicationDto\\UpdateScheduleDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\MedicationDto\\UpdateScheduleDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T01:26:41.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateScheduleCommand.cs.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\UpdateScheduleCommand.cs.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\UpdateScheduleCommand.cs.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\UpdateScheduleCommand.cs.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\UpdateScheduleCommand.cs.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T01:22:01.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Program.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Program.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Program.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Program.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T18:35:29.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetSchedulesByMedicationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\GetSchedulesByMedicationHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\GetSchedulesByMedicationHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\GetSchedulesByMedicationHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\GetSchedulesByMedicationHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T19:43:10.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserServices.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\UserServices.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Services\\UserServices.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\UserServices.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Services\\UserServices.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAAAAAH4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T20:24:15.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateScheduleHandle.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\CreateScheduleHandle.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\CreateScheduleHandle.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\CreateScheduleHandle.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\CreateScheduleHandle.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T15:34:19.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MedsReminderService.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\MedsReminderService.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Services\\MedsReminderService.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\MedsReminderService.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Services\\MedsReminderService.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAiwD8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T19:01:06.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MarkScheduleTakenHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\MarkScheduleTakenHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\MarkScheduleTakenHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\MarkScheduleTakenHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\MarkScheduleTakenHandler.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAqwCcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T15:33:36.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreateMedicationHandlers.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\CreateMedicationHandlers.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\CreateMedicationHandlers.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\CreateMedicationHandlers.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\CreateMedicationHandlers.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAABMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T14:59:19.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DeleteScheduleHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\DeleteScheduleHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\DeleteScheduleHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\DeleteScheduleHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\SchuduleMedicationHandlers\\DeleteScheduleHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T19:47:42.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApproveExpenseRequestHandler .cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\ApproveExpenseRequestHandler .cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\ApproveExpenseRequestHandler .cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\ApproveExpenseRequestHandler .cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\ApproveExpenseRequestHandler .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T12:28:54.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UpdateMedicationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\UpdateMedicationHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\UpdateMedicationHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\UpdateMedicationHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\UpdateMedicationHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAhwCQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T15:29:02.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GetMedicationByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\GetMedicationByIdHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\GetMedicationByIdHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\GetMedicationByIdHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\GetMedicationByIdHandler.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T19:22:32.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MarkScheduleTakenCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationCommand\\MarkScheduleTakenCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\MedicationCommand\\MarkScheduleTakenCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationCommand\\MarkScheduleTakenCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\MedicationCommand\\MarkScheduleTakenCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T16:58:51.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GetAllMedicationsHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\GetAllMedicationsHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\GetAllMedicationsHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\GetAllMedicationsHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\GetAllMedicationsHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T15:30:22.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DeleteMedicationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\DeleteMedicationHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\DeleteMedicationHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\DeleteMedicationHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\MedicationHandlers\\DeleteMedicationHandler.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAqwBMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T15:31:17.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserContextService.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\UserContextService.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Services\\UserContextService.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\UserContextService.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Services\\UserContextService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T16:48:39.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IUserContextService.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Interface\\IUserContextService.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Interface\\IUserContextService.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Interface\\IUserContextService.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Interface\\IUserContextService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T01:23:37.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IUserServices.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Interface\\IUserServices.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Interface\\IUserServices.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Interface\\IUserServices.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Interface\\IUserServices.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwBEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T01:24:15.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MedicationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\Repository\\MedicationRepository.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Infrastructure\\Infrastructure\\Repository\\MedicationRepository.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\Repository\\MedicationRepository.cs",
+              "RelativeToolTip": "UseCaseService.Infrastructure\\Infrastructure\\Repository\\MedicationRepository.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T13:40:48.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GetHistoriesByMedicationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\HistoriesMedicationHandler\\GetHistoriesByMedicationHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\HistoriesMedicationHandler\\GetHistoriesByMedicationHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\HistoriesMedicationHandler\\GetHistoriesByMedicationHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\HistoriesMedicationHandler\\GetHistoriesByMedicationHandler.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCYAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T20:05:26.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\UserController.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAuwGYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T21:07:52.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ApproveExpenseRequestCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\ApproveExpenseRequestCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\ApproveExpenseRequestCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\ApproveExpenseRequestCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\ApproveExpenseRequestCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T12:28:10.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DeleteUserCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\DeleteUserCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\DeleteUserCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\DeleteUserCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\DeleteUserCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:50:46.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DeleteUserHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\DeleteUserHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\DeleteUserHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\DeleteUserHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\DeleteUserHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAYwAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:51:15.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserCaseDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\Persistence\\UserCaseDbContext.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Infrastructure\\Infrastructure\\Persistence\\UserCaseDbContext.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\Persistence\\UserCaseDbContext.cs",
+              "RelativeToolTip": "UseCaseService.Infrastructure\\Infrastructure\\Persistence\\UserCaseDbContext.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAswEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:15:37.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "CreateUserHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\CreateUserHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\CreateUserHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\CreateUserHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\CreateUserHandler.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAwDkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:03:40.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "RecoverPasswordController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\RecoverPasswordController.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Controllers\\RecoverPasswordController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\RecoverPasswordController.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Controllers\\RecoverPasswordController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:37:54.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "GetMedicationByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetMedicationByIdQuery.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Queries\\GetMedicationByIdQuery.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetMedicationByIdQuery.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Queries\\GetMedicationByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T19:21:06.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "MedicationDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\MedicationDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\MedicationDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\MedicationDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\MedicationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T13:54:32.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "UpdateMedicationDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\UpdateMedicationDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\UpdateMedicationDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\UpdateMedicationDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\UpdateMedicationDto.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIAwwAoAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T19:06:12.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CreateScheduleCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\CreateScheduleCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\CreateScheduleCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\CreateScheduleCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\CreateScheduleCommand.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAADwvxIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T16:54:12.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T01:40:06.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "UpdateMedicationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationCommand\\UpdateMedicationCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\MedicationCommand\\UpdateMedicationCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationCommand\\UpdateMedicationCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\MedicationCommand\\UpdateMedicationCommand.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T14:31:14.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "GetHistoriesByMedicationQuery.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetHistoriesByMedicationQuery.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Queries\\GetHistoriesByMedicationQuery.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetHistoriesByMedicationQuery.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Queries\\GetHistoriesByMedicationQuery.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T20:04:17.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "GetSchedulesByMedicationQuery.cs.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetSchedulesByMedicationQuery.cs.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Queries\\GetSchedulesByMedicationQuery.cs.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetSchedulesByMedicationQuery.cs.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Queries\\GetSchedulesByMedicationQuery.cs.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T19:37:37.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "DeleteScheduleCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\DeleteScheduleCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\DeleteScheduleCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\DeleteScheduleCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\MedicationSchuduleCommand\\DeleteScheduleCommand.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T19:45:42.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "DeleteMedicationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationCommand\\DeleteMedicationCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\MedicationCommand\\DeleteMedicationCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationCommand\\DeleteMedicationCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\MedicationCommand\\DeleteMedicationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T14:47:53.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "CreateMedicationCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationCommand\\CreateMedicationCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\MedicationCommand\\CreateMedicationCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\MedicationCommand\\CreateMedicationCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\MedicationCommand\\CreateMedicationCommand.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwA8AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T14:06:49.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "GetMedicationAllQuery.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetMedicationAllQuery.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Queries\\GetMedicationAllQuery.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetMedicationAllQuery.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Queries\\GetMedicationAllQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T14:52:06.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "MedicationSchedule.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\MedicationSchedule.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Entities\\MedicationSchedule.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\MedicationSchedule.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Entities\\MedicationSchedule.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:47:18.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "MedicationHistory.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\MedicationHistory.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Entities\\MedicationHistory.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\MedicationHistory.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Entities\\MedicationHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:48:48.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "IMedicationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\Interface\\IMedicationRepository.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Infrastructure\\Infrastructure\\Interface\\IMedicationRepository.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\Interface\\IMedicationRepository.cs",
+              "RelativeToolTip": "UseCaseService.Infrastructure\\Infrastructure\\Interface\\IMedicationRepository.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T13:17:25.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "PasswordResetCode.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\PasswordResetCode.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Entities\\PasswordResetCode.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\PasswordResetCode.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Entities\\PasswordResetCode.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:26:04.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "AddressEntity.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\AddressEntity.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Entities\\AddressEntity.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\AddressEntity.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Entities\\AddressEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:28:04.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "GenerateCode.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\GenerateCode.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Entities\\GenerateCode.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\GenerateCode.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Entities\\GenerateCode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:25:45.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Medication.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\Medication.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Entities\\Medication.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\Medication.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Entities\\Medication.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:46:34.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Infrastructure\\Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "UseCaseService.Infrastructure\\Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswBIAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:19:16.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\appsettings.json",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\appsettings.json",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\appsettings.json",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-21T17:02:52.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "UserCaseDbContextFactory .cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\DesignTime\\UserCaseDbContextFactory .cs",
+              "RelativeDocumentMoniker": "UseCaseService.Infrastructure\\Infrastructure\\DesignTime\\UserCaseDbContextFactory .cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Infrastructure\\Infrastructure\\DesignTime\\UserCaseDbContextFactory .cs",
+              "RelativeToolTip": "UseCaseService.Infrastructure\\Infrastructure\\DesignTime\\UserCaseDbContextFactory .cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T13:51:44.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\DependencyInjection.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T18:18:19.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "CreateMedicationDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\MedicationDto\\CreateMedicationDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\MedicationDto\\CreateMedicationDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\MedicationDto\\CreateMedicationDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\MedicationDto\\CreateMedicationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T19:05:55.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ServiceHelper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Helpers\\ServiceHelper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Helpers\\ServiceHelper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Helpers\\ServiceHelper.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Helpers\\ServiceHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T02:01:33.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "UserEntities.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\UserEntities.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Entities\\UserEntities.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Entities\\UserEntities.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Entities\\UserEntities.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:26:07.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "CancelExpenseRequestHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\CancelExpenseRequestHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\CancelExpenseRequestHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\CancelExpenseRequestHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\CancelExpenseRequestHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:08:49.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "CreateExpenseRequestHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\CreateExpenseRequestHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\CreateExpenseRequestHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\CreateExpenseRequestHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\CreateExpenseRequestHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T12:03:56.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "CreateUserCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\CreateUserCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\CreateUserCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\CreateUserCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\CreateUserCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:09:07.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "CreateExpenseRequestCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\CreateExpenseRequestCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\CreateExpenseRequestCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\CreateExpenseRequestCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\CreateExpenseRequestCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:10:00.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "Web.csproj",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Web.csproj",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Web.csproj",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Web.csproj",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-21T15:45:51.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "EnvelopResponse.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Response\\EnvelopResponse.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Response\\EnvelopResponse.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Response\\EnvelopResponse.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Response\\EnvelopResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:59:10.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "DeleteExpenseRequestHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\DeleteExpenseRequestHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\DeleteExpenseRequestHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\DeleteExpenseRequestHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\DeleteExpenseRequestHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:08:34.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "GetUserByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\GetUserByIdHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\GetUserByIdHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\GetUserByIdHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\GetUserByIdHandler.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvxkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T20:03:00.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "GetExpenseRequestsByUserHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\GetExpenseRequestsByUserHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\GetExpenseRequestsByUserHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\GetExpenseRequestsByUserHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\GetExpenseRequestsByUserHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:08:07.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "GenerateReportQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\GenerateReportQueryHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\GenerateReportQueryHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\GenerateReportQueryHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\GenerateReportQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:08:24.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "GetUserByAllQuery.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetUserByAllQuery.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Queries\\GetUserByAllQuery.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetUserByAllQuery.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Queries\\GetUserByAllQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T14:54:10.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "CreateDtoMapper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\CreateDtoMapper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Mappers\\CreateDtoMapper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\CreateDtoMapper.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Mappers\\CreateDtoMapper.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:00:43.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "SwaggerExtension.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Extensions\\SwaggerExtension.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Extensions\\SwaggerExtension.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Extensions\\SwaggerExtension.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Extensions\\SwaggerExtension.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T17:07:23.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "JwtEnxtension.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Extensions\\JwtEnxtension.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Extensions\\JwtEnxtension.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Extensions\\JwtEnxtension.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Extensions\\JwtEnxtension.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T17:06:09.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ExternalAuthenticationExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Extensions\\ExternalAuthenticationExtensions.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Extensions\\ExternalAuthenticationExtensions.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Extensions\\ExternalAuthenticationExtensions.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Extensions\\ExternalAuthenticationExtensions.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwBgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T19:05:42.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "AuthConfigHelper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Helpers\\AuthConfigHelper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Helpers\\AuthConfigHelper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Helpers\\AuthConfigHelper.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Helpers\\AuthConfigHelper.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T13:01:47.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Application.csproj",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Application.csproj",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Application.csproj",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Application.csproj",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-22T12:06:13.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\appsettings.Development.json",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-08T00:10:40.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "ClaimsHelper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Helpers\\ClaimsHelper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Helpers\\ClaimsHelper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Helpers\\ClaimsHelper.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Helpers\\ClaimsHelper.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T20:55:20.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T20:15:11.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "UpdateUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\UpdateUserDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\UpdateUserDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\UpdateUserDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\UpdateUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T19:08:06.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "RoleConstants.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Constants\\RoleConstants.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Constants\\RoleConstants.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Constants\\RoleConstants.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Constants\\RoleConstants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T16:45:31.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\RegisterDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\RegisterDto.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAwDcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:07:08.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "ExpenseRequestMapper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\ExpenseRequestMapper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Mappers\\ExpenseRequestMapper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\ExpenseRequestMapper.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Mappers\\ExpenseRequestMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T23:15:11.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "ExpenseRequestQueryMapper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\ExpenseRequestQueryMapper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Mappers\\ExpenseRequestQueryMapper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\ExpenseRequestQueryMapper.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Mappers\\ExpenseRequestQueryMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T17:12:55.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "CreateExpenseRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\CreateExpenseRequestDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\CreateExpenseRequestDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\CreateExpenseRequestDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\CreateExpenseRequestDto.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwB0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:09:23.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "GetAllExpenseRequestsHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\GetAllExpenseRequestsHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\GetAllExpenseRequestsHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\GetAllExpenseRequestsHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\GetAllExpenseRequestsHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:08:57.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "PaidExpenseRequestHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\PaidExpenseRequestHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\PaidExpenseRequestHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\PaidExpenseRequestHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\PaidExpenseRequestHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:07:49.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "GetExpenseRequestByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\GetExpenseRequestByIdHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\GetExpenseRequestByIdHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\GetExpenseRequestByIdHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\GetExpenseRequestByIdHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T18:06:45.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "JwtTyping.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Typing\\JwtTyping.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Typing\\JwtTyping.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Typing\\JwtTyping.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Typing\\JwtTyping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:31:54.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "ExtraLoginTyping.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Typing\\ExtraLoginTyping.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Typing\\ExtraLoginTyping.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Typing\\ExtraLoginTyping.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Typing\\ExtraLoginTyping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:31:52.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "AdminTyping.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Typing\\AdminTyping.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Typing\\AdminTyping.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Typing\\AdminTyping.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Typing\\AdminTyping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:31:48.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "SexEnum.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Enums\\SexEnum.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Enums\\SexEnum.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Enums\\SexEnum.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Enums\\SexEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:27:12.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "UserTypeEnum.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Enums\\UserTypeEnum.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Domain\\Domain\\Enums\\UserTypeEnum.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Domain\\Domain\\Enums\\UserTypeEnum.cs",
+              "RelativeToolTip": "UseCaseService.Domain\\Domain\\Enums\\UserTypeEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T17:27:01.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "UseCaseService.Web\\Web\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Web\\Web\\Properties\\launchSettings.json",
+              "RelativeToolTip": "UseCaseService.Web\\Web\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-06T01:51:28.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "RecoverPasswordServices.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\RecoverPasswordServices.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Services\\RecoverPasswordServices.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\RecoverPasswordServices.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Services\\RecoverPasswordServices.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwAwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T18:03:17.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "AuthenticationServices.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\AuthenticationServices.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Services\\AuthenticationServices.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\AuthenticationServices.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Services\\AuthenticationServices.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAiwEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T17:50:04.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "AdminServices.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\AdminServices.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Services\\AdminServices.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\AdminServices.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Services\\AdminServices.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwDIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T17:21:21.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "SendEmail.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\SendEmail.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Services\\SendEmail.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Services\\SendEmail.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Services\\SendEmail.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAiwDQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T00:27:38.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "UpdateUserHandler.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\UpdateUserHandler.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Handlers\\UpdateUserHandler.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Handlers\\UpdateUserHandler.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Handlers\\UpdateUserHandler.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAApwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:47:20.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "AdressDto.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\AdressDto.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Dto\\AdressDto.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Dto\\AdressDto.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Dto\\AdressDto.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T18:43:57.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "UserMapper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\UserMapper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Mappers\\UserMapper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\UserMapper.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Mappers\\UserMapper.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T20:14:27.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "UpdateUserMapper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\UpdateUserMapper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Mappers\\UpdateUserMapper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\UpdateUserMapper.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Mappers\\UpdateUserMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:33:47.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "DeleteUserMapper.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\DeleteUserMapper.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Mappers\\DeleteUserMapper.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Mappers\\DeleteUserMapper.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Mappers\\DeleteUserMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T19:58:14.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "DeleteExpenseRequestCommand.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\DeleteExpenseRequestCommand.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Commands\\DeleteExpenseRequestCommand.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Commands\\DeleteExpenseRequestCommand.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Commands\\DeleteExpenseRequestCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T17:14:40.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "GetUserByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetUserByIdQuery.cs",
+              "RelativeDocumentMoniker": "UseCaseService.Application\\Application\\Queries\\GetUserByIdQuery.cs",
+              "ToolTip": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.Application\\Application\\Queries\\GetUserByIdQuery.cs",
+              "RelativeToolTip": "UseCaseService.Application\\Application\\Queries\\GetUserByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T20:00:23.319Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

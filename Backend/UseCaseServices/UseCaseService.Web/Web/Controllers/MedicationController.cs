@@ -40,8 +40,8 @@ public class MedicationsController : ControllerBase
         }
     }
 
-    [HttpGet("{id:guid}")]
-    public async Task<IActionResult> Get(Guid id)
+    [HttpGet("{id:long}")]
+    public async Task<IActionResult> Get(long id)
     {
         try
         {
@@ -86,8 +86,8 @@ public class MedicationsController : ControllerBase
         }
     }
 
-    [HttpPut("{id:guid}")]
-    public async Task<IActionResult> Update(Guid id, [FromBody] UpdateMedicationDto dto)
+    [HttpPut("{id:long}")]
+    public async Task<IActionResult> Update( [FromBody] UpdateMedicationDto dto)
     {
         try
         {
@@ -101,7 +101,7 @@ public class MedicationsController : ControllerBase
                 return BadRequest(EnvelopResponse<string>.Failure(allErrors));
             }
 
-            var command = new UpdateMedicationCommand(id, dto.Name, dto.Strength, dto.Notes);
+            var command = new UpdateMedicationCommand(dto.Id,dto.Name, dto.Strength, dto.Notes);
             var result = await _mediator.Send(command);
 
             return result.isSuccess ? Ok(result) : NotFound(result);
@@ -112,8 +112,8 @@ public class MedicationsController : ControllerBase
         }
     }
 
-    [HttpDelete("{id:guid}")]
-    public async Task<IActionResult> Delete(Guid id)
+    [HttpDelete("{id:long}")]
+    public async Task<IActionResult> Delete(long id)
     {
         try
         {

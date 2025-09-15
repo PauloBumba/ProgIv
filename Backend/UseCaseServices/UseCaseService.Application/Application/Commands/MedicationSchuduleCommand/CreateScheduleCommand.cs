@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 namespace Application.Commands.MedicationSchuduleCommand
 {
     public record CreateScheduleCommand(
-        Guid MedicationId,
+        long MedicationId,
         TimeSpan TimeOfDay,
         bool Enabled,
         int RepeatIntervalDays,
         DateTime? StartDate,
-        DateTime? EndDate
+        DateTime? EndDate,
+        string UserId
     ) : IRequest<EnvelopResponse<MedicationSchedule>>;
 
 }

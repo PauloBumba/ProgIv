@@ -79,7 +79,7 @@ builder.Services.AddApplicationServices();
 
 // ou, se você tiver uma interface
 builder.Services.AddScoped<IUserContextService, UserContextService>();
-builder.Services.AddScoped<IMedicationRepository, Repository>();
+builder.Services.AddScoped<IMedicationRepository, MedicationRepository>();
 // JWT (se estiver usando)
 builder.Services.AddJwtExtension(builder.Configuration);
 builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection("EmailConfig"));

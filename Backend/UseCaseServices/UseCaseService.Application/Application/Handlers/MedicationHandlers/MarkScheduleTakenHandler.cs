@@ -1,5 +1,6 @@
 ﻿using Application.Commands.MedicationCommand;
 using Application.Response;
+using Application.Services;
 using Domain.Entities;
 using Infrastructure.Interface;
 using MediatR;
@@ -15,11 +16,16 @@ namespace Application.Handlers.MedicationHandlers
     {
         private readonly IMedicationRepository _repository;
         private readonly IPublisher _publisher;
+        private readonly IUserContextService _userContextService;
 
-        public MarkScheduleTakenHandler(IMedicationRepository repository, IPublisher publisher)
+        public MarkScheduleTakenHandler(
+            IMedicationRepository repository,
+            IPublisher publisher,
+            IUserContextService userContextService)
         {
             _repository = repository;
             _publisher = publisher;
+            _userContextService = userContextService;
         }
 
         public async Task<EnvelopResponse<MedicationSchedule>> Handle(
@@ -30,6 +36,9 @@ namespace Application.Handlers.MedicationHandlers
             var schedule = await _repository.GetScheduleByIdAsync(request.ScheduleId);
             if (schedule == null)
                 return EnvelopResponse<MedicationSchedule>.Failure("Schedule não encontrado.");
+
+            var userId = _userContextService.GetUserId();
+            var email = _userContextService.GetUserEmail();
 
             // Validação do usuário
             if (schedule.UserId != request.UserId)
@@ -51,11 +60,15 @@ namespace Application.Handlers.MedicationHandlers
             await _publisher.Publish(new MedicationTakenEvent
             {
                 MedicationId = updated.MedicationId,
-                UserId = updated.UserId,
-                TakenAt = DateTime.UtcNow
+                UserId = userId,
+                TakenAt = DateTime.UtcNow,
+                Email = email // 👈 agora vai o email do usuário logado
             }, cancellationToken);
 
-            return EnvelopResponse<MedicationSchedule>.Success(updated, "Medicação marcada como tomada com sucesso!");
+            return EnvelopResponse<MedicationSchedule>.Success(
+                updated,
+                "Medicação marcada como tomada com sucesso!"
+            );
         }
     }
 }

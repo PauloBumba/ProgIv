@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain.Entities;
 namespace Application.Services
 {
     
@@ -99,35 +100,35 @@ namespace Application.Services
                 }
             }
 
-            public async Task<EnvelopResponse<bool>> DeleteUserAsync(DeleteUserCommand command)
+            public async Task<EnvelopResponse<string>> DeleteUserAsync(DeleteUserCommand command)
             {
                 try
                 {
                     var result = await _mediator.Send(command);
                     if (result==null)
                     {
-                        return new EnvelopResponse<bool>
+                        return new EnvelopResponse<string>
                         {
                             isSuccess = false,
                             Message = "Usuário não encontrado ou erro ao deletar.",
-                            Data = false
+                            Data = null
                         };
                     }
 
-                    return new EnvelopResponse<bool>
+                    return new EnvelopResponse<string>
                     {
                         isSuccess = true,
                         Message = "Usuário deletado com sucesso.",
-                        Data = true
+                        Data = result.Id
                     };
                 }
                 catch (Exception ex)
                 {
-                    return new EnvelopResponse<bool>
+                    return new EnvelopResponse<string>
                     {
                         isSuccess = false,
                         Message = $"Erro inesperado: {ex.Message}",
-                        Data = false
+                        Data = null
                     };
                 }
             }

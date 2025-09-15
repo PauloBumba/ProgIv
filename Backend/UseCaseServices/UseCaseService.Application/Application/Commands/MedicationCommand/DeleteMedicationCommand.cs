@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Application.Commands.MedicationCommand
 {
     public record DeleteMedicationCommand(
-        Guid MedicationId
+        long MedicationId
         ) : IRequest<EnvelopResponse<string>>;
 
 }

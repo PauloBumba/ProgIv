@@ -118,3 +118,4 @@ C:\Users\paulo\Documents\GitHub\ProgIv\Backend\GatewayServices\obj\Debug\net9.0\
 C:\Users\paulo\Documents\GitHub\ProgIv\Backend\GatewayServices\obj\Debug\net9.0\ApiGateway.pdb
 C:\Users\paulo\Documents\GitHub\ProgIv\Backend\GatewayServices\obj\Debug\net9.0\ApiGateway.genruntimeconfig.cache
 C:\Users\paulo\Documents\GitHub\ProgIv\Backend\GatewayServices\obj\Debug\net9.0\ref\ApiGateway.dll
+C:\Users\paulo\Documents\GitHub\ProgIv\Backend\GatewayServices\obj\Debug\net9.0\swae.build.ex.cache

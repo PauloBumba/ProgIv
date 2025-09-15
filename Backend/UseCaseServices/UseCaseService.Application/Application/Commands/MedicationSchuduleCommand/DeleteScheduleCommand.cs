@@ -10,9 +10,9 @@ namespace Application.Commands.MedicationSchuduleCommand
 {
     public class DeleteScheduleCommand : IRequest<EnvelopResponse<string>>
     {
-        public Guid ScheduleId { get; }
+        public long ScheduleId { get; }
 
-        public DeleteScheduleCommand(Guid scheduleId)
+        public DeleteScheduleCommand(long scheduleId)
         {
             ScheduleId = scheduleId;
         }

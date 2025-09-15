@@ -8,10 +8,12 @@ namespace Shared.Contracts.Events
 {
     public record MedicationReminderEvent
     {
-        public Guid MedicationId { get; init; }
-        public Guid ScheduleId { get; init; }
+        public long MedicationId { get; init; }
+        public long ScheduleId { get; init; }
         public string UserId { get; init; } = string.Empty;
         public DateTime TimeOfReminder { get; init; }
         public string MedicationName { get; init; } = string.Empty;
+        public string? Email { get; set; }
+
     }
 }

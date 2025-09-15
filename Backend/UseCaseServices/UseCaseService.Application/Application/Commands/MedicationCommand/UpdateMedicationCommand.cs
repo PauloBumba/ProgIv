@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Application.Commands.MedicationCommand
 {
     public record UpdateMedicationCommand(
-        Guid Id,
+        long Id,
         string Name,
         string Notes,
         string Strength

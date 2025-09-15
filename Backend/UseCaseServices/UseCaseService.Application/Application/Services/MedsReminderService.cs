@@ -18,12 +18,13 @@ namespace Application.Services
         private readonly IServiceScopeFactory _scopeFactory;
         private readonly ILogger<MedsReminderService> _logger;
         private readonly IPublishEndpoint _publish;
-
-        public MedsReminderService(IServiceScopeFactory scopeFactory, ILogger<MedsReminderService> logger, IPublishEndpoint publish)
+        private readonly IUserContextService _userContextService;
+        public MedsReminderService(IServiceScopeFactory scopeFactory, ILogger<MedsReminderService> logger, IPublishEndpoint publish , IUserContextService userContextService)
         {
             _scopeFactory = scopeFactory;
             _logger = logger;
             _publish = publish;
+            _userContextService = userContextService;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -65,7 +66,7 @@ namespace Application.Services
                                 // Cria registro de histórico
                                 var history = new MedicationHistory
                                 {
-                                    Id = Guid.NewGuid(),
+                                   
                                     MedicationId = schedule.MedicationId,
                                     ScheduleId = schedule.Id,
                                     WasTaken = false,
@@ -83,9 +84,11 @@ namespace Application.Services
                                 {
                                     MedicationId = schedule.MedicationId,
                                     ScheduleId = schedule.Id,
-                                    UserId = schedule.UserId,
+                                   
                                     TimeOfReminder = now,
-                                    MedicationName = schedule.Medication.Name
+                                    MedicationName = schedule.Medication.Name,
+                                    Email= _userContextService.GetUserEmail(),
+                                    UserId=_userContextService.GetUserId()
                                 }, stoppingToken);
 
                                 _logger.LogInformation("Evento enviado para RabbitMQ para {Medication}", schedule.Medication.Name);

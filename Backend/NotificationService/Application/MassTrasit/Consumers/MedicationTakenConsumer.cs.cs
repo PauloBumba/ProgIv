@@ -1,15 +1,12 @@
-﻿using Application.Interface;
+﻿using Application.Helper;
+using Application.Interface;
 using Infrastruture.Interface;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 using Shared.Contracts.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.MassTrasit.Consumers
+namespace Application.MassTransit.Consumers
 {
     public class MedicationTakenConsumer : IConsumer<MedicationTakenEvent>
     {
@@ -27,14 +24,11 @@ namespace Application.MassTrasit.Consumers
         public async Task Consume(ConsumeContext<MedicationTakenEvent> context)
         {
             var evt = context.Message;
-            string message = $"Medicação {evt.MedicationId} tomada em {evt.TakenAt:HH:mm} pelo usuário {evt.UserId}";
+            string message = $"💊 Medicação {evt.MedicationId} marcada como tomada em {evt.TakenAt:g}";
 
-            try { await _email.SendEmailAsync("admin@pharma.com", "Medicação tomada", message); }
-            catch (Exception ex) { _logger.LogError(ex, "Erro ao enviar e-mail"); }
-
-            try { await _signalR.NotifyAdminsAsync(message); }
-            catch (Exception ex) { _logger.LogError(ex, "Erro SignalR"); }
+            await SafeExecutor.ExecuteAsync(() => _email.SendEmailAsync(evt.Email, "Medicação tomada", message), _logger, "Erro ao enviar e-mail");
+            await SafeExecutor.ExecuteAsync(() => _signalR.NotifyUserAsync(evt.UserId, message), _logger, "Erro ao enviar notificação SignalR");
+            await SafeExecutor.ExecuteAsync(() => _signalR.NotifyAdminsAsync(message), _logger, "Erro ao enviar notificação SignalR");
         }
     }
-
 }

@@ -33,6 +33,9 @@ import { MyExpense } from "../Pages/Painel/Expense/myExpense";
 import ListaUsuarios from "../Pages/Painel/UserList";
 import { CriarUsuarioPage } from "../Pages/Painel/UserList/CreateUser";
 import EditarUsuarioPage from "../Pages/Painel/UserList/EditarUsuario";
+import { ScheduleList } from "../Pages/Painel/Schedules/ScheduleList";
+import { ScheduleListWrapper } from "../Helper/ScheduleList";
+import { SuportPrivate } from "../Pages/Painel/Suport";
 
 interface AppUser {
   id: string;
@@ -83,6 +86,12 @@ export const AppRouter: FC = () => {
           {/* Usuários */}
           <Route path="usuarios" element={<ListaUsuarios />} />
           <Route path="usuarios/editar/:id" element={<EditarUsuarioPage />} />
+
+          <Route path="*" element={<Navigate to="/acesso-negado" replace />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="medications/:id/schedules/list" element={<ScheduleListWrapper />} />
+         <Route path="private/suport" element={<SuportPrivate />} />
+
         </Route>
       </Routes>
     </Router>

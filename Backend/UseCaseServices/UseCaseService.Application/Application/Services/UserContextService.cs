@@ -24,6 +24,11 @@ namespace Application.Services
             return _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier)
                    ?? throw new InvalidOperationException("User ID not found.");
         }
+        public string GetUserEmail()
+        {
+            return _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.Email)
+                   ?? throw new InvalidOperationException("User Email not found.");
+        }
     }
 
 }

@@ -37,9 +37,10 @@ builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<PasswordRecoveryRequestedConsumer>();
     x.AddConsumer<MedicationCreatedConsumer>();
-    x.AddConsumer<ScheduleCreatedConsumer>();
+    x.AddConsumer<MedicationScheduleCreatedConsumer>();
     x.AddConsumer<MedicationTakenConsumer>();
     x.AddConsumer<CreateUserConsumer>();
+    x.AddConsumer<MedicationReminderConsumer>();
     x.UsingRabbitMq((context, cfg) =>
     {
         var rabbitHost = Environment.GetEnvironmentVariable("RabbitMQ__Host") ?? "localhost";
@@ -69,12 +70,17 @@ builder.Services.AddMassTransit(x =>
 
         cfg.ReceiveEndpoint("schedule-created-queue", e =>
         {
-            e.ConfigureConsumer<ScheduleCreatedConsumer>(context);
+            e.ConfigureConsumer<MedicationScheduleCreatedConsumer>(context);
         });
 
         cfg.ReceiveEndpoint("medication-taken-queue", e =>
         {
             e.ConfigureConsumer<MedicationTakenConsumer>(context);
+        });
+         cfg.ReceiveEndpoint
+        ("medication-reminder-queue", e =>
+        {
+            e.ConfigureConsumer<MedicationReminderConsumer>(context);
         });
     });
 

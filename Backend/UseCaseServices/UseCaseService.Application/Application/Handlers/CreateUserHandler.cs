@@ -69,7 +69,7 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, UserEntities
         {
             Email = user.Email,
             FullName = user.FullName,
-            Role = Enum.TryParse<RoleContracts>(register.Role, true, out var role) ? role : RoleContracts.Collaborator,
+            UserId=user.Id,
             CreateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("America/Sao_Paulo"))
         }, cancellationToken);
 

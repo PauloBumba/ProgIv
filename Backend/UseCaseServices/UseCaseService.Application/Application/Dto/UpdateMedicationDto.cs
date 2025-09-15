@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 namespace Application.Dto
 {
     public class UpdateMedicationDto
-    {
-        [Required(ErrorMessage = "O nome do medicamento é obrigatório")]
+    {    [Required]
+        public long Id { get; set; }
+    [Required(ErrorMessage = "O nome do medicamento é obrigatório")]
         [StringLength(100, MinimumLength = 2, ErrorMessage = "O nome deve ter entre 2 e 100 caracteres")]
         public string Name { get; set; } = string.Empty;
 

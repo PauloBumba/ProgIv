@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace Application.Queries
 {
-    public record GetMedicationByIdQuery(Guid Id) : IRequest<Medication>;
+    public record GetMedicationByIdQuery(long Id) : IRequest<Medication>;
 }

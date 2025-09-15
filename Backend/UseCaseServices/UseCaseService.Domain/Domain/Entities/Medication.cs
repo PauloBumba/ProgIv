@@ -8,9 +8,9 @@ namespace Domain.Entities
 {
     public class Medication
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; } // Modificado de Guid para long
         public string Name { get; set; } = null!;
-        public string Strength { get; set; } = null!; // ex: "500 mg"
+        public string Strength { get; set; } = null!;
         public string Notes { get; set; } = "";
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public ICollection<MedicationSchedule> Schedules { get; set; } = new List<MedicationSchedule>();

@@ -1,5 +1,4 @@
 ﻿using Application.Commands;
-
 using Application.Dto;
 using Application.Interface;
 using Application.Mappers;
@@ -8,13 +7,11 @@ using Application.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.Helpers;
-using static Domain.Constants.RoleConstants;
 
 namespace Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    
     public class UserController : ControllerBase
     {
         private readonly IUserServices _userService;
@@ -24,7 +21,7 @@ namespace Api.Controllers
             _userService = userService;
         }
 
-        
+        // ================= CREATE =================
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> CreateUser([FromBody] RegisterDto registerDto)
@@ -49,9 +46,10 @@ namespace Api.Controllers
             }
         }
 
+        // ================= UPDATE =================
         [Authorize]
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(string id, [FromBody] UpdateUserDto updateUserDto)
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> UpdateUser(Guid id, [FromBody] UpdateUserDto updateUserDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -73,31 +71,31 @@ namespace Api.Controllers
             }
         }
 
-       
-        [HttpDelete("{id}")]
+        // ================= DELETE =================
         [Authorize]
-        public async Task<IActionResult> DeleteUser(DeleteUserDto deleteUserDto)
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> DeleteUser(Guid id)
         {
             try
             {
-                var command = deleteUserDto.ToCommand();
+                var command = new DeleteUserCommand(id.ToString());
                 var response = await _userService.DeleteUserAsync(command);
 
                 if (!response.isSuccess)
-                    return BadRequest(response);
+                    return NotFound(EnvelopResponse<bool>.Failure(response.Message ?? "Usuário não encontrado."));
 
                 return Ok(response);
             }
             catch (Exception ex)
             {
-                var errorResponse = ServiceHelper.HandleException<string>(ex, "Erro ao deletar usuário.");
+                var errorResponse = ServiceHelper.HandleException<bool>(ex, "Erro ao deletar usuário.");
                 return StatusCode(500, errorResponse);
             }
         }
 
-        
-        [HttpGet]
+        // ================= GET ALL =================
         [Authorize]
+        [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
             try
@@ -117,14 +115,14 @@ namespace Api.Controllers
             }
         }
 
-     
-        [HttpGet("{id}")]
+        // ================= GET BY ID =================
         [Authorize]
-        public async Task<IActionResult> GetUserById(string id)
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetUserById(Guid id)
         {
             try
             {
-                var query = new GetUserByIdQuery(id);
+                var query = new GetUserByIdQuery(id.ToString());
                 var response = await _userService.GetUserByIdAsync(query);
 
                 if (!response.isSuccess)

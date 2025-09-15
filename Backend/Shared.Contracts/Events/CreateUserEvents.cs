@@ -11,7 +11,7 @@ namespace Shared.Contracts.Events
     {
         public string Email { get; set; } = string.Empty;
         public string FullName { get; set; } = string.Empty;
-        public RoleContracts Role { get; set; } = RoleContracts.Collaborator;
+        public string UserId { get; set; } = string.Empty;   
         public DateTime CreateTime { get; set; } = DateTime.UtcNow;
        
     }

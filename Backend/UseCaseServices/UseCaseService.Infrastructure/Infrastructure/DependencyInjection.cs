@@ -1,7 +1,7 @@
 ﻿using Domain.Entities;
 using Infrastructure.Interface;
 using Infrastructure.Persistence;
-
+using Infrastructure.Repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -16,7 +16,7 @@ namespace Infrastructure
     {
         public static void AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IMedicationRepository,IMedicationRepository>();
+            services.AddScoped<IMedicationRepository,MedicationRepository>();
 
 
             services.AddIdentityCore<UserEntities>(options =>

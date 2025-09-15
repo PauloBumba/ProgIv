@@ -1,105 +1,74 @@
 import { classNames } from "primereact/utils";
 import { SpeedDial } from "primereact/speeddial";
 import { useNavigate } from "react-router-dom";
-import "./sidebar.css";
 import { PanelMenu } from "primereact/panelmenu";
+import "./sidebar.css";
 
 type SidebarProps = {
   isCollapsed: boolean;
-  setCollapsed?: (value: boolean) => void;
   setHovered: (value: boolean) => void;
+  medicationId?: number;
 };
 
-export default function Sidebar({ isCollapsed, setHovered }: SidebarProps) {
-  const isExpanded = !isCollapsed;
+export default function Sidebar({ isCollapsed, setHovered, medicationId }: SidebarProps) {
   const navigate = useNavigate();
+  const isExpanded = !isCollapsed;
 
-  const menuItems = [
-    {
-      label: isExpanded ? "Dashboard" : " ",
-      icon: "pi pi-home",
-      tooltip: "Dashboard",
-      command: () => navigate("/dashboard"),
-      items: [
-        {
-          label: isExpanded ? "Listar Usuários" : "",
-          icon: "pi pi-users",
-          command: () => navigate("/usuarios"),
-          className: "my-2",
-        },
-        {
-          label: isExpanded ? "Novo Usuário" : "",
-          icon: "pi pi-user-plus",
-          command: () => navigate("/usuarios/criar"),
-          className: "my-2",
-        },
-      ],
+  // Menu principal
+  const mainMenu = [
+    { label: "Dashboard", icon: "pi pi-home", command: () => navigate("/dashboard") },
+    { label: "Medicamentos", icon: "pi pi-list", command: () => navigate("/medications/list") },
+    { 
+      label: "Agendamentos", 
+      icon: "pi pi-clock", 
+      command: () => {
+        if (medicationId) navigate(`/medications/${medicationId}/schedules`);
+        else console.warn("Selecione um medicamento para ver os agendamentos");
+      } 
     },
-    {
-      label: isExpanded ? "Solicitações de Despesas" : "",
-      icon: "pi pi-file",
-      command: () => navigate("/expense"),
-      className: "my-2",
-    },
-    {
-      label: isExpanded ? "Configurações" : "",
-      icon: "pi pi-cog",
-      command: () => navigate("/configuracoes"),
-      className: "my-2",
-    },
+    { label: "Usuários", icon: "pi pi-users", command: () => navigate("/usuarios") },
+    { label: "Suporte", icon: "pi pi-question", command: () => navigate("/private/suport") },
   ];
 
-  const items = [
-    {
-      label: "Perfil",
-      icon: "pi pi-user",
-      command: () => {
-        navigate("/profile");
-      },
-    },
-    {
-      label: "Sair",
-      icon: "pi pi-sign-out",
-      command: () => {
-        // Aqui pode adicionar lógica de logout, tipo limpar token e redirecionar
-        console.log("Logout executado");
-        navigate("/login");
-      },
-    },
+  // Itens do SpeedDial (parte inferior)
+  const bottomActions = [
+    { label: "Perfil", icon: "pi pi-user", command: () => navigate("/profile") },
+    { label: "Sair", icon: "pi pi-sign-out", command: () => { 
+      localStorage.clear();
+      navigate("/login"); 
+    }},
   ];
+
+  // Ajuste do menu para o PanelMenu (com submenus, se necessário)
+  const panelMenuItems = mainMenu.map(item => ({
+    label: isExpanded ? item.label : "",
+    icon: item.icon,
+    command: item.command,
+    tooltip: item.label
+  }));
 
   return (
     <aside
       className={classNames(
         "sidebar custom-scrollbar sidebar-transition hidden lg:flex flex-column justify-between",
-        {
-          "sidebar-expanded": isExpanded,
-          "sidebar-collapsed": !isExpanded,
-        }
+        { "sidebar-expanded": isExpanded, "sidebar-collapsed": !isExpanded }
       )}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Parte superior com menus */}
-      <div className="flex flex-column">
-        {isExpanded && (
-          <h2 className="text-lg font-bold mt-2 mx-auto" style={{ userSelect: "none" }}>
-            Menu
-          </h2>
-        )}
-
-        <div className="p-3 flex flex-column h-full justify-between">
-          <PanelMenu model={menuItems} className="w-full p-2" />
-        </div>
+      {/* Parte superior com menu */}
+      <div className="flex flex-column p-3">
+        {isExpanded && <h2 className="text-lg font-bold mt-2 mx-auto">Menu</h2>}
+        <PanelMenu model={panelMenuItems} className="w-full p-2" />
       </div>
 
       {/* Parte inferior com SpeedDial */}
       <div className="mb-2">
         <SpeedDial
-          model={items}
+          model={bottomActions}
           direction="up"
-          style={{ left: "calc(50% - 2rem)", bottom: 5 }}
-          aria-label="SpeedDial Actions"
+          style={{ left: "50%", transform: "translateX(-50%)", bottom: 5 }}
+          aria-label="Ações rápidas"
         />
       </div>
     </aside>

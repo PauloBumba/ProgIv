@@ -8,8 +8,9 @@ namespace Shared.Contracts.Events
 {
     public class MedicationTakenEvent
     {
-        public Guid MedicationId { get; set; }
+        public long MedicationId { get; set; }
         public string UserId { get; set; } = string.Empty;
         public DateTime TakenAt { get; set; } = DateTime.UtcNow;
+        public string? Email { get; set; }
     }
 }

@@ -1,12 +1,12 @@
-﻿using MassTransit;
-using Shared.Contracts.Events;
+﻿using Application.Helper; // SafeExecutor
 using Application.Interface;
 using Infrastruture.Interface;
+using MassTransit;
 using Microsoft.Extensions.Logging;
-using System;
+using Shared.Contracts.Events;
 using System.Threading.Tasks;
 
-namespace Application.MassTrasit.Consumers
+namespace Application.MassTransit.Consumers
 {
     public class MedicationCreatedConsumer : IConsumer<MedicationCreatedEvent>
     {
@@ -24,13 +24,28 @@ namespace Application.MassTrasit.Consumers
         public async Task Consume(ConsumeContext<MedicationCreatedEvent> context)
         {
             var evt = context.Message;
-            string message = $"Nova medicação criada: {evt.Name} ({evt.Strength})";
+            string message = $"💊 Nova medicação criada: {evt.Name} ({evt.Strength})";
 
-            try { await _email.SendEmailAsync("paulomvbumba@gmail.com", "Medicação criada", message); }
-            catch (Exception ex) { _logger.LogError(ex, "Erro ao enviar e-mail"); }
+            // Envia email para o usuário
+            await SafeExecutor.ExecuteAsync(
+                () => _email.SendEmailAsync(evt.Email, "Medicação criada", message),
+                _logger,
+                "Erro ao enviar e-mail da medicação"
+            );
 
-            try { await _signalR.NotifyAdminsAsync(message); }
-            catch (Exception ex) { _logger.LogError(ex, "Erro SignalR"); }
+            // Notificação em tempo real via SignalR
+            await SafeExecutor.ExecuteAsync(
+                () => _signalR.NotifyUserAsync(evt.UserId, message),
+                _logger,
+                "Erro ao enviar notificação SignalR ao usuário"
+            );
+
+            // Opcional: notificar admins também
+            await SafeExecutor.ExecuteAsync(
+                () => _signalR.NotifyAdminsAsync(message),
+                _logger,
+                "Erro ao enviar notificação SignalR para admins"
+            );
         }
     }
 }

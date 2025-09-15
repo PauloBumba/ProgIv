@@ -1,6 +1,7 @@
 ﻿using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,19 @@ namespace Infrastructure.DesignTime
     {
         public UserCaseDbContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<UserCaseDbContext>();
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
 
-            // conexão local (host)
-            var connectionString = "Server=localhost;Port=3306;Database=MedicationDb;User=admin;Password=admin123;";
+            var builder = new DbContextOptionsBuilder<UserCaseDbContext>();
+            var connectionString = configuration.GetConnectionString("MySqlConnection");
 
-            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+            builder.UseMySql(connectionString,
+                ServerVersion.AutoDetect(connectionString),
+                x => x.MigrationsAssembly("Infrastructure"));
 
-            return new UserCaseDbContext(optionsBuilder.Options);
+            return new UserCaseDbContext(builder.Options);
         }
     }
 

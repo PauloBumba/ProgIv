@@ -184,7 +184,7 @@ export const Index: FC = () => {
         {/* Features Farmacêuticas */}
         <section className="mb-8 text-center reveal-card" id="funcionalidades">
           <div className="mb-5">
-            <h2 className="text-5xl font-light mb-3 text-blue-700">Funcionalidades Principais</h2>
+            <h2 className="text-5xl font-light mb-3 text-blue-700 back">Funcionalidades Principais</h2>
             <p className="text-gray-600 text-xl">Tecnologia avançada para gestão farmacêutica completa</p>
           </div>
           
@@ -241,14 +241,14 @@ export const Index: FC = () => {
             <div className="col-12 lg:col-8">
               <Card className="h-full shadow-3 border-round-xl">
                 <div className="text-center mb-4">
-                  <h2 className="text-4xl font-light mb-2 text-blue-700">Performance de Vendas</h2>
+                  <h2 className="text-4xl font-light mb-2 text-blue-700 ">Performance de Vendas</h2>
                   <p className="text-gray-600 text-lg">Acompanhe o faturamento mensal da farmácia</p>
                 </div>
                 <Chart 
                   type="bar" 
                   data={chartData} 
                   options={chartOptions}
-                  className="w-full"
+                  className="w-full text-center"
                 />
               </Card>
             </div>
@@ -257,14 +257,14 @@ export const Index: FC = () => {
             <div className="col-12 lg:col-4">
               <Card className="h-full shadow-3 border-round-xl">
                 <div className="text-center mb-4">
-                  <h3 className="text-2xl font-light mb-2 text-blue-700">Estoque por Categoria</h3>
+                  <h3 className="text-2xl font-light mb-2 text-blue-700 ">Estoque por Categoria</h3>
                   <p className="text-gray-600">Distribuição atual</p>
                 </div>
                 <Chart 
                   type="doughnut" 
                   data={stockData} 
                   options={pieOptions}
-                  className="w-full"
+                  className="w-full text-center" 
                 />
               </Card>
             </div>
@@ -274,7 +274,7 @@ export const Index: FC = () => {
         {/* Métricas Rápidas */}
         <section className="mb-8 reveal-card">
           <Card className="shadow-3 border-round-xl">
-            <h2 className="text-4xl font-light mb-4 text-center text-blue-700">Métricas em Tempo Real</h2>
+            <h2 className="text-4xl font-light mb-4 text-center text-blue-700 ">Métricas em Tempo Real</h2>
             <div className="grid">
               <div className="col-12 md:col-3">
                 <div className="text-center p-3 border-round bg-green-50">
@@ -309,9 +309,9 @@ export const Index: FC = () => {
         </section>
 
         {/* Depoimentos */}
-        <section className="text-center reveal-card" id="depoimentos">
+        <section className="text-center " id="depoimentos">
           <div className="mb-5">
-            <h2 className="text-5xl font-light mb-3 text-blue-700">Depoimentos</h2>
+            <h2 className="text-5xl font-light mb-3 text-blue-700 back">Depoimentos</h2>
             <p className="text-gray-600 text-xl">O que dizem os farmacêuticos que usam nossa plataforma</p>
           </div>
           <Depoimentos />
@@ -320,7 +320,7 @@ export const Index: FC = () => {
         {/* Call to Action Final */}
         <section className="text-center mt-8 p-6 bg-gradient-to-r from-blue-500 to-green-500 border-round-2xl">
           <div >
-            <h2 className="text-4xl font-light mb-3">Pronto para transformar sua farmácia?</h2>
+            <h2 className="text-4xl font-light mb-3 ">Pronto para transformar sua farmácia?</h2>
             <p className="text-xl mb-5 opacity-90">Junte-se a mais de 1.500 farmácias que já confiam no Código Farmacêutico</p>
             <div className="flex flex-wrap gap-3 justify-content-center">
               <Button 

@@ -10,6 +10,7 @@ namespace Application.Services
         public interface IUserContextService
         {
             string GetUserId();
+           string GetUserEmail();
         }
     
 }

@@ -76,7 +76,7 @@ export const Login: FC = () => {
   
 
   return (
-    <div className="flex justify-content-center align-items-center">
+    <div className="flex justify-content-center align-items-center border">
       <form
         onSubmit={handleLogin}
         className="card border-2 p-5 border-round-2xl layouts border-bottom-2 form-login shadow-8 glass"

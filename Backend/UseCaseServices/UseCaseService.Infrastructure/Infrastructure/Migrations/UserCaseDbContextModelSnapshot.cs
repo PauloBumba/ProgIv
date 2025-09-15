@@ -62,14 +62,16 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Address");
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("Domain.Entities.Medication", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("bigint");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -99,18 +101,23 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.MedicationHistory", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("bigint");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<Guid>("MedicationId")
-                        .HasColumnType("char(36)");
+                    b.Property<long>("MedicationId")
+                        .HasColumnType("bigint");
 
-                    b.Property<string>("Note")
+                    b.Property<string>("Notes")
                         .HasColumnType("longtext");
+
+                    b.Property<long>("ScheduleId")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("TakenAt")
                         .HasColumnType("datetime(6)");
@@ -122,14 +129,18 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("MedicationId");
 
+                    b.HasIndex("ScheduleId");
+
                     b.ToTable("MedicationHistories");
                 });
 
             modelBuilder.Entity("Domain.Entities.MedicationSchedule", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("bigint");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<bool>("Enabled")
                         .HasColumnType("tinyint(1)");
@@ -137,8 +148,8 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<Guid>("MedicationId")
-                        .HasColumnType("char(36)");
+                    b.Property<long>("MedicationId")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("RepeatIntervalDays")
                         .HasColumnType("int");
@@ -149,9 +160,20 @@ namespace Infrastructure.Migrations
                     b.Property<TimeSpan>("TimeOfDay")
                         .HasColumnType("time(6)");
 
+                    b.Property<string>("UserEntitiesId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("MedicationId");
+
+                    b.HasIndex("UserEntitiesId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("MedicationSchedules");
                 });
@@ -434,7 +456,15 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.MedicationSchedule", "Schedule")
+                        .WithMany("Histories")
+                        .HasForeignKey("ScheduleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Medication");
+
+                    b.Navigation("Schedule");
                 });
 
             modelBuilder.Entity("Domain.Entities.MedicationSchedule", b =>
@@ -445,7 +475,19 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.UserEntities", null)
+                        .WithMany("ExpenseRequests")
+                        .HasForeignKey("UserEntitiesId");
+
+                    b.HasOne("Domain.Entities.UserEntities", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Medication");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Entities.PasswordResetCode", b =>
@@ -517,9 +559,16 @@ namespace Infrastructure.Migrations
                     b.Navigation("Schedules");
                 });
 
+            modelBuilder.Entity("Domain.Entities.MedicationSchedule", b =>
+                {
+                    b.Navigation("Histories");
+                });
+
             modelBuilder.Entity("Domain.Entities.UserEntities", b =>
                 {
                     b.Navigation("Addresses");
+
+                    b.Navigation("ExpenseRequests");
 
                     b.Navigation("Medications");
 

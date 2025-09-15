@@ -49,6 +49,7 @@ export const HomePage = () => {
         const medicinesRes = await medicationService.getAll();
         const medicines = medicinesRes.data?.data  || medicinesRes.data || [];
         setTotalMedicines(medicines.length);
+        console.log("Medicamentos carregados:", medicines);
 
         const lowStock = medicines.filter((med: any) => med.stock < 10).length;
         setLowStockItems(lowStock);
@@ -64,7 +65,8 @@ export const HomePage = () => {
         const usersRes = await userService.getAllUsers();
         const users = usersRes.data?.data || usersRes.data || [];
         const customers = users.filter((user: any) => user.role === 'customer' || user.role === 'cliente');
-        setActiveCustomers(customers.length);
+       
+        setActiveCustomers(users.length);
 
         // Configurar gráficos
         setupChartData(medicines);
@@ -127,7 +129,7 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0062A8 0%, #00C896 100%)', padding: '1rem' }}>
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0062A8 0%, #00C896 100%)' }}>
       
       {error && <Message severity="error" text={error} className="mb-4" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }} />}
 
@@ -150,27 +152,23 @@ export const HomePage = () => {
       </Card>
 
       {/* Cards de Métricas */}
-      <div className="grid mb-4">
-        <div className="col-12 md:col-6 lg:col-3">
+      <div className=" grid formgrid  mb-4">
+        <div className="field col-12 md:col-6 lg:col-3">
           <Card className="text-center shadow-3 h-full" style={{ backgroundColor: 'rgba(0, 200, 150, 0.95)', color: 'white' }}>
             <i className="pi pi-heart text-4xl mb-2"></i>
             <h3 className="text-2xl font-bold mb-1">{totalMedicines.toLocaleString()}</h3>
             <p className="text-sm opacity-90 m-0">Medicamentos</p>
           </Card>
         </div>
-        <div className="col-12 md:col-6 lg:col-3">
+        <div className="field  col-12 md:col-6 lg:col-3">
           <Card className="text-center shadow-3 h-full" style={{ backgroundColor: 'rgba(0, 176, 133, 0.95)', color: 'white' }}>
             <i className="pi pi-users text-4xl mb-2"></i>
             <h3 className="text-2xl font-bold mb-1">{activeCustomers.toLocaleString()}</h3>
             <p className="text-sm opacity-90 m-0">Clientes Ativos</p>
           </Card>
         </div>
-      </div>
-
-      {/* Cards de Alertas */}
-      <div className="grid mb-4">
-        <div className="col-12 md:col-6 lg:col-3">
-          <Card className="shadow-3" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
+        <div className="field   col-12 md:col-6 lg:col-3">
+          <Card className="shadow-3  h-full" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
             <div className="flex justify-content-between align-items-center">
               <div>
                 <h4 className="text-orange-600 mb-2">Estoque Baixo</h4>
@@ -181,8 +179,8 @@ export const HomePage = () => {
             <ProgressBar value={totalMedicines ? (lowStockItems / totalMedicines) * 100 : 0} className="mt-3" style={{ height: '6px' }} />
           </Card>
         </div>
-        <div className="col-12 md:col-6 lg:col-3">
-          <Card className="shadow-3" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
+        <div className="field   col-12 md:col-6 lg:col-3">
+          <Card className="shadow-3  h-full" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
             <div className="flex justify-content-between align-items-center">
               <div>
                 <h4 className="text-red-600 mb-2">Vencimento Próximo</h4>
@@ -195,27 +193,37 @@ export const HomePage = () => {
         </div>
       </div>
 
-      {/* Gráficos */}
-      <div className="grid">
-        <div className="col-12 lg:6">
-          <Card className="shadow-3" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
-            <h4 className="mb-3" style={{ color: '#003F7D' }}>Evolução dos Medicamentos</h4>
-            <Chart type="bar" data={salesData} options={chartOptions} />
-          </Card>
-        </div>
-        <div className="col-12 lg:6">
-          <Card className="shadow-3" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
-            <h4 className="mb-3" style={{ color: '#003F7D' }}>Status do Estoque</h4>
-            <Chart type="doughnut" data={stockData} options={pieOptions} />
-          </Card>
-        </div>
-        <div className="col-12 lg:6 mt-4">
-          <Card className="shadow-3" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
-            <h4 className="mb-3" style={{ color: '#003F7D' }}>Categorias de Medicamentos</h4>
-            <Chart type="pie" data={categoryData} options={pieOptions} />
-          </Card>
-        </div>
+      {/* Cards de Alertas */}
+      <div className=" mb-4">
+        
       </div>
+
+      {/* Gráficos */}
+     <div className="grid col-12 formgrid mr-0 ml-0 mb-4 mt-3">
+  <div className="col-12 md:col-6 lg:col-4">
+    <Card className="shadow-3 h-full" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
+      <h4 className="mb-3" style={{ color: '#003F7D' }}>Evolução dos Medicamentos</h4>
+      <Chart type="bar" data={salesData} options={chartOptions} />
+    </Card>
+  </div>
+
+  <div className="col-12 md:col-6 lg:col-4">
+    <Card className="shadow-3 h-full" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
+      <h4 className="mb-3" style={{ color: '#003F7D' }}>Status do Estoque</h4>
+      <Chart type="doughnut" data={stockData} options={pieOptions} />
+    </Card>
+  </div>
+
+  <div className="col-12 md:col-6 lg:col-4">
+    <Card className="shadow-3 h-full" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
+      <h4 className="mb-3" style={{ color: '#003F7D' }}>Categorias de Medicamentos</h4>
+      <Chart type="pie" data={categoryData} options={pieOptions} />
+    </Card>
+  </div>
+</div>
+
+
+
 
       <Toast ref={toast} />
     </div>

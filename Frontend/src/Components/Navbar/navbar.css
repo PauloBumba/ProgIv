@@ -102,6 +102,12 @@ color: #f3f4f69e !important;
    
     
 }
+
+label {
+    
+   
+    color: var(--Branco-Puro);
+}
 .p-button-mobile
 {
     background-color: #D4AF37;

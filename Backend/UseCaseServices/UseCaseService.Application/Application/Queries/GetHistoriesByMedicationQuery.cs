@@ -11,9 +11,9 @@ namespace Application.Queries
 {
     public class GetHistoriesByMedicationQuery : IRequest<EnvelopResponse<List<MedicationHistory>>>
     {
-        public Guid MedicationId { get; }
+        public long MedicationId { get; }
 
-        public GetHistoriesByMedicationQuery(Guid medicationId)
+        public GetHistoriesByMedicationQuery(long medicationId)
         {
             MedicationId = medicationId;
         }

@@ -4,11 +4,11 @@ namespace Domain.Entities
 {
     public class MedicationHistory
     {
-        public Guid Id { get; set; }
-        public Guid MedicationId { get; set; }
+        public long Id { get; set; }
+        public long MedicationId { get; set; } // Atualizado de Guid para long
         public Medication? Medication { get; set; }
 
-        public Guid ScheduleId { get; set; }   // Relaciona com o schedule
+        public long ScheduleId { get; set; }   // Relaciona com o schedule
         public MedicationSchedule? Schedule { get; set; }
 
         public bool WasTaken { get; set; } = false;
