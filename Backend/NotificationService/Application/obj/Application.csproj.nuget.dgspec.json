@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Application\\Application.csproj": {}
+    "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Application\\Application.csproj": {
+    "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Application\\obj\\",
+        "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\paulo.bumba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulo.bumba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,17 +32,17 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj"
+              "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj"
+              "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj": {
+                "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj"
               },
-              "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj"
+              "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj": {
+                "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj"
               },
-              "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj"
+              "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj": {
+                "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj"
               }
             }
           }
@@ -57,7 +57,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -78,24 +78,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj": {
+    "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\paulo.bumba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulo.bumba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -110,8 +110,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj"
+              "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj": {
+                "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj"
               }
             }
           }
@@ -126,7 +126,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -147,24 +147,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj": {
+    "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj",
+        "projectUniqueName": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj",
         "projectName": "Infrastruture",
-        "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj",
-        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Infrastruture\\obj\\",
+        "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Infrastruture\\Infrastruture.csproj",
+        "packagesPath": "C:\\Users\\paulo.bumba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Infrastruture\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulo.bumba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -179,11 +179,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj"
+              "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj"
+              "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj": {
+                "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj"
               }
             }
           }
@@ -198,7 +198,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -219,24 +219,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj": {
+    "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj",
+        "projectUniqueName": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj",
         "projectName": "References",
-        "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\References.csproj",
-        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\NotificationService\\References\\obj\\",
+        "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\References.csproj",
+        "packagesPath": "C:\\Users\\paulo.bumba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\NotificationService\\References\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulo.bumba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -263,7 +263,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -314,24 +314,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj": {
+    "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj",
         "projectName": "Shared.Contracts",
-        "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj",
-        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo\\Documents\\GitHub\\ProgIv\\Backend\\Shared.Contracts\\obj\\",
+        "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\Shared.Contracts.csproj",
+        "packagesPath": "C:\\Users\\paulo.bumba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\Shared.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulo.bumba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -358,7 +358,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -379,7 +379,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
