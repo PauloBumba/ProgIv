@@ -19,11 +19,11 @@ export const SocialLoginButton: FC<SocialLoginButtonProps> = ({
 }) => {
   
   const handleSocialLogin = () => {
-    const returnUrl = `${FRONTEND_URL}/callback`;
+    const returnUrl = `${FRONTEND_URL}/Auth/callback`;
     const loginUrl =
       provider === "Google"
         ? `${BACKEND_URL}/auth/login?provider=Google&returnUrl=${encodeURIComponent(returnUrl)}`
-        : `${BACKEND_URL}/api/ExtraLogin/facebook?returnUrl=${encodeURIComponent(returnUrl)}`;
+        : `${BACKEND_URL}/auth/login?provider=Facebook&returnUrl=${encodeURIComponent(returnUrl)}`;
     window.location.href = loginUrl;
   };
 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Infrastructure.DesignTime
 {
     public class UserCaseDbContextFactory : IDesignTimeDbContextFactory<UserCaseDbContext>

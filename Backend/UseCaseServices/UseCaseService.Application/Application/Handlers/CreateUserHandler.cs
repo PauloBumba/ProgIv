@@ -65,7 +65,7 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, UserEntities
         await _userManager.AddToRoleAsync(user, register.Role);
 
         Console.WriteLine($"Publicando CreateUserEvents: Email={user.Email}, FullName={user.FullName}");
-        await _publisher.Publish(new Shared.Contracts.Events.CreateUserEvents
+        await _publisher.Publish(new CreateUserEvents
         {
             Email = user.Email,
             FullName = user.FullName,

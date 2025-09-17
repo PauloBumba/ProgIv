@@ -14,9 +14,7 @@ namespace Web.Extensions
             if (!configResult.isSuccess)
             {
                 Console.WriteLine($"[WARN] Configuração do Google inválida: {configResult.Message}");
-                // Aqui você pode disparar algum evento, ou colocar um flag, ou outro mecanismo
-                // para depois algum serviço de notificação avisar o time ou o usuário.
-                return services; // continua sem o Google
+                return services;
             }
 
             var googleConfig = configResult.Data!;
@@ -26,13 +24,45 @@ namespace Web.Extensions
                 {
                     options.ClientId = googleConfig.ClientId;
                     options.ClientSecret = googleConfig.ClientSecret;
+
+                    // ⚡ Callback alinhado com nosso controller
                     options.CallbackPath = "/signin-google";
+
+                    // Claims
                     options.ClaimActions.MapJsonKey(ClaimTypes.Name, "name");
                     options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+                    options.ClaimActions.MapJsonKey(ClaimTypes.GivenName, "given_name");
+                    options.ClaimActions.MapJsonKey(ClaimTypes.Surname, "family_name");
+                    options.ClaimActions.MapJsonKey("picture", "picture");
                 });
+            var facebookResult = AuthConfigHelper.ValidateFacebookConfig(configuration);
+
+            if (!facebookResult.isSuccess)
+            {
+                Console.WriteLine($"[WARN] Configuração do Facebook inválida: {facebookResult.Message}");
+            }
+            else
+            {
+                var facebookConfig = facebookResult.Data!;
+
+                services.AddAuthentication()
+                    .AddFacebook(options =>
+                    {
+                        options.AppId = facebookConfig.AppId;
+                        options.AppSecret = facebookConfig.AppSecret;
+
+                        // ⚡ importante: alinhado com seu controller de callback
+                        options.CallbackPath = "/signin-facebook";
+
+                        // Claims extras
+                        options.Fields.Add("email");
+                        options.Fields.Add("name");
+                        options.Fields.Add("picture");
+                    });
+            }
+
 
             return services;
         }
-
     }
 }

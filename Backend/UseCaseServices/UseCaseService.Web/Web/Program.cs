@@ -116,9 +116,6 @@ using (var scope = app.Services.CreateScope())
 
     db.SaveChanges();
     var services = scope.ServiceProvider;
-    var adminInitializer = services.GetRequiredService<IAdminServices>();
-
-    await adminInitializer.CreateAdmin();
 }
 using (var scope = app.Services.CreateScope())
 {

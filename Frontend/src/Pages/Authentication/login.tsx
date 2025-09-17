@@ -75,6 +75,7 @@ const handleLogin = async (e: React.FormEvent) => {
           <div>
           <div className="flex justify-content-center mt-4">
           <SocialLoginButton icon="pi pi-google" provider="Google" severity="danger" />
+          <SocialLoginButton icon="pi pi-facebook" provider="Facebook" severity="info" />
            
           </div>
 

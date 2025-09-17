@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\References.csproj": {}
+    "C:\\Users\\paulo.bumba\\Desktop\\Prog\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\References.csproj": {}
   },
   "projects": {
-    "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\References.csproj": {
+    "C:\\Users\\paulo.bumba\\Desktop\\Prog\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\References.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\References.csproj",
+        "projectUniqueName": "C:\\Users\\paulo.bumba\\Desktop\\Prog\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\References.csproj",
         "projectName": "References",
-        "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\References.csproj",
+        "projectPath": "C:\\Users\\paulo.bumba\\Desktop\\Prog\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\References.csproj",
         "packagesPath": "C:\\Users\\paulo.bumba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo.bumba\\Desktop\\ProgIv\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\obj\\",
+        "outputPath": "C:\\Users\\paulo.bumba\\Desktop\\Prog\\ProgIv\\Backend\\UseCaseServices\\UseCaseService.References\\References\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -62,9 +62,13 @@
               "target": "Package",
               "version": "[11.1.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.Facebook": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[9.0.9, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -72,17 +76,11 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.8, )"
+              "version": "[9.0.9, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.8, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.8, )"
+              "version": "[9.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

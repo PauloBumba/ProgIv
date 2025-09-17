@@ -387,7 +387,7 @@
   {
     "ContainingType": "BackEnd.Controllers.AuthController",
     "Method": "ExternalLoginCallback",
-    "RelativePath": "auth/Externallogincallback",
+    "RelativePath": "auth/ExternalLoginCallback",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -408,7 +408,7 @@
   {
     "ContainingType": "BackEnd.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "auth/Login",
+    "RelativePath": "auth/login",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -417,8 +417,23 @@
         "Name": "provider",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "returnUrl",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackEnd.Controllers.AuthController",
+    "Method": "GetCurrentUser",
+    "RelativePath": "auth/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

@@ -18,9 +18,9 @@ import { ForgotToPassordSucess } from "../Pages/Authentication/Forgot-Sucess";
 import { RecoverToPassordSucess } from "../Pages/Authentication/Recover-sucess";
 import { Suport } from "../Pages/Common/suport";
 import AccessDenied from "../Pages/Authentication/AccessDenied";
-import PasswordRecoveryOTP from "../Pages/Authentication/ConfirmPassword";
 
-// Páginas privadas
+import PasswordRecoveryOTP from "../Pages/Authentication/ConfirmPassword";
+import { AuthCallback } from "../Pages/Authentication/AuthCallback";
 import { Profile } from "../Pages/Painel/profile";
 import { HomePage } from "../Pages/Painel/homepage";
 import { GenericList } from "../Pages/Painel/Medications/MedicationsList";
@@ -67,6 +67,7 @@ export const AppRouter: FC = () => {
           <Route path="reset-sucess" element={<RecoverToPassordSucess />} />
           <Route path="otp" element={<PasswordRecoveryOTP />} />
           <Route path="suport" element={<Suport />} />
+          <Route path="Auth/callback" element ={<AuthCallback/>} />
           <Route path="acesso-negado" element={<AccessDenied />} />
           <Route path="usuarios/criar" element={<CriarUsuarioPage />} />
           <Route path="*" element={<Navigate to="/acesso-negado" replace />} />

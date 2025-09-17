@@ -1,12 +1,10 @@
-﻿
-using Application.Security;
+﻿using Application.Security;
 using Application.Interface;
 using Domain.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BackEnd.Controllers
 {
@@ -17,77 +15,139 @@ namespace BackEnd.Controllers
         private readonly UserManager<UserEntities> _userManager;
         private readonly SignInManager<UserEntities> _signInManager;
         private readonly IJwyServices _securityValue;
+        private readonly ILogger<AuthController> _logger;
 
-        public AuthController(UserManager<UserEntities> userManager, SignInManager<UserEntities> signInManager, IJwyServices securityValue)
+        public AuthController(
+            UserManager<UserEntities> userManager,
+            SignInManager<UserEntities> signInManager,
+            IJwyServices securityValue,
+            ILogger<AuthController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _securityValue = securityValue;
+            _logger = logger;
         }
 
-
-        // Inicia o login externo, por exemplo, com Google, Facebook, etc.
-        [HttpGet("Login")]
-        public IActionResult Login(string provider)
+        [HttpGet("login")]
+        public IActionResult Login(string provider, string? returnUrl = null)
         {
-            var redirectUrl = Url.Action("ExternalLoginCallback", "Auth");
+            returnUrl ??= "https://localhost:5173/Auth/callback";
+            var redirectUrl = Url.Action("ExternalLoginCallback", "Auth", new { returnUrl });
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
             return Challenge(properties, provider);
         }
 
-        // Retorna a resposta após o login externo ser feito
-        [HttpGet("Externallogincallback")]
+        [HttpGet("ExternalLoginCallback")]
         public async Task<IActionResult> ExternalLoginCallback(string? returnUrl = null, string? remoteError = null)
         {
-            // Define o URL de retorno padrão se não for informado
-            returnUrl = returnUrl ?? "http://localhost:5173/Auth/callback";
+            returnUrl ??= "https://localhost:5173/Auth/callback";
 
-            // Se houver erro remoto, redireciona com o erro
-            if (remoteError != null)
+            try
             {
-                return Redirect($"{returnUrl}?error={Uri.EscapeDataString(remoteError)}");
+                if (!string.IsNullOrEmpty(remoteError))
+                {
+                    _logger.LogWarning("Login externo retornou erro: {Error}", remoteError);
+                    return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString(remoteError)}");
+                }
+
+                var info = await _signInManager.GetExternalLoginInfoAsync();
+                if (info == null)
+                {
+                    _logger.LogWarning("Login externo info retornou null");
+                    return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString("Login externo inválido")}");
+                }
+
+                var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: true);
+                UserEntities user;
+
+                if (result.Succeeded)
+                {
+                    user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey)
+                           ?? throw new Exception("Usuário não encontrado após login externo");
+                    _logger.LogInformation("Usuário existente logado via {Provider}: {Email}", info.LoginProvider, user.Email);
+                }
+                else
+                {
+                    var email = info.Principal?.FindFirstValue(ClaimTypes.Email);
+                    var name = info.Principal?.FindFirstValue(ClaimTypes.Name) ?? "Usuário";
+
+                    if (string.IsNullOrEmpty(email))
+                    {
+                        _logger.LogWarning("{Provider} não forneceu email", info.LoginProvider);
+                        return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString($"{info.LoginProvider} não forneceu email")}");
+                    }
+
+                    // Verifica se usuário já existe
+                    var existingUser = await _userManager.FindByEmailAsync(email);
+                    if (existingUser != null)
+                    {
+                        // Vincula login externo, se ainda não estiver vinculado
+                        var logins = await _userManager.GetLoginsAsync(existingUser);
+                        if (!logins.Any(l => l.LoginProvider == info.LoginProvider && l.ProviderKey == info.ProviderKey))
+                        {
+                            await _userManager.AddLoginAsync(existingUser, info);
+                            _logger.LogInformation("Login externo vinculado a usuário existente: {Email}", email);
+                        }
+
+                        await _signInManager.SignInAsync(existingUser, isPersistent: false);
+                        _logger.LogInformation("Usuário existente logado via {Provider}: {Email}", info.LoginProvider, email);
+
+                        return Redirect(Uri.EscapeDataString(returnUrl));
+                    }
+
+                    // Se não existe, cria novo usuário
+                    user = new UserEntities
+                    {
+                        UserName = email,
+                        Email = email,
+                        FullName = name,
+                        EmailConfirmed = true
+                    };
+
+                    var createResult = await _userManager.CreateAsync(user);
+                    if (!createResult.Succeeded)
+                    {
+                        _logger.LogError("Falha ao criar usuário {Email}: {Errors}", email, string.Join(", ", createResult.Errors.Select(e => e.Description)));
+                        return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString("Erro ao criar usuário")}");
+                    }
+
+                    await _userManager.AddLoginAsync(user, info);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    _logger.LogInformation("Novo usuário criado e logado via {Provider}: {Email}", info.LoginProvider, email);
+                }
+
+
+                return Redirect(returnUrl);
             }
-
-            var info = await _signInManager.GetExternalLoginInfoAsync();
-            if (info == null)
+            catch (Exception ex)
             {
-                return Redirect($"{returnUrl}?error=Erro+ao+obter+informações+de+login+externo");
+                _logger.LogError(ex, "Erro no callback de login externo");
+                return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString("Erro ao processar login externo")}");
             }
-
-            var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: true);
-            if (result.Succeeded)
-            {
-                // Login bem-sucedido: gere o JWT aqui
-                var existingUser = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey);
-
-                var jwt = await _securityValue.GerarJwtAsync(existingUser); // Gerar o JWT do usuário existente
-                return Redirect($"{returnUrl}?token={Uri.EscapeDataString(jwt)}"); // Codificar o token na URL
-            }
-
-            // Usuário não existe, cria um novo usuário
-            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-            var name = info.Principal.FindFirstValue(ClaimTypes.Name);
-            // Tenta pegar a data de nascimento
-
-            var newUser = new UserEntities
-            {
-                UserName = email,
-                Email = email,
-                FullName = name,
-                EmailConfirmed = true
-            };
-
-            var createResult = await _userManager.CreateAsync(newUser);
-            if (!createResult.Succeeded)
-            {
-                return Redirect($"{returnUrl}?error=Erro+ao+criar+usuário");
-            }
-
-            await _userManager.AddLoginAsync(newUser, info);
-            await _signInManager.SignInAsync(newUser, isPersistent: false);
-
-            var jwtNovo = await _securityValue.GerarJwtAsync(newUser); // Gerar o JWT para o novo usuário
-            return Redirect($"{returnUrl}?token={Uri.EscapeDataString(jwtNovo)}"); // Codificar o token na URL
         }
+        [AllowAnonymous]
+        [HttpGet("me")]
+public async Task<IActionResult> GetCurrentUser()
+{
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    if (string.IsNullOrEmpty(userId))
+        return Unauthorized();
+
+    var user = await _userManager.FindByIdAsync(userId);
+    if (user == null)
+        return NotFound();
+
+    var roles = await _userManager.GetRolesAsync(user);
+
+    return Ok(new
+    {
+        id = user.Id,
+        email = user.Email,
+        fullName = user.FullName,
+        roles
+    });
+}
+
     }
 }

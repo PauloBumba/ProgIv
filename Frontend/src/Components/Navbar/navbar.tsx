@@ -21,14 +21,21 @@ export const Navbar= () => {
  
     // Rola até a seção quando o hash da URL mudar
     useEffect(() => {
-        if (location.hash) {
+        // Limpa o hash do Facebook (#_=_)
+        if (window.location.hash === '#_=_') {
+            window.history.replaceState(null, '', window.location.pathname + window.location.search);
+            return; // sai do efeito, nada de querySelector
+        }
+    
+        // Só rola se o hash for um ID válido (começa com # seguido de letras, números ou underscore)
+        if (location.hash && /^#[\w-]+$/.test(location.hash)) {
             const section = document.querySelector(location.hash);
             if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
             }
         }
     }, [location]);
-
+    
     // Função para rolar até a seção ou navegar antes
     const handleScrollToSection = (id: string) => {
         if (location.pathname === "/") {

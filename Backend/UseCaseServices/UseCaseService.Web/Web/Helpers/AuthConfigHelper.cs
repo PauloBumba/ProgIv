@@ -16,5 +16,17 @@ namespace Web.Helpers
 
             return EnvelopResponse<ExtraLoginTyping>.Success(googleConfig);
         }
+        public static EnvelopResponse<FacebookTyping> ValidateFacebookConfig(IConfiguration configuration)
+        {
+            var fbConfig = configuration.GetSection("FacebookConfig").Get<FacebookTyping>();
+
+            if (fbConfig == null || string.IsNullOrEmpty(fbConfig.AppId) || string.IsNullOrEmpty(fbConfig.AppSecret))
+            {
+                return EnvelopResponse<FacebookTyping>.Failure("Erro ao configurar o Facebook. Verifique o appsettings.json.");
+            }
+
+            return EnvelopResponse<FacebookTyping>.Success(fbConfig);
+        }
+
     }
 }

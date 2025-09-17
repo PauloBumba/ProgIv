@@ -1,40 +1,27 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { loginExternal } from "../../Reducers/UserReducer";
-import { useNavigate, useLocation } from "react-router-dom";
-import type { AppDispatch } from "../../Store/StoreReducer";
+import { useNavigate } from "react-router-dom";
+import { api } from "../../Api/api";
+import { setUser } from "../../Reducers/ExtraloginReducer";
 
 export const AuthCallback = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const token = params.get("token");
-
-    if (!token) {
-      navigate("/login");
-      return;
-    }
-
-    const login = async () => {
+    const fetchUser = async () => {
       try {
-        const resultAction = await dispatch(loginExternal(token) as any);
-        if (loginExternal.fulfilled.match(resultAction)) {
-          navigate("/dashboard");
-        } else {
-          console.error("Erro no login externo:", resultAction.payload);
-          navigate("/login");
-        }
+        const res = await api.get("https://localhost:7184/auth/me"); // pega usuário logado
+        dispatch(setUser(res.data)); // salva no Redux
+        navigate("/dashboard"); // redireciona
       } catch (err) {
-        console.error(err);
-        navigate("/login");
+        console.error("Erro ao buscar usuário:", err);
+        navigate("/login"); // se falhar, volta para login
       }
     };
 
-    login();
-  }, [dispatch, location, navigate]);
+    fetchUser();
+  }, []);
 
-  return <div>Processando login...</div>;
+  return <div>Carregando...</div>;
 };
