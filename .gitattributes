@@ -1,65 +1,45 @@
 # =============================
+# Normalização de finais de linha
+# =============================
+* text=auto eol=lf
+
+# =============================
 # BACKEND (.NET / Visual Studio)
 # =============================
+*.cs     text diff=csharp
+*.sln    text eol=crlf
+*.csproj text eol=crlf
+*.vbproj text eol=crlf
+*.fsproj text eol=crlf
 
-# Ignorar pastas bin/ e obj/ em qualquer nível
-**/[Bb]in/
-**/[Oo]bj/
+# Binários
+*.dll    binary
+*.exe    binary
+*.pdb    binary
 
-# Arquivos gerados pelo Visual Studio
-.vs/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
+# =============================
+# FRONTEND (Node.js / React / Vite)
+# =============================
+*.js     text diff=javascript
+*.ts     text diff=typescript
+*.jsx    text
+*.tsx    text
+*.json   text
+*.css    text
+*.scss   text
+*.html   text
+*.md     text
 
-# Logs e builds
-*.log
-*.pdb
-*.cache
-*.dbmdl
-*.db
+# Imagens → sempre binário
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.svg    text
 
-# Arquivos temporários
-*.tmp
-*.bak
-*.old
-
-# Diretórios de publicação
-publish/
-out/
-
-# ===============
-# FRONTEND (Node.js / React / Yarn / Vite)
-# ===============
-
-# Dependências
-node_modules/
-.pnp/
-.pnp.js
-
-# Produção
-/build
-/dist
-
-# Testes
-/coverage
-
-# Arquivos de ambiente
-.env
-.env.*
-!.env.example
-
-# Logs do NPM/Yarn
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# macOS
-.DS_Store
-
-# Windows
-Thumbs.db
-ehthumbs.db
-# Auto detect text files and perform LF normalization
-* text=auto
+# =============================
+# Outros
+# =============================
+*.sh     text eol=lf
+*.bat    text eol=crlf
