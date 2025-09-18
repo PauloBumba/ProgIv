@@ -1,4 +1,4 @@
-import {type FC, useState } from "react";
+import {type FC, useEffect, useState } from "react";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../../Root/RootReducer";
 
 import { SocialLoginButton } from "../../Utils/SocialLoginButton";
+import CookieConsent from "../../Hook/CookieConsent";
 
 
 export const Login: FC = () => {
@@ -30,7 +31,13 @@ export const Login: FC = () => {
   const dispatch = useDispatch();
 
   const lastPath = useSelector((state: RootState) => state.route.lastPath) || "/dashboard";
-
+  useEffect(() => {
+    const aceito = localStorage.getItem("cookieAceito");
+    if (aceito === "true") {
+      setCookieAccepted(true);
+      setRememberMe(true); // já marca lembrar de mim
+    }
+  }, []);
 const handleLogin = async (e: React.FormEvent) => {
   e.preventDefault();
   show();
@@ -118,11 +125,16 @@ const handleLogin = async (e: React.FormEvent) => {
           </div>
           <div className="text-center mb-3">
             <div className="my-3 flex align-items-center justify-content-center">
-              <InputSwitch
-               readOnly
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.value)}
-              />
+            <InputSwitch
+  checked={rememberMe}
+  onChange={(e) => {
+    setRememberMe(e.value);
+    if (!e.value) {
+      setCookieAccepted(false); // 👈 volta o banner de cookie
+    }
+  }}
+/>
+
               <label className="mt-2 ml-2 nav">Lembrar de mim</label>
             </div>
             <div>
@@ -142,6 +154,23 @@ const handleLogin = async (e: React.FormEvent) => {
           <h3>Não tem uma conta?</h3>
           <Link to="/usuarios/criar" className="underline nav">Cadastre-se</Link>
         </div>
+      
+        <CookieConsent
+  onAccept={() => {
+    localStorage.setItem("cookieAceito", "true");
+    setCookieAccepted(true);
+    setRememberMe(true);
+    toast.current?.show({
+      severity: "info",
+      summary: "Cookie aceito",
+      detail: "O 'Lembrar de mim' foi ativado automaticamente.",
+      life: 4000,
+    });
+  }}
+/>
+
+ 
+
       </form>
     </div>
   );
