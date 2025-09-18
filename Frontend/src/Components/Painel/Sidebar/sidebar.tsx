@@ -5,7 +5,8 @@ import { PanelMenu } from "primereact/panelmenu";
 import "./sidebar.css";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../Reducers/UserReducer";
-
+import { logout as logoutExtra } from "../../../Reducers/ExtraloginReducer";
+import { api } from "../../../Api/api";
 type SidebarProps = {
   isCollapsed: boolean;
   setHovered: (value: boolean) => void;
@@ -17,6 +18,20 @@ export default function Sidebar({ isCollapsed, setHovered, medicationId }: Sideb
   const dispatch = useDispatch();
   const isExpanded = !isCollapsed;
 
+
+  const handleLogout = async () => {
+    try {
+      await api.post('/authentication/logout'); // chama seu endpoint do backend
+    } catch (err) {
+      console.error("Erro ao deslogar:", err);
+    } finally {
+      localStorage.clear();
+      dispatch(logoutExtra());
+      dispatch(logout());
+      navigate("/login");
+    }
+  };
+  
   // Menu principal
   const mainMenu = [
     { label: "Dashboard", icon: "pi pi-home", command: () => navigate("/dashboard") },
@@ -37,9 +52,7 @@ export default function Sidebar({ isCollapsed, setHovered, medicationId }: Sideb
   const bottomActions = [
     { label: "Perfil", icon: "pi pi-user", command: () => navigate("/profile") },
     { label: "Sair", icon: "pi pi-sign-out", command: () => { 
-      localStorage.clear();
-      navigate("/login")
-      dispatch(logout())
+     handleLogout()
     }},
   ];
 

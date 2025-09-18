@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import type { RootState } from "../../Root/RootReducer";
 import { api } from "../../Api/api";
 import { logout } from "../../Reducers/UserReducer";
-
+import { logout as logoutExtra } from "../../Reducers/ExtraloginReducer";
 export const Navbar= () => {
      const navigate = useNavigate();
      const location = useLocation(); 
@@ -49,6 +49,7 @@ export const Navbar= () => {
         console.log(response.data)
         
         dispatch(logout());  
+        dispatch(logoutExtra());
         navigate("/login"); 
     };
     const items = [

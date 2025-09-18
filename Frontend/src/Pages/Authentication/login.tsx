@@ -14,11 +14,6 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../../Root/RootReducer";
 
 import { SocialLoginButton } from "../../Utils/SocialLoginButton";
-// Constants
-
-
-
-
 
 
 export const Login: FC = () => {
@@ -28,7 +23,7 @@ export const Login: FC = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
- 
+  const [cookieAccepted, setCookieAccepted] = useState(false);
   
   const navigate = useNavigate();
 

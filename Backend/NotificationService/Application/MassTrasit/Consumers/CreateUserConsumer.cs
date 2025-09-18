@@ -4,7 +4,7 @@ using Infrastruture.Interface;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 using Shared.Contracts.Events;
-using Shared.Templates; // importa os templates HTML
+
 using System;
 using System.Threading.Tasks;
 
@@ -37,7 +37,7 @@ namespace Application.MassTransit.Consumers
                 throw new ArgumentException("Email e FullName não podem ser vazios.");
             }
 
-            _logger.LogInformation("Consumindo CreateUserEvents para {Email}, Role: {Role}", evt.Email, evt.Role);
+            _logger.LogInformation("Consumindo CreateUserEvents para {Email}, Role: {Role}", evt.Email);
 
             // HTML estilizado para e-mail
             var content = $@"
@@ -57,7 +57,7 @@ namespace Application.MassTransit.Consumers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erro ao enviar e-mail para {Email}, Role: {Role}", evt.Email, evt.Role);
+                _logger.LogError(ex, "Erro ao enviar e-mail para {Email}, Role: {Role}", evt.Email);
             }
 
             // Notificação simples para admins via SignalR
@@ -70,7 +70,7 @@ namespace Application.MassTransit.Consumers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erro ao notificar via SignalR para {Email}, Role: {Role}", evt.Email, evt.Role);
+                _logger.LogError(ex, "Erro ao notificar via SignalR para {Email}, Role: {Role}", evt.Email);
                 Console.WriteLine($"Erro ao enviar notificação SignalR: {ex.Message}");
             }
         }

@@ -1,6 +1,6 @@
 ﻿using Application.Interface;
 using Application.MassTransit.Consumers;
-using Application.MassTrasit.Consumers;
+
 using Application.Services;
 using Domain.Settings;
 using Infrastructure.Services;
