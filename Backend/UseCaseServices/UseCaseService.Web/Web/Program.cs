@@ -2,14 +2,10 @@
 using Application.Interface;
 using Application.Services;
 using Domain.Entities;
-using Domain.Typing;
 using Infrastructure;
 using Infrastructure.Interface;
 using Infrastructure.Persistence;
 using Infrastructure.Repository;
-using MediatR;
-using Microsoft.AspNetCore.CookiePolicy;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
@@ -17,24 +13,19 @@ using Web.Extensions;
 using Web.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
-// Detecta se está dentro do Docker (variável de ambiente opcional)
-var isDocker = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true";
 
-// Escolhe a connection string correta
+// Conexão DB
+var isDocker = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true";
 var connectionString = isDocker
-    ? builder.Configuration.GetConnectionString("MySqlConnection") // dentro do Docker
-    : "Server=localhost;Port=3306;Database=MedicationDb;User=admin;Password=admin123;"; // fora do Docker
+    ? builder.Configuration.GetConnectionString("MySqlConnection")
+    : "Server=localhost;Port=3306;Database=MedicationDb;User=admin;Password=admin123;";
 
 builder.Services.AddDbContext<UserCaseDbContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString),
         mySqlOptions =>
         {
-            mySqlOptions.EnableRetryOnFailure(
-                maxRetryCount: 10,
-                maxRetryDelay: TimeSpan.FromSeconds(5),
-                errorNumbersToAdd: null
-            );
+            mySqlOptions.EnableRetryOnFailure(10, TimeSpan.FromSeconds(5), null);
         });
 });
 
@@ -42,54 +33,26 @@ builder.Services.AddDbContext<UserCaseDbContext>(options =>
 builder.Services.AddIdentity<UserEntities, IdentityRole>()
     .AddEntityFrameworkStores<UserCaseDbContext>()
     .AddDefaultTokenProviders();
-builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession();
 
-// Configuração do Cookie de Autenticação
+// Configuração do Cookie Identity
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.Name = "MenuOnline.Auth";
     options.Cookie.HttpOnly = true;
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // HTTPS obrigatório
-    options.Cookie.SameSite = SameSiteMode.None;             // Permite cross-site cookies
+    options.Cookie.SameSite = SameSiteMode.None;             // Cross-domain
     options.LoginPath = "/auth/login";
     options.LogoutPath = "/auth/logout";
     options.AccessDeniedPath = "/auth/access-denied";
     options.ExpireTimeSpan = TimeSpan.FromHours(1);
     options.SlidingExpiration = true;
-    // Armazenamento em memória para sessões
 });
 
+// Session e cache
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
-
-// MVC e Controllers
-builder.Services.AddControllersWithViews();
-
-// SignalR
-builder.Services.AddSignalR();
-
-// Serviços customizados
-builder.Services.AddScoped<IFileStorageService, FileStorageService>();
-
-
-// Camadas da aplicação
-builder.Services.AddInfrastructureServices(builder.Configuration);
-builder.Services.AddApplicationServices();
-builder.Services.AddExternalAuthentication(builder.Configuration); // Autenticação externa (Google, etc) se precisar
-// Se UserContextService implementa IUserContextService
-
-// ou, se você tiver uma interface
-builder.Services.AddScoped<IUserContextService, UserContextService>();
-
-builder.Services.AddScoped<IMedicationRepository, MedicationRepository>();
-
-
-// JWT (se estiver usando)
-builder.Services.AddJwtExtension(builder.Configuration);
-builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection("EmailConfig"));
-builder.Services.AddTransient<ISendEmails, SendEmail>();
-
-// CORS com credenciais e origem HTTPS do React
+// CORS para React
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
@@ -101,31 +64,36 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Swagger com JWT (se usar)
+// Controllers e MVC
+builder.Services.AddControllersWithViews();
+
+// Serviços customizados
+builder.Services.AddScoped<IFileStorageService, FileStorageService>();
+builder.Services.AddScoped<IMedicationRepository, MedicationRepository>();
+builder.Services.AddScoped<IUserContextService, UserContextService>();
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
+
+builder.Services.AddExternalAuthentication(builder.Configuration); // Google, etc.
+
+
+// Swagger (opcional)
 builder.Services.AddSwaggerWithJwt();
 
 var app = builder.Build();
 
-// Criação do admin (se precisar)
+// Migrations e admin
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<UserCaseDbContext>();
-
-    // Aplica migrations
     db.Database.Migrate();
 
-    db.SaveChanges();
-    var services = scope.ServiceProvider;
-}
-using (var scope = app.Services.CreateScope())
-{
     var services = scope.ServiceProvider;
     var adminInitializer = services.GetRequiredService<IAdminServices>();
-
     await adminInitializer.CreateAdmin();
 }
-// Middlewares
 
+// Middleware pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -134,24 +102,16 @@ if (!app.Environment.IsDevelopment())
 else
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
-    });
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1"));
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
-app.UseStaticFiles(); // para wwwroot, padrão
-
-app.UseStaticFiles(); // para wwwroot, padrão
-
-// Garante que a pasta uploads existe antes de configurar os arquivos estáticos
+// Pasta uploads
 var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "uploads");
 if (!Directory.Exists(uploadsPath))
-{
     Directory.CreateDirectory(uploadsPath);
-}
 
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -163,16 +123,17 @@ app.UseRouting();
 
 app.UseCors("AllowFrontend");
 app.UseSession();
-app.UseAuthentication();
+app.UseAuthentication();  // 🔑 antes do Authorization
 app.UseAuthorization();
-
+app.UseMiddleware<AuthenticationDebugMiddleware>();
 app.UseCookiePolicy(new CookiePolicyOptions
 {
     MinimumSameSitePolicy = SameSiteMode.None,
     Secure = CookieSecurePolicy.Always,
-    HttpOnly = HttpOnlyPolicy.Always,
+    HttpOnly = Microsoft.AspNetCore.CookiePolicy.HttpOnlyPolicy.Always,
 });
 
+// Rota default
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

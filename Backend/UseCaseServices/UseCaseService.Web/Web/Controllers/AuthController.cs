@@ -1,10 +1,11 @@
-﻿using Application.Security;
-using Application.Interface;
+﻿using Application.Interface;
+using Application.Response;
+using Application.Security;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
 
 namespace BackEnd.Controllers
 {
@@ -16,17 +17,21 @@ namespace BackEnd.Controllers
         private readonly SignInManager<UserEntities> _signInManager;
         private readonly IJwyServices _securityValue;
         private readonly ILogger<AuthController> _logger;
+        private readonly IUserServices _userServices;
 
         public AuthController(
             UserManager<UserEntities> userManager,
             SignInManager<UserEntities> signInManager,
             IJwyServices securityValue,
-            ILogger<AuthController> logger)
+            ILogger<AuthController> logger,
+            IUserServices userServices
+        )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _securityValue = securityValue;
             _logger = logger;
+            _userServices = userServices;
         }
 
         [HttpGet("login")]
@@ -48,14 +53,14 @@ namespace BackEnd.Controllers
                 if (!string.IsNullOrEmpty(remoteError))
                 {
                     _logger.LogWarning("Login externo retornou erro: {Error}", remoteError);
-                    return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString(remoteError)}");
+                    return Redirect($"{returnUrl}?error={Uri.EscapeDataString(remoteError)}");
                 }
 
                 var info = await _signInManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
                     _logger.LogWarning("Login externo info retornou null");
-                    return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString("Login externo inválido")}");
+                    return Redirect($"{returnUrl}?error={Uri.EscapeDataString("Login externo inválido")}");
                 }
 
                 var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: true);
@@ -71,18 +76,19 @@ namespace BackEnd.Controllers
                 {
                     var email = info.Principal?.FindFirstValue(ClaimTypes.Email);
                     var name = info.Principal?.FindFirstValue(ClaimTypes.Name) ?? "Usuário";
+                    var picture = info.Principal?.FindFirstValue("picture"); // claim custom do Google
 
                     if (string.IsNullOrEmpty(email))
                     {
                         _logger.LogWarning("{Provider} não forneceu email", info.LoginProvider);
-                        return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString($"{info.LoginProvider} não forneceu email")}");
+                        return Redirect($"{returnUrl}?error={Uri.EscapeDataString($"{info.LoginProvider} não forneceu email")}");
                     }
 
                     // Verifica se usuário já existe
                     var existingUser = await _userManager.FindByEmailAsync(email);
                     if (existingUser != null)
                     {
-                        // Vincula login externo, se ainda não estiver vinculado
+                        // Vincula login externo se ainda não estiver
                         var logins = await _userManager.GetLoginsAsync(existingUser);
                         if (!logins.Any(l => l.LoginProvider == info.LoginProvider && l.ProviderKey == info.ProviderKey))
                         {
@@ -90,13 +96,11 @@ namespace BackEnd.Controllers
                             _logger.LogInformation("Login externo vinculado a usuário existente: {Email}", email);
                         }
 
-                        await _signInManager.SignInAsync(existingUser, isPersistent: false);
-                        _logger.LogInformation("Usuário existente logado via {Provider}: {Email}", info.LoginProvider, email);
-
-                        return Redirect(Uri.EscapeDataString(returnUrl));
+                        await AddClaimsAndSignIn(existingUser, picture);
+                        return Redirect(returnUrl);
                     }
 
-                    // Se não existe, cria novo usuário
+                    // Cria novo usuário
                     user = new UserEntities
                     {
                         UserName = email,
@@ -109,45 +113,86 @@ namespace BackEnd.Controllers
                     if (!createResult.Succeeded)
                     {
                         _logger.LogError("Falha ao criar usuário {Email}: {Errors}", email, string.Join(", ", createResult.Errors.Select(e => e.Description)));
-                        return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString("Erro ao criar usuário")}");
+                        return Redirect($"{returnUrl}?error={Uri.EscapeDataString("Erro ao criar usuário")}");
                     }
 
                     await _userManager.AddLoginAsync(user, info);
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    await AddClaimsAndSignIn(user, picture);
+
                     _logger.LogInformation("Novo usuário criado e logado via {Provider}: {Email}", info.LoginProvider, email);
                 }
-
 
                 return Redirect(returnUrl);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Erro no callback de login externo");
-                return Redirect($"{Uri.EscapeDataString(returnUrl)}?error={Uri.EscapeDataString("Erro ao processar login externo")}");
+                return Redirect($"{returnUrl}?error={Uri.EscapeDataString("Erro ao processar login externo")}");
             }
         }
-        [AllowAnonymous]
+
+        [Authorize]
         [HttpGet("me")]
-public async Task<IActionResult> GetCurrentUser()
-{
-    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-    if (string.IsNullOrEmpty(userId))
-        return Unauthorized();
+        public IActionResult Me()
+        {
+            try
+            {
+                if (!User.Identity?.IsAuthenticated ?? true)
+                    return Unauthorized(EnvelopResponse<object>.Failure("Usuário não autenticado"));
 
-    var user = await _userManager.FindByIdAsync(userId);
-    if (user == null)
-        return NotFound();
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "";
+                var email = User.FindFirst(ClaimTypes.Email)?.Value ?? "";
+                var fullName = User.FindFirst(ClaimTypes.Name)?.Value ?? email;
 
-    var roles = await _userManager.GetRolesAsync(user);
+                var roles = User.Claims
+                                .Where(c => c.Type == ClaimTypes.Role)
+                                .Select(c => c.Value)
+                                .ToList();
 
-    return Ok(new
-    {
-        id = user.Id,
-        email = user.Email,
-        fullName = user.FullName,
-        roles
-    });
-}
+                var userData = new
+                {
+                    id = userId,
+                    email,
+                    fullName,
+                    roles
+                };
 
+                return Ok(EnvelopResponse<object>.Success(userData));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro no /auth/me");
+                return StatusCode(500, EnvelopResponse<object>.Failure("Erro ao buscar usuário: " + ex.Message));
+            }
+        }
+
+
+        /// <summary>
+        /// Garante que os claims essenciais estão salvos e refaz o SignIn.
+        /// </summary>
+        private async Task AddClaimsAndSignIn(UserEntities user, string? picture)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.Email, user.Email ?? ""),
+                new Claim(ClaimTypes.Name, user.FullName ?? user.UserName ?? "")
+            };
+
+            if (!string.IsNullOrEmpty(picture))
+                claims.Add(new Claim("picture", picture));
+
+            var existingClaims = await _userManager.GetClaimsAsync(user);
+            foreach (var claim in claims)
+            {
+                if (!existingClaims.Any(c => c.Type == claim.Type && c.Value == claim.Value))
+                {
+                    await _userManager.AddClaimAsync(user, claim);
+                }
+            }
+
+            // Recria cookie já com os claims
+            await _signInManager.SignInAsync(user, isPersistent: false);
+        }
     }
 }

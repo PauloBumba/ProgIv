@@ -428,7 +428,7 @@
   },
   {
     "ContainingType": "BackEnd.Controllers.AuthController",
-    "Method": "GetCurrentUser",
+    "Method": "Me",
     "RelativePath": "auth/me",
     "HttpMethod": "GET",
     "IsController": true,
