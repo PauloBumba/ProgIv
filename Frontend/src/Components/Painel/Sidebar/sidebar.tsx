@@ -3,6 +3,8 @@ import { SpeedDial } from "primereact/speeddial";
 import { useNavigate } from "react-router-dom";
 import { PanelMenu } from "primereact/panelmenu";
 import "./sidebar.css";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../Reducers/UserReducer";
 
 type SidebarProps = {
   isCollapsed: boolean;
@@ -12,6 +14,7 @@ type SidebarProps = {
 
 export default function Sidebar({ isCollapsed, setHovered, medicationId }: SidebarProps) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const isExpanded = !isCollapsed;
 
   // Menu principal
@@ -35,7 +38,8 @@ export default function Sidebar({ isCollapsed, setHovered, medicationId }: Sideb
     { label: "Perfil", icon: "pi pi-user", command: () => navigate("/profile") },
     { label: "Sair", icon: "pi pi-sign-out", command: () => { 
       localStorage.clear();
-      navigate("/login"); 
+      navigate("/login")
+      dispatch(logout())
     }},
   ];
 
