@@ -17,7 +17,18 @@ builder.Services.AddLogging(logging =>
     logging.AddDebug();
     logging.SetMinimumLevel(LogLevel.Debug);
 });
-
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.Name = "MenuOnline.Auth";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // HTTPS obrigatório
+    options.Cookie.SameSite = SameSiteMode.None;             // Cross-domain
+    options.LoginPath = "/login";
+    options.LogoutPath = "/login";
+    options.AccessDeniedPath = "/acesso-negado";
+    options.ExpireTimeSpan = TimeSpan.FromHours(1);
+    options.SlidingExpiration = true;
+});
 // 🔹 JWT Config
 var jwtKey = builder.Configuration["JwtConfig:Key"];
 var jwtIssuer = builder.Configuration["JwtConfig:Issuer"];
@@ -109,6 +120,11 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapReverseProxy();    // Aqui o YARP intercepta
-
+app.UseCookiePolicy(new CookiePolicyOptions
+{
+    MinimumSameSitePolicy = SameSiteMode.None,
+    Secure = CookieSecurePolicy.Always,
+    HttpOnly = Microsoft.AspNetCore.CookiePolicy.HttpOnlyPolicy.Always,
+});
 
 app.Run();

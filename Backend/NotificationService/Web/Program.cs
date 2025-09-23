@@ -28,7 +28,24 @@ builder.Services.AddSignalR(options =>
 // Configurações Email
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
-
+// Configuração do Cookie Identity
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.Name = "MenuOnline.Auth";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // HTTPS obrigatório
+    options.Cookie.SameSite = SameSiteMode.None;             // Cross-domain
+    options.LoginPath = "/login";
+    options.LogoutPath = "/login";
+    options.AccessDeniedPath = "/acesso-negado";
+    options.ExpireTimeSpan = TimeSpan.FromHours(1);
+    options.SlidingExpiration = true;
+});
 // SignalR Notification Service
 builder.Services.AddScoped<ISignalRNotificationService, SignalRNotificationService>();
 
@@ -143,7 +160,12 @@ app.UseCors("AllowGateway");
 app.UseRouting();             // 🚨 UseRouting antes de Authentication/Authorization
 app.UseAuthentication();      // 🚨 Authentication primeiro
 app.UseAuthorization();       // 🚨 Authorization logo depois
-
+app.UseCookiePolicy(new CookiePolicyOptions
+{
+    MinimumSameSitePolicy = SameSiteMode.None,
+    Secure = CookieSecurePolicy.Always,
+    HttpOnly = Microsoft.AspNetCore.CookiePolicy.HttpOnlyPolicy.Always,
+});
 // MapHub com proteção JWT
 app.UseEndpoints(endpoints =>
 {

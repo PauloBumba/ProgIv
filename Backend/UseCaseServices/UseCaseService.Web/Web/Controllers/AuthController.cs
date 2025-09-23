@@ -70,8 +70,13 @@ namespace BackEnd.Controllers
                 {
                     user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey)
                            ?? throw new Exception("Usuário não encontrado após login externo");
+
+                    // 🔑 Importante: garante que o cookie do Identity é criado
+                    await AddClaimsAndSignIn(user, info.Principal?.FindFirstValue("picture"));
+
                     _logger.LogInformation("Usuário existente logado via {Provider}: {Email}", info.LoginProvider, user.Email);
                 }
+
                 else
                 {
                     var email = info.Principal?.FindFirstValue(ClaimTypes.Email);
@@ -192,7 +197,7 @@ namespace BackEnd.Controllers
             }
 
             // Recria cookie já com os claims
-            await _signInManager.SignInAsync(user, isPersistent: false);
+            await _signInManager.SignInAsync(user, isPersistent: true);
         }
     }
 }

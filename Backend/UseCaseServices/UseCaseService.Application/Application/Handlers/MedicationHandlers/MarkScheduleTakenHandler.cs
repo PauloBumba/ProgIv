@@ -3,6 +3,7 @@ using Application.Response;
 using Application.Services;
 using Domain.Entities;
 using Infrastructure.Interface;
+using MassTransit;
 using MediatR;
 using Shared.Contracts.Events;
 using System;
@@ -15,12 +16,12 @@ namespace Application.Handlers.MedicationHandlers
         : IRequestHandler<MarkScheduleTakenCommand, EnvelopResponse<MedicationSchedule>>
     {
         private readonly IMedicationRepository _repository;
-        private readonly IPublisher _publisher;
+        private readonly IPublishEndpoint _publisher;
         private readonly IUserContextService _userContextService;
 
         public MarkScheduleTakenHandler(
             IMedicationRepository repository,
-            IPublisher publisher,
+            IPublishEndpoint publisher,
             IUserContextService userContextService)
         {
             _repository = repository;
@@ -55,7 +56,7 @@ namespace Application.Handlers.MedicationHandlers
             var updated = await _repository.UpdateScheduleAsync(schedule);
             if (updated == null)
                 return EnvelopResponse<MedicationSchedule>.Failure("Falha ao atualizar schedule da medicação.");
-
+            
             // Publica evento
             await _publisher.Publish(new MedicationTakenEvent
             {

@@ -19,7 +19,12 @@ namespace Application.Services
         private readonly ILogger<MedsReminderService> _logger;
         private readonly IPublishEndpoint _publish;
         private readonly IUserContextService _userContextService;
-        public MedsReminderService(IServiceScopeFactory scopeFactory, ILogger<MedsReminderService> logger, IPublishEndpoint publish , IUserContextService userContextService)
+
+        public MedsReminderService(
+            IServiceScopeFactory scopeFactory,
+            ILogger<MedsReminderService> logger,
+            IPublishEndpoint publish,
+            IUserContextService userContextService)
         {
             _scopeFactory = scopeFactory;
             _logger = logger;
@@ -37,7 +42,7 @@ namespace Application.Services
                 {
                     using var scope = _scopeFactory.CreateScope();
                     var db = scope.ServiceProvider.GetRequiredService<UserCaseDbContext>();
-                    var now = DateTime.UtcNow;
+                    var now = DateTime.Now; // usando hora local
 
                     // Busca todos os schedules habilitados
                     var allSchedules = await db.MedicationSchedules
@@ -47,52 +52,48 @@ namespace Application.Services
 
                     foreach (var schedule in allSchedules)
                     {
-                        var scheduledTimeToday = now.Date.Add(schedule.TimeOfDay);
-                        var timeDifference = (now - scheduledTimeToday).Duration();
+                        // Calcula o horário do lembrete para hoje
+                        var scheduledTimeToday = now.Date + schedule.TimeOfDay; // TimeSpan do banco
 
-                        // Dentro da janela de 60 segundos
-                        if (timeDifference <= TimeSpan.FromSeconds(60))
+                        // Checa se o lembrete já foi enviado hoje
+                        var alreadyNotifiedToday = await db.MedicationHistories
+                            .AnyAsync(h => h.MedicationId == schedule.MedicationId &&
+                                           h.ScheduleId == schedule.Id &&
+                                           h.CreatedAt.Date == now.Date, stoppingToken);
+
+                        if (!alreadyNotifiedToday && now >= scheduledTimeToday)
                         {
-                            _logger.LogInformation("Lembrete para {Medication} às {Time}", schedule.Medication.Name, schedule.TimeOfDay);
+                            _logger.LogInformation("Enviando lembrete para {Medication} às {Time}",
+                                schedule.Medication.Name, schedule.TimeOfDay);
 
-                            var alreadyNotifiedToday = await db.MedicationHistories
-                                .AnyAsync(h => h.MedicationId == schedule.MedicationId &&
-                                              h.Notes != null &&
-                                              h.Notes.Contains("Lembrete enviado") &&
-                                              h.TakenAt == null, stoppingToken);
-
-                            if (!alreadyNotifiedToday)
+                            // Cria registro de histórico
+                            var history = new MedicationHistory
                             {
-                                // Cria registro de histórico
-                                var history = new MedicationHistory
-                                {
-                                   
-                                    MedicationId = schedule.MedicationId,
-                                    ScheduleId = schedule.Id,
-                                    WasTaken = false,
-                                    TakenAt = null,
-                                    Notes = $"Lembrete enviado para {schedule.Medication.Name} às {schedule.TimeOfDay}"
-                                };
+                                MedicationId = schedule.MedicationId,
+                                ScheduleId = schedule.Id,
+                                WasTaken = false,
+                                TakenAt = null,
+                                Notes = $"Lembrete enviado para {schedule.Medication.Name} às {schedule.TimeOfDay}",
+                                CreatedAt = now
+                            };
 
-                                db.MedicationHistories.Add(history);
-                                await db.SaveChangesAsync(stoppingToken);
+                            db.MedicationHistories.Add(history);
+                            await db.SaveChangesAsync(stoppingToken);
 
-                                _logger.LogInformation("Lembrete registrado no banco para {Medication}", schedule.Medication.Name);
+                            _logger.LogInformation("Lembrete registrado no banco para {Medication}", schedule.Medication.Name);
 
-                                // ✅ Publica evento no RabbitMQ via MassTransit
-                                await _publish.Publish(new MedicationReminderEvent
-                                {
-                                    MedicationId = schedule.MedicationId,
-                                    ScheduleId = schedule.Id,
-                                   
-                                    TimeOfReminder = now,
-                                    MedicationName = schedule.Medication.Name,
-                                    Email= _userContextService.GetUserEmail(),
-                                    UserId=_userContextService.GetUserId()
-                                }, stoppingToken);
+                            // Publica evento no RabbitMQ
+                            await _publish.Publish(new MedicationReminderEvent
+                            {
+                                MedicationId = schedule.MedicationId,
+                                ScheduleId = schedule.Id,
+                                TimeOfReminder = now,
+                                MedicationName = schedule.Medication.Name,
+                                Email = _userContextService.GetUserEmail(),
+                                UserId = _userContextService.GetUserId()
+                            }, stoppingToken);
 
-                                _logger.LogInformation("Evento enviado para RabbitMQ para {Medication}", schedule.Medication.Name);
-                            }
+                            _logger.LogInformation("Evento enviado para RabbitMQ para {Medication}", schedule.Medication.Name);
                         }
                     }
                 }
@@ -101,10 +102,9 @@ namespace Application.Services
                     _logger.LogError(ex, "Erro no serviço de lembretes");
                 }
 
+                // Delay para não sobrecarregar o loop
                 await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
             }
         }
     }
-
-    
 }
