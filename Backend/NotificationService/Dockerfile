@@ -1,31 +1,25 @@
-# Use the official .NET 9 runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
-# Use the official .NET 9 SDK image for building
+# Etapa 1: build
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Copy everything from current context (NotificationServices directory)
-COPY . ./
-WORKDIR /src/NotificationService
+# Copia os arquivos de csproj e restaura dependências
+COPY *.sln ./
+COPY */*.csproj ./
+RUN for file in $(ls *.csproj); do mkdir -p ${file%.*} && mv $file ${file%.*}/; done
 
-# Restore dependencies (skip missing references)
-RUN dotnet restore NotificationService.sln || true
+RUN dotnet restore
 
-# Build the application (ignore missing project references)
-RUN dotnet build NotificationService.sln -c Release -o /app/build --ignore-failed-sources || dotnet build NotificationService.sln -c Release -o /app/build
+# Copia tudo e compila
+COPY . .
+RUN dotnet publish -c Release -o /app
 
-# Publish the solution
-FROM build AS publish
-RUN dotnet publish NotificationService.sln -c Release -o /app/publish /p:UseAppHost=false || dotnet publish -c Release -o /app/publish /p:UseAppHost=false
-
-# Final stage
-FROM base AS final
+# Etapa 2: runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app ./
 
-# Start the Web API
-ENTRYPOINT ["dotnet", "Web.dll"]
+# Porta padrão do container (80) -> exposta pelo docker-compose
+EXPOSE 80
+
+# Starta a aplicação
+ENTRYPOINT ["dotnet", "NotificationService.dll"]

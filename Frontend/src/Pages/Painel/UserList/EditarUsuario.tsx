@@ -19,7 +19,7 @@ interface IUser {
 
 export default function EditarUsuarioPage() {
   const { id } = useParams();
-  const navigate = useNavigate();
+ 
 
   const [user, setUser] = useState<IUser>({
     fullName: '',

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    io.kompose.service: sqlserver-data
+  name: sqlserver-data
+spec:
+  storageClassName: azurefile
+  volumeName: sqlserver-data
+  selector:
+    storageclass.beta.kubernetes.io/azure-file: "true"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi

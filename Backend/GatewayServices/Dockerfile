@@ -1,37 +1,22 @@
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
-# Use the official .NET 8 SDK image for building
+# Etapa 1: build
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Copy solution and project files
-COPY GatewayServices/ApiGateway.sln ./GatewayServices/
-COPY GatewayServices/ApiGateway.csproj ./GatewayServices/
+# Copia o .csproj do Gateway
+COPY Gateway/*.csproj ./Gateway/
+RUN dotnet restore ./Gateway/Gateway.csproj
 
-# Copy any other gateway files
-COPY GatewayServices/ ./GatewayServices/
+# Copia tudo e publica
+COPY . .
+RUN dotnet publish ./Gateway/Gateway.csproj -c Release -o /app
 
-# Set working directory to GatewayServices
-WORKDIR /src/GatewayServices
-
-# Restore dependencies
-RUN dotnet restore ApiGateway.sln
-
-# Build the application
-RUN dotnet build ApiGateway.sln -c Release -o /app/build
-
-# Publish the application
-FROM build AS publish
-WORKDIR /src/GatewayServices
-RUN dotnet publish ApiGateway.csproj -c Release -o /app/publish /p:UseAppHost=false
-
-# Final stage
-FROM base AS final
+# Etapa 2: runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app ./
 
-# Start the ApiGateway
-ENTRYPOINT ["dotnet", "ApiGateway.dll"]
+# Porta do container
+EXPOSE 80
+
+# Inicia o Gateway
+ENTRYPOINT ["dotnet", "Gateway.dll"]

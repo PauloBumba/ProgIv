@@ -4,8 +4,8 @@ import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
 import { InputSwitch } from "primereact/inputswitch";
 import { Message } from "primereact/message";  // Importando o Message do PrimeReact
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { loginExternal, loginUser } from "../../Reducers/UserReducer";
+import { Link, useNavigate } from "react-router-dom";
+import {  loginUser } from "../../Reducers/UserReducer";
 import { useDispatch } from "react-redux";
 import { useProgressOverlay } from "../../Components/ProgressBar/useProgressOverlay";
 import { ApiErrorHelper } from "../../Helper/apihelper";
@@ -24,7 +24,7 @@ export const Login: FC = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [cookieAccepted, setCookieAccepted] = useState(false);
+  const [cookieAccepted, setCookieAccepted] = useState<boolean | null>(null);
   
   const navigate = useNavigate();
 

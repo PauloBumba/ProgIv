@@ -9,16 +9,17 @@ using Infrastructure.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
+using System.Net.NetworkInformation;
 using Web.Extensions;
 using Web.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = "Server=127.0.0.1;Port=3307;Database=MedicationDb;User=admin;Password=admin123;\n";
+
+
 
 // Conexão DB
-var isDocker = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true";
-var connectionString = isDocker
-    ? builder.Configuration.GetConnectionString("MySqlConnection")
-    : "Server=localhost;Port=3306;Database=MedicationDb;User=admin;Password=admin123;";
+
 
 builder.Services.AddDbContext<UserCaseDbContext>(options =>
 {

@@ -34,7 +34,7 @@ import ListaUsuarios from "../Pages/Painel/UserList";
 import { CriarUsuarioPage } from "../Pages/Painel/UserList/CreateUser";
 import EditarUsuarioPage from "../Pages/Painel/UserList/EditarUsuario";
 
-import { ScheduleList } from "../Pages/Painel/Schedules/ScheduleList";
+
 import { ScheduleListWrapper } from "../Helper/ScheduleList";
 import { SuportPrivate } from "../Pages/Painel/Suport";
 
@@ -48,7 +48,7 @@ interface AppUser {
 }
 
 export const AppRouter: FC = () => {
-  const currentUser = useSelector((state: RootState) => state.users.user) as AppUser | null;
+  
 
   return (
     <Router>

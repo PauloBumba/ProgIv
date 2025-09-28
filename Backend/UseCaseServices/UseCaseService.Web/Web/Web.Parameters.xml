@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="https://meuapp.scm.azurewebsites.net:443/msdeploy.axd" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Paulo_Bumba\\Documents\\GitHub\\ProgIv\\Backend\\UseCaseServices\\UseCaseService\.Web\\Web\\obj\\Release\\net9\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

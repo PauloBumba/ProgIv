@@ -35,11 +35,12 @@ namespace Application
             {
                 x.UsingRabbitMq((ctx, cfg) =>
                 {
-                    cfg.Host("localhost", "/", h =>
+                    cfg.Host("48.223.216.70", 5672, "/", h =>
                     {
                         h.Username("guest");
                         h.Password("guest");
                     });
+
                 });
 
                 // REGISTRA O CONTRATO DO EVENTO
