@@ -1,7 +1,6 @@
 import { type FC } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import type { RootState } from "../Root/RootReducer";
+
 
 import { PublicLayot } from "../Layout/Public/public";
 import { Main } from "../Layout/Private/dashbord";
@@ -41,11 +40,7 @@ import { SuportPrivate } from "../Pages/Painel/Suport";
 import { RouteWatcher } from "./RouteWatcher";
 
 
-interface AppUser {
-  id: string;
-  username: string;
-  roles: string[];
-}
+
 
 export const AppRouter: FC = () => {
   

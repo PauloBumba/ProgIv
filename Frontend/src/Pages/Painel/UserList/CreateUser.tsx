@@ -83,7 +83,7 @@ const fetchAddressByCep = async (cep: string) => {
 
   setForm(prev => ({
     ...prev,
-    addresses: [{ ...prev.addresses[0], [name]: value }]
+    addresses: [{ ...prev.addresses[0], [name]: value }] as any
   }));
 
   if (name === "zipCode") {
@@ -183,16 +183,16 @@ const fetchAddressByCep = async (cep: string) => {
         <div className="mb-3">
           <Message
             severity="error"
-            text={submitError.replaceAll(" | ", "\n")}
+            text={submitError.replace(" | ", "\n")}
             style={{ whiteSpace: "pre-line" }}
-            closable
+           
           />
         </div>
       )}
 
       {submitSuccess && (
         <div className="mb-3">
-          <Message severity="success" text={submitSuccess} closable />
+          <Message severity="success" text={submitSuccess} />
         </div>
       )}
 
@@ -333,12 +333,12 @@ const fetchAddressByCep = async (cep: string) => {
   { name: "federalstate", label: "Estado" },
   { name: "city", label: "Cidade" },
   { name: "district", label: "Bairro" },
-  ,
+  
   { name: "numberHouse", label: "Número" }
 ].map((field) => (
-  <div key={field.name} className="field col-12 md:col-4">
-    <label>{field.label}</label>
-    {field.name === "zipCode" ? (
+  <div key={ field ? field.name : ''} className="field col-12 md:col-4">
+    <label>{field ? field.label : ''}</label>
+    {field &&  field.name === "zipCode" ? (
       <InputMask
         name={field.name}
         mask="99999-999"
@@ -347,12 +347,15 @@ const fetchAddressByCep = async (cep: string) => {
       />
     ) : (
       <InputText
-        name={field.name}
-        value={form.addresses[0][field.name] as string}
+      name={field ? field.name : ''}
+
+        value={field ? (form.addresses[0][field.name as keyof typeof form.addresses[0]] as string) : ''}
+
         onChange={handleAddressChange}
       />
     )}
-    {renderFieldError(`addresses[0].${field.name}`)}
+  {field ? renderFieldError(`addresses[0].${field.name}`) : null}
+
   </div>
 ))}
 

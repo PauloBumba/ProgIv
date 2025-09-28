@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
 import { Button } from 'primereact/button';
@@ -89,13 +89,13 @@ export default function EditarUsuarioPage() {
 
       {error && (
         <div className="mb-3">
-          <Message severity="error" text={error} closable />
+          <Message severity="error" text={error}  />
         </div>
       )}
 
       {submitSuccess && (
         <div className="mb-3">
-          <Message severity="success" text={submitSuccess} closable />
+          <Message severity="success" text={submitSuccess} />
         </div>
       )}
 
