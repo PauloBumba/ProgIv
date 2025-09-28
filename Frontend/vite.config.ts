@@ -39,6 +39,7 @@ export default defineConfig({
         target: 'https://localhost:7085/usecase',
         changeOrigin: true,
         secure: false,
+      
       },
     }
   }

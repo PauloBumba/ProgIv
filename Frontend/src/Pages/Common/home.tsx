@@ -188,7 +188,7 @@ export const Index: FC = () => {
             <p className="text-gray-600 text-xl">Tecnologia avançada para gestão farmacêutica completa</p>
           </div>
           
-          <div className="grid">
+          <div className="grid" id="produtos">
             {features.map((feature, index) => (
               <div key={index} className="col-12 md:col-6 lg:col-3 p-3">
                 <Card className="text-center h-full shadow-4 border-round-2xl hover:shadow-8 transition-all transition-duration-300">

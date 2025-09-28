@@ -42,9 +42,9 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // HTTPS obrigatório
     options.Cookie.SameSite = SameSiteMode.None;             // Cross-domain
-    options.LoginPath = "/auth/login";
-    options.LogoutPath = "/auth/logout";
-    options.AccessDeniedPath = "/auth/access-denied";
+    options.LoginPath = "/login";
+    options.LogoutPath = "/login";
+    options.AccessDeniedPath = "/acesso-negado";
     options.ExpireTimeSpan = TimeSpan.FromHours(1);
     options.SlidingExpiration = true;
 });
@@ -74,6 +74,9 @@ builder.Services.AddScoped<IMedicationRepository, MedicationRepository>();
 builder.Services.AddScoped<IUserContextService, UserContextService>();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.ConfigureApplicationCookie(options => {
+    options.AccessDeniedPath = new PathString("/acesso-negado");
+});
 
 builder.Services.AddExternalAuthentication(builder.Configuration); // Google, etc.
 
@@ -86,9 +89,7 @@ var app = builder.Build();
 // Migrations e admin
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<UserCaseDbContext>();
-    db.Database.Migrate();
-
+    
     var services = scope.ServiceProvider;
     var adminInitializer = services.GetRequiredService<IAdminServices>();
     await adminInitializer.CreateAdmin();

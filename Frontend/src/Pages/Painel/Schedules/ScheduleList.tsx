@@ -38,7 +38,7 @@ export const ScheduleList = ({ medicationId }: IScheduleListProps) => {
   const fetchSchedules = async () => {
     try {
       const res = await scheduleService.getByMedication(medicationId);
-      setSchedules(res.data.data);
+      setSchedules(res.data.data.filter((s:any) => s.enabled) || []);
       setError(null);
     } catch (err: any) {
       setError(err.response?.data?.message || 'Erro ao buscar schedules');
@@ -63,9 +63,9 @@ export const ScheduleList = ({ medicationId }: IScheduleListProps) => {
   // Deletar schedule
   const handleDelete = async (id: number) => {
     try {
-      await scheduleService.delete(id);
+     var deleteSchedule = await scheduleService.delete(id);
       setSchedules(prev => prev.filter(s => s.id !== id));
-      toast.current?.show({ severity: 'success', summary: 'Sucesso', detail: 'Schedule deletado.' });
+      toast.current?.show({ severity: 'success', summary: 'Sucesso', detail: deleteSchedule.data.message   });
     } catch (err: any) {
       setError(err.response?.data?.message || 'Erro ao deletar schedule');
       toast.current?.show({ severity: 'error', summary: 'Erro', detail: error });
@@ -75,8 +75,8 @@ export const ScheduleList = ({ medicationId }: IScheduleListProps) => {
   // Marcar como tomado
   const handleMarkTaken = async (id: number) => {
     try {
-      await scheduleService.markTaken(id);
-      toast.current?.show({ severity: 'success', summary: 'Sucesso', detail: 'Schedule marcado como tomado.' });
+     var markSchedule= await scheduleService.markTaken(id);
+      toast.current?.show({ severity: 'success', summary: 'Sucesso', detail: markSchedule.data.message   });
       fetchSchedules();
     } catch (err: any) {
       setError(err.response?.data?.message || 'Erro ao marcar como tomado');
@@ -162,7 +162,7 @@ export const ScheduleList = ({ medicationId }: IScheduleListProps) => {
   const formatDate = (rowData: ISchedule, field: keyof ISchedule) => {
     const date = rowData[field];
     if (!date) return '';
-    return format(new Date(date), 'dd/MM/yyyy HH:mm');
+    return format(new Date(date as string), 'dd/MM/yyyy HH:mm');
   };
 
   return (
