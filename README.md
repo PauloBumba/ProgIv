@@ -1,3 +1,4 @@
+
 # 💊 Pharmecode
 
 > Sistema de gestão farmacêutica com arquitetura baseada em **microserviços**, **mensageria**, **API Gateway**, **Docker**, **CQRS + MediatR**, **Clean Architecture** e **DDD**.  
@@ -10,6 +11,13 @@
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-Messaging-FF6600?logo=rabbitmq&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-326CE5?logo=kubernetes&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+## 👥 Alunos / Equipe
+
+- Paulo Mário Valente Bumba  
+- Alexandre Ribeiro  
+- Kauan Camargo  
+- Leonardo Zonta
 
 ## 🧰 Tecnologias & Padrões
 
