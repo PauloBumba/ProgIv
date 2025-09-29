@@ -3,7 +3,13 @@
 > Sistema de gestão farmacêutica com arquitetura baseada em **microserviços**, **mensageria**, **API Gateway**, **Docker**, **CQRS + MediatR**, **Clean Architecture** e **DDD**.  
 > Frontend moderno em **React**, backend em **ASP.NET Core**.
 
----
+![.NET](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-Messaging-FF6600?logo=rabbitmq&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-326CE5?logo=kubernetes&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 🧰 Tecnologias & Padrões
 
@@ -60,13 +66,14 @@ docker-compose up --build
 Serviços disponíveis:
 
 API Gateway: http://localhost:8000
-
-Adminer: http://localhost:8080
+Grafana : http://52.191.207.39:3000/
+Adminer: http://48.216.184.41:8080/
 
 MySQL: localhost:3306
 
-Prometheus: http://localhost:9090
+Prometheus: http://4.157.64.253:9090
 
+RabbiMq : http://48.223.216.70:15672/
 Rodando o Backend manualmente Rodar no microserviços na pasta web 
 bash
 
