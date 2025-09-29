@@ -11,7 +11,9 @@
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-Messaging-FF6600?logo=rabbitmq&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-326CE5?logo=kubernetes&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
-
+## 👥 Video de Apresentação do Projeto  
+https://youtu.be/YePRtcw0gKE
+## Hospedagem Front https://prog-iv-orcin.vercel.app/
 ## 👥 Alunos / Equipe
 
 - Paulo Mário Valente Bumba  
