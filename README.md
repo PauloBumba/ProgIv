@@ -45,6 +45,7 @@ Root/
 ├── .gitattributes          # Configurações de normalização de arquivos no Git
 └── README.md               # Documentação principal do projeto
 
+
 ---
 
 ## 🚀 Como Rodar Localmente
