@@ -26,24 +26,29 @@
 
 ---
 
+<!-- Estrutura do projeto - renderiza alinhada no GitHub -->
+<h2>📂 Estrutura do Projeto</h2>
+
+<pre>
 Backend/
-├── GatewayServices/        # API Gateway (centraliza autenticação, roteamento e entrada de requisições)
-├── NotificationService/    # Microsserviço de notificações (eventos via mensageria/RabbitMQ)
-├── SharedContracts/        # Contratos compartilhados (DTOs, eventos, mensagens)
-├── UseCaseServices/        # Microsserviços principais (regras de negócio, CQRS, DDD)
-├── docker-compose.yml      # Orquestração local com Docker Compose (DB, RabbitMQ, serviços, Prometheus)
-├── prometheus.yml          # Configuração de monitoramento Prometheus
-└── aspnetapp.pfx           # Certificado SSL de desenvolvimento para HTTPS
+├── GatewayServices/        # API Gateway (centraliza autenticação, roteamento)
+├── NotificationService/    # Microsserviço de notificações (RabbitMQ)
+├── SharedContracts/        # Contratos compartilhados (DTOs, eventos)
+├── UseCaseServices/        # Microsserviços principais (CQRS, DDD)
+├── docker-compose.yml      # Orquestração local (DB, RabbitMQ, Prometheus)
+├── prometheus.yml          # Configuração Prometheus
+└── aspnetapp.pfx           # Certificado SSL dev
 
 Frontend/
-├── src/                    # Código-fonte React (componentes, páginas, hooks, serviços)
-├── public/                 # Arquivos estáticos (favicon, index.html, assets públicos)
-└── package.json            # Configuração do projeto React (dependências, scripts, build)
+├── src/                    # Código-fonte React (componentes, páginas, hooks)
+├── public/                 # Arquivos estáticos (index.html, assets)
+└── package.json            # Config do projeto React
 
 Root/
 ├── .gitignore              # Ignora arquivos/pastas não versionados
-├── .gitattributes          # Configurações de normalização de arquivos no Git
-└── README.md               # Documentação principal do projeto
+├── .gitattributes          # Normalização de arquivos no Git
+└── README.md               # Documentação principal
+</pre>
 
 
 ---
