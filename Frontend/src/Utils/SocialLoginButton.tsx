@@ -5,7 +5,7 @@ import { Button } from "primereact/button";
 
 
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://localhost:7085/usecase";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://localhost:7184";
 
 const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || "https://localhost:5173";
 

@@ -9,9 +9,11 @@ import { logout as logoutExtra } from "../../../Reducers/ExtraloginReducer";
 import { api } from "../../../Api/api";
 type SidebarProps = {
   isCollapsed: boolean;
+  setCollapsed: (value: boolean) => void;
   setHovered: (value: boolean) => void;
   medicationId?: number;
 };
+
 
 export default function Sidebar({ isCollapsed, setHovered, medicationId }: SidebarProps) {
   const navigate = useNavigate();

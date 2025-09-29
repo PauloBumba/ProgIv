@@ -25,10 +25,8 @@ import { HomePage } from "../Pages/Painel/homepage";
 import { GenericList } from "../Pages/Painel/Medications/MedicationsList";
 import { MedicationForm } from "../Pages/Painel/Medications/MedicationForm";
 import { MedicationDetails } from "../Pages/Painel/Medications/edicationDetails";
-import { MedicationSchedules } from "../Pages/Painel/Medications/MedicationSchedules";
-import { CreateExpense } from "../Pages/Painel/Expense/CreateExpense";
-import { ViewExpense } from "../Pages/Painel/Expense/ViewExpense";
-import { MyExpense } from "../Pages/Painel/Expense/myExpense";
+
+
 import ListaUsuarios from "../Pages/Painel/UserList";
 import { CriarUsuarioPage } from "../Pages/Painel/UserList/CreateUser";
 import EditarUsuarioPage from "../Pages/Painel/UserList/EditarUsuario";
@@ -77,14 +75,11 @@ export const AppRouter: FC = () => {
           <Route path="medications/list" element={<GenericList/>} />
           <Route path="medications/new" element={<MedicationForm />} />
           <Route path="medications/:id/edit" element={<MedicationForm />} />
-          <Route path="medications/:id/schedules" element={<MedicationSchedules />} />
+         
           <Route path="medications/:id" element={<MedicationDetails />} />
 
           {/* Despesas */}
-          <Route path="expense/create" element={<CreateExpense />} />
-          <Route path="expense/view" element={<ViewExpense />} />
-          <Route path="expense/my" element={<MyExpense />} />
-
+   
           {/* Usuários */}
           <Route path="usuarios" element={<ListaUsuarios />} />
           <Route path="usuarios/editar/:id" element={<EditarUsuarioPage />} />

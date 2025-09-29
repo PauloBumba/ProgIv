@@ -8,7 +8,8 @@ import * as signalR from "@microsoft/signalr";
 interface NotificationDto {
   title?: string;
   message?: string;
-  type?: "success" | "info" | "warning" | "error";
+  type: "error" | "info" | "secondary" | "success" | "contrast" | "warn" | undefined;
+
   timestamp?: string;
   actionUrl?: string;
   icon?: string;
@@ -19,6 +20,7 @@ interface NotificationBellProps {
 }
 
 const NotificationBell: React.FC<NotificationBellProps> = ({ userId }) => {
+  void userId;
   const op = useRef<OverlayPanel | null>(null);
   const toast = useRef<Toast | null>(null);
   const [notifications, setNotifications] = useState<NotificationDto[]>([]);
@@ -28,7 +30,7 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ userId }) => {
   // Monta a conexão SignalR
   useEffect(() => {
     const newConnection = new signalR.HubConnectionBuilder()
-      .withUrl("https://localhost:7085/notificationHub", {
+      .withUrl("https://localhost:7296/notificationHub", {
         accessTokenFactory: () => localStorage.getItem("token") || "",
         logger: signalR.LogLevel.Trace, // debug detalhado
       })
@@ -51,7 +53,7 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ userId }) => {
           console.log("Notificação recebida:", notification);
 
           const notifObj: NotificationDto =
-            typeof notification === "string" ? { message: notification } : notification;
+            typeof notification === "string" ? { message: notification, type: "info" } : notification;
 
           toast.current?.show({
             severity: notifObj.type || "info",

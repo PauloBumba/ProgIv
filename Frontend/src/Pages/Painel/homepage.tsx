@@ -64,7 +64,7 @@ export const HomePage = () => {
         // Usuários ativos
         const usersRes = await userService.getAllUsers();
         const users = usersRes.data?.data || usersRes.data || [];
-        const customers = users.filter((user: any) => user.role === 'customer' || user.role === 'cliente');
+      
        
         setActiveCustomers(users.length);
 

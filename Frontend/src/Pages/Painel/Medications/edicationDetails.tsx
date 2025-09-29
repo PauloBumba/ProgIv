@@ -12,37 +12,39 @@ import { Column } from 'primereact/column';
 import { Tag } from 'primereact/tag';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 
-import { medicationService, type Medication, type MedicationSchedule } from '../../../Services/medicationService';
+import { medicationService} from '../../../Services/medicationService';
 
 export const MedicationDetails = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const toast = useRef<Toast>(null);
   
-  const [medication, setMedication] = useState<Medication | null>(null);
+  const [medication, setMedication] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!id) return navigate('/medications');
+    if (!id) {
+      navigate('/medications');
+      return;
+    }
     loadMedication();
-  }, [id]);
+  }, [id, navigate]);
 
   const showToast = (severity: 'success' | 'info' | 'warn' | 'error', summary: string, detail: string) => {
     toast.current?.show({ severity, summary, detail });
   };
-
   const loadMedication = async () => {
     if (!id) return;
 
     setLoading(true);
     try {
-      const response = await medicationService.getById(id);
-      if (response.success) {
-        if (!response.data) {
+      const response = await medicationService.getById(parseInt(id));
+      if (response.data.success) {
+        if (!response.data.data) {
           showToast('error', 'Erro', 'Medicamento não encontrado');
           navigate('/medications');
         } else {
-          setMedication(response.data);
+          setMedication(response.data.data);
         }
       } else {
         showToast('error', 'Erro', 'Falha ao carregar medicamento');
@@ -58,8 +60,8 @@ export const MedicationDetails = () => {
 
   const markAsTaken = async (scheduleId: string) => {
     try {
-      const response = await medicationService.markTaken(scheduleId);
-      if (response.success) {
+      const response = await medicationService.markTaken(parseInt(scheduleId));
+      if (response.data.success) {
         showToast('success', 'Sucesso', 'Medicamento marcado como tomado');
         loadMedication();
       } else {
@@ -88,8 +90,8 @@ export const MedicationDetails = () => {
     setLoading(true);
 
     try {
-      const response = await medicationService.delete(id);
-      if (response.success) {
+      const response = await medicationService.delete(parseInt(id));
+      if (response.data.success) {
         showToast('success', 'Sucesso', 'Medicamento excluído com sucesso');
         setTimeout(() => navigate('/medications'), 1500);
       } else {
@@ -102,12 +104,12 @@ export const MedicationDetails = () => {
     }
   };
 
-  const timeTemplate = (rowData: MedicationSchedule) => {
+  const timeTemplate = (rowData: any) => {
     const time = new Date(`2000-01-01T${rowData.timeOfDay}`);
     return time.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
   };
 
-  const statusTemplate = (rowData: MedicationSchedule) => (
+  const statusTemplate = (rowData: any) => (
     <Tag 
       value={rowData.enabled ? 'Ativo' : 'Inativo'} 
       severity={rowData.enabled ? 'success' : 'secondary'}
@@ -115,7 +117,7 @@ export const MedicationDetails = () => {
     />
   );
 
-  const scheduleActionsTemplate = (rowData: MedicationSchedule) => (
+  const scheduleActionsTemplate = (rowData: any) => (
     <div className="flex gap-2">
       <Button
         icon="pi pi-check"
@@ -187,7 +189,7 @@ export const MedicationDetails = () => {
   );
 
   const scheduleCount = medication.schedules?.length || 0;
-  const activeSchedules = medication.schedules?.filter(s => s.enabled).length || 0;
+  const activeSchedules = medication.schedules?.filter((s: any) => s.enabled).length || 0;
 
   return (
     <div className="min-h-screen p-4" 
@@ -302,7 +304,7 @@ export const MedicationDetails = () => {
                 </div>
               ) : (
                 <div className="space-y-2">
-                  {medication.schedules?.slice(0, 3).map((schedule) => (
+                  {medication.schedules?.slice(0, 3).map((    schedule: any) => (
                     <div key={schedule.id} className="flex justify-content-between align-items-center p-2 bg-gray-50 border-round">
                       <span className="font-medium">{timeTemplate(schedule)}</span>
                       {statusTemplate(schedule)}

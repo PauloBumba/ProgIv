@@ -5,6 +5,7 @@ import Sidebar from "../../Components/Painel/Sidebar/sidebar";
 import { Footer } from "../../Components/Painel/Footer/footer";
 import "./dashbord.css";
 
+
 export const Main = () => {
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(true); // clique
   const [isSidebarHovered, setSidebarHovered] = useState(false);   // hover
@@ -20,7 +21,7 @@ export const Main = () => {
       <div className="flex flex-1">
         <Sidebar
           isCollapsed={isSidebarCollapsed}
-          setCollapsed={setSidebarCollapsed}
+          setCollapsed={setSidebarCollapsed }
           setHovered={setSidebarHovered}
         />
 

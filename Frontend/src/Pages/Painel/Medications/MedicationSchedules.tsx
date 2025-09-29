@@ -20,7 +20,7 @@ interface ISchedule {
   endDate: string;
 }
 
-interface IScheduleListProps {
+ export interface IScheduleListProps {
   medicationId: number;
 }
 
@@ -233,7 +233,8 @@ export const ScheduleList = ({ medicationId }: IScheduleListProps) => {
       <InputText
         id="repeatIntervalDays"
         placeholder="Ex: 1"
-        value={selectedSchedule?.repeatIntervalDays || 1 || '' || null}
+        value={selectedSchedule?.repeatIntervalDays?.toString() || "1"}
+
         onChange={(e) =>
           setSelectedSchedule((prev) =>
             prev ? { ...prev, repeatIntervalDays: parseInt(e.target.value) || 1 } : null

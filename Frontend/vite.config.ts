@@ -36,7 +36,7 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api': {
-        target: 'https://localhost:7085/usecase',
+        target: 'https://localhost:7184',
         changeOrigin: true,
         secure: false,
       

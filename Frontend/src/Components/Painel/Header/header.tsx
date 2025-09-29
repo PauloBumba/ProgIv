@@ -6,8 +6,7 @@ import { Toast } from "primereact/toast";
 import { useNavigate } from "react-router-dom";
 import img from "../../../assets/logo.png";
 import "./header.css";
-import { useSelector } from "react-redux";
-import type { RootState } from "../../../Root/RootReducer";
+
 import NotificationBell from "../../Notification/NotificationBell";
 
 type HeaderProps = {

@@ -14,7 +14,6 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../../Root/RootReducer";
 
 import { SocialLoginButton } from "../../Utils/SocialLoginButton";
-import CookieConsent from "../../Hook/CookieConsent";
 
 
 export const Login: FC = () => {
@@ -24,17 +23,18 @@ export const Login: FC = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [cookieAccepted, setCookieAccepted] = useState<boolean | null>(null);
+ 
   
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
-  const lastPath = useSelector((state: RootState) => state.route.lastPath) || "/dashboard";
+   const lastPath = useSelector((state: RootState) => state.route.lastPath) || "/dashboard";
+   void lastPath;
   useEffect(() => {
     const aceito = localStorage.getItem("cookieAceito");
     if (aceito === "true") {
-      setCookieAccepted(true);
+    
       setRememberMe(true); // já marca lembrar de mim
     }
   }, []);
@@ -129,9 +129,7 @@ const handleLogin = async (e: React.FormEvent) => {
   checked={rememberMe}
   onChange={(e) => {
     setRememberMe(e.value);
-    if (!e.value) {
-      setCookieAccepted(false); // 👈 volta o banner de cookie
-    }
+   
   }}
 />
 
@@ -155,19 +153,8 @@ const handleLogin = async (e: React.FormEvent) => {
           <Link to="/usuarios/criar" className="underline nav">Cadastre-se</Link>
         </div>
       
-        <CookieConsent
-  onAccept={() => {
-    localStorage.setItem("cookieAceito", "true");
-    setCookieAccepted(true);
-    setRememberMe(true);
-    toast.current?.show({
-      severity: "info",
-      summary: "Cookie aceito",
-      detail: "O 'Lembrar de mim' foi ativado automaticamente.",
-      life: 4000,
-    });
-  }}
-/>
+     
+
 
  
 

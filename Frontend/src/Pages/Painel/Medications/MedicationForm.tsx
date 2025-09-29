@@ -9,7 +9,7 @@ import { Message } from 'primereact/message';
 import { Divider } from 'primereact/divider';
 import { ProgressSpinner } from 'primereact/progressspinner';
 
-import { medicationService, type Medication } from "../../../Services/medicationService"
+import { medicationService } from "../../../Services/medicationService"
 
 interface FormData {
   name: string;
@@ -52,8 +52,8 @@ export const MedicationForm = () => {
     
     setInitialLoading(true);
     try {
-      const response = await medicationService.getById(id);
-      if (response.success) {
+      const response = await medicationService.getById(parseInt(id) || 0);
+      if (response.data.success as boolean) {
         const medication = response.data;
         setFormData({
           name: medication.name,
@@ -125,10 +125,10 @@ export const MedicationForm = () => {
       };
 
       const response = isEditMode 
-        ? await medicationService.update(id!, submitData)
+        ? await medicationService.update(id ? parseInt(id) : 0, submitData)
         : await medicationService.create(submitData);
 
-      if (response.success) {
+      if ( response.data.success) {
         showToast('success', 'Sucesso', 
           isEditMode ? 'Medicamento atualizado com sucesso' : 'Medicamento criado com sucesso'
         );
