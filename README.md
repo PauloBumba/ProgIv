@@ -26,28 +26,24 @@
 
 ---
 
-## 📂 Estrutura do Projeto
-
 Backend/
-├── GatewayServices/ # API Gateway para roteamento
-├── NotificationService/ # Serviço de Notificação (eventos/mensageria)
-├── SharedContracts/ # Contratos compartilhados entre serviços
-├── UseCaseServices/ # Serviços de caso de uso (core da aplicação)
-├── docker-compose.yml # Orquestração dos microsserviços + banco
-├── prometheus.yml # Configuração de monitoramento
-└── aspnetapp.pfx # Certificado SSL de desenvolvimento
+├── GatewayServices/        # API Gateway (centraliza autenticação, roteamento e entrada de requisições)
+├── NotificationService/    # Microsserviço de notificações (eventos via mensageria/RabbitMQ)
+├── SharedContracts/        # Contratos compartilhados (DTOs, eventos, mensagens)
+├── UseCaseServices/        # Microsserviços principais (regras de negócio, CQRS, DDD)
+├── docker-compose.yml      # Orquestração local com Docker Compose (DB, RabbitMQ, serviços, Prometheus)
+├── prometheus.yml          # Configuração de monitoramento Prometheus
+└── aspnetapp.pfx           # Certificado SSL de desenvolvimento para HTTPS
 
 Frontend/
-├── src/ # Código do React
-├── public/
-└── package.json
+├── src/                    # Código-fonte React (componentes, páginas, hooks, serviços)
+├── public/                 # Arquivos estáticos (favicon, index.html, assets públicos)
+└── package.json            # Configuração do projeto React (dependências, scripts, build)
 
-.gitignore
-.gitattributes
-README.md
-
-yaml
-Copiar código
+Root/
+├── .gitignore              # Ignora arquivos/pastas não versionados
+├── .gitattributes          # Configurações de normalização de arquivos no Git
+└── README.md               # Documentação principal do projeto
 
 ---
 
